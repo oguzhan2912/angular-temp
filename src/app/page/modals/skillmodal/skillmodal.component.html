@@ -1,0 +1,26 @@
+<table style="font-size: large">
+  <thead>
+  <h2>Yeteneklerim</h2>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Yetenek</mat-label>
+        <input matInput placeholder="İsim Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Tecrübe Yılı</mat-label>
+        <input matInput placeholder="Ad Giriniz." formControlName="firstCtrl" >
+      </mat-form-field>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" mat-dialog-close>İptal Et</button>
+  <button mat-raised-button color="warn" style="background-color: lawngreen" [mat-dialog-close]="true" cdkFocusInitial>Kaydet</button>
+</mat-dialog-actions>

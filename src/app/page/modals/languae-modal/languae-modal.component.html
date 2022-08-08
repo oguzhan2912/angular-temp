@@ -1,0 +1,65 @@
+<table style="font-size: large">
+  <thead>
+  <h2>Dil Bilgileri</h2>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Dil Adı</mat-label>
+        <select matNativeControl required>
+          <option value="male"> İngilizce</option>
+          <option value="female"> Almanca</option>
+        </select>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Okuma Seviyesi</mat-label>
+        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Yazma Seviyesi</mat-label>
+        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Konuşma Seviyesi</mat-label>
+        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Anlama Seviyesi</mat-label>
+        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Sınav Türü</mat-label>
+        <select matNativeControl required>
+          <option value="male">YDS</option>
+          <option value="female">YÖK-Dil</option>
+        </select>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Sınav Puanı</mat-label>
+        <input matInput placeholder="Bölüm Adı Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" mat-dialog-close>İptal Et</button>
+  <button mat-raised-button color="warn" style="background-color: lawngreen" [mat-dialog-close]="true" cdkFocusInitial>Kaydet</button>
+</mat-dialog-actions>
+

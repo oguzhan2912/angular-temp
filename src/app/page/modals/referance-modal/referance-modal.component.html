@@ -1,0 +1,45 @@
+<table style="font-size: large">
+  <thead>
+  <h2>Referans Bilgileri</h2>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Referans Adı</mat-label>
+        <input matInput placeholder="İsim Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Kurum Adı</mat-label>
+        <input matInput placeholder="Ad Giriniz." formControlName="firstCtrl" >
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail Adresi</mat-label>
+        <input matInput placeholder="ogr.sakarya@gmail.com" formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Telefon numarası</mat-label>
+        <input matInput placeholder="Numara Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Telefon Numarası-2</mat-label>
+        <input matInput placeholder="Numara Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" mat-dialog-close>İptal Et</button>
+  <button mat-raised-button color="warn" style="background-color: lawngreen" [mat-dialog-close]="true" cdkFocusInitial>Kaydet</button>
+</mat-dialog-actions>
+

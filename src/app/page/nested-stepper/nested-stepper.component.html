@@ -1,0 +1,350 @@
+
+<mat-stepper  [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstForm2Group">
+    <form [formGroup]="firstForm2Group">
+      <ng-template matStepLabel>İlkokul Bilgileri</ng-template>
+      <div class="container" style="min-height: 450px;">
+      <table style="font-size: large">
+        <thead>
+        <h2>İlkokul Bilgileri</h2>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Okul Adı</mat-label>
+              <input matInput placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
+            </mat-form-field>
+          </td>
+          <td style="margin-left:1%;">
+            <mat-form-field appearance="outline">
+              <mat-label>Mezuniyet Tarihi</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+      <div>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+
+    </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="secondForm2Group">
+    <form [formGroup]="secondForm2Group">
+      <div class="container" style="min-height: 450px;">
+      <ng-template matStepLabel>Ortaokul Bilgileri</ng-template>
+      <table style="font-size: large">
+        <thead>
+        <h2>Ortaokul Bilgileri</h2>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Okul Adı</mat-label>
+              <input matInput placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
+            </mat-form-field>
+          </td>
+          <td style="margin-left:1%;">
+            <mat-form-field appearance="outline">
+              <mat-label>Mezuniyet Tarihi</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+      <div>
+        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="thirdForm2Group">
+    <form [formGroup]="thirdForm2Group">
+      <div class="container" style="min-height: 450px;">
+      <ng-template matStepLabel>Lise Bilgileri</ng-template>
+      <table style="font-size: large">
+        <thead>
+        <h2>Lise Bilgileri Bilgileri</h2>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Okul Adı</mat-label>
+              <input matInput placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
+            </mat-form-field>
+          </td>
+          <td style="margin-left:1%;">
+            <mat-form-field appearance="outline">
+              <mat-label>Mezuniyet Tarihi</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Mezuniyet Notu</mat-label>
+              <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+      <div>
+        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="fourthForm2Group">
+    <form [formGroup]="fourthForm2Group">
+      <div class="container" style="min-height: 450px;">
+      <ng-template matStepLabel>Ön Lisans</ng-template>
+
+        <table style="font-size: large">
+          <thead>
+          <h2>Ön Lisans Bilgileri</h2>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <mat-form-field appearance="outline">
+                <mat-label>Okul Adı</mat-label>
+                <select matNativeControl required>
+                  <option value="male">Sakarya Üniversitesi</option>
+                  <option value="female">İstanbul Üniversitesi</option>
+                </select>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="outline">
+                <mat-label>Bölüm Adı</mat-label>
+                <select matNativeControl required>
+                  <option value="male">Bilgisayar müh.</option>
+                  <option value="female">Makine Müh.</option>
+                </select>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="outline">
+                <mat-label>Öğrenim Türü</mat-label>
+                <select matNativeControl required>
+                  <option value="male">Mezun</option>
+                  <option value="female">Devam Ediyor</option>
+                </select>
+              </mat-form-field>
+            </td>
+            <td style="margin-left:1%;">
+              <mat-form-field appearance="outline">
+                <mat-label>Mezuniyet Tarihi</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="outline">
+                <mat-label>Mezuniyet Notu</mat-label>
+                <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <h3>Okulunuz listede yoksa</h3>
+          <tr>
+            <td>
+              <mat-form-field appearance="outline">
+                <mat-label>Okul Adı</mat-label>
+                <input matInput placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field appearance="outline">
+                <mat-label>Bölüm Adı</mat-label>
+                <input matInput placeholder="Bölüm Adı Giriniz." formControlName="firstCtrl" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div >
+        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div >
+
+    </form>
+  </mat-step>
+
+   <mat-step [stepControl]="fifthForm2Group">
+    <form [formGroup]="fifthForm2Group">
+      <div class="container" style="min-height: 450px;">
+      <ng-template matStepLabel>Lisans Bilgileri</ng-template>
+      <table>
+        <thead>
+        <h2>Lisans Bilgileri</h2>
+        </thead>
+        <tbody>
+        <tr >
+          <td class="stepper-table-button" >
+            <button mat-raised-button color="primary" style="color:white;" (click)="openDialog()">Lisans Ekle</button></td>
+          <td class="stepper-table-header">Okul İsmi</td>
+          <td class="stepper-table-header">Bölüm İsmi</td>
+          <td class="stepper-table-header">Öğrenim Durumu</td>
+          <td class="stepper-table-header">Mezuniyet Ortalaması</td>
+          <td class="stepper-table-header">Mezuniyet Tarihi</td>
+        </tr>
+            <td class="stepper-table-body"></td>
+            <td class="stepper-table-body">Sakarya Univ</td>
+            <td class="stepper-table-body">Bilgsayar Müh</td>
+            <td class="stepper-table-body">Mezun</td>
+            <td class="stepper-table-body">4.0</td>
+            <td class="stepper-table-body">22.04.1999</td>
+
+        </tbody>
+      </table>
+      </div>
+      <div>
+        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="sixthForm2Group">
+    <form [formGroup]="sixthForm2Group">
+      <div class="container" style="min-height: 450px;">
+      <ng-template matStepLabel>Yüksek Lisans Bilgileri</ng-template>
+      <table>
+        <thead>
+        <h2>Yüksek Lisans Bilgileri</h2>
+        </thead>
+        <tbody>
+        <tr >
+          <td class="stepper-table-button" >
+            <button mat-raised-button color="primary" style="color:white;" (click)="openDialog()">Yüksek Ekle</button></td>
+          <td class="stepper-table-header">Okul İsmi</td>
+          <td class="stepper-table-header">Bölüm İsmi</td>
+          <td class="stepper-table-header">Öğrenim Durumu</td>
+          <td class="stepper-table-header">Mezuniyet Ortalaması</td>
+          <td class="stepper-table-header">Mezuniyet Tarihi</td>
+        </tr>
+        <td class="stepper-table-body"></td>
+        <td class="stepper-table-body">Sakarya Univ</td>
+        <td class="stepper-table-body">Bilgsayar Müh</td>
+        <td class="stepper-table-body">Mezun</td>
+        <td class="stepper-table-body">4.0</td>
+        <td class="stepper-table-body">22.04.1999</td>
+
+        </tbody>
+      </table>
+      </div>
+      <div>
+        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="seventhForm2Group">
+  <form [formGroup]="seventhForm2Group">
+    <div class="container" style="min-height: 450px;">
+    <ng-template matStepLabel>Doktora Bilgileri</ng-template>
+    <table style="font-size: large">
+      <thead>
+      <h2>Doktora Bilgileri</h2>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <mat-form-field appearance="outline">
+            <mat-label>Okul Adı</mat-label>
+            <select matNativeControl required>
+              <option value="male">Sakarya Üniversitesi</option>
+              <option value="female">İstanbul Üniversitesi</option>
+            </select>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field appearance="outline">
+            <mat-label>Bölüm Adı</mat-label>
+            <select matNativeControl required>
+              <option value="male">Bilgisayar müh.</option>
+              <option value="female">Makine Müh.</option>
+            </select>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field appearance="outline">
+            <mat-label>Öğrenim Türü</mat-label>
+            <select matNativeControl required>
+              <option value="male">Mezun</option>
+              <option value="female">Devam Ediyor</option>
+            </select>
+          </mat-form-field>
+        </td>
+        <td style="margin-left:1%;">
+          <mat-form-field appearance="outline">
+            <mat-label>Mezuniyet Tarihi</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field appearance="outline">
+            <mat-label>Mezuniyet Notu</mat-label>
+            <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+          </mat-form-field>
+        </td>
+      </tr>
+      <h3>Okulunuz listede yoksa</h3>
+      <tr>
+        <td>
+          <mat-form-field appearance="outline">
+            <mat-label>Okul Adı</mat-label>
+            <input matInput placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field appearance="outline">
+            <mat-label>Bölüm Adı</mat-label>
+            <input matInput placeholder="Bölüm Adı Giriniz." formControlName="firstCtrl" required>
+          </mat-form-field>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <div>
+      <button mat-raised-button color="danger" (click)="stepper.reset()">Next</button>
+      <button mat-raised-button color="warn" matStepperPrevious>Başa Dön!</button>
+      <button mat-raised-button color="primary" matStepperNext>Devam et</button>
+    </div>
+  </form>
+  </mat-step>
+
+</mat-stepper>

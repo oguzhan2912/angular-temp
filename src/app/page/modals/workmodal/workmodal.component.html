@@ -1,0 +1,81 @@
+<table style="font-size: large">
+  <thead>
+  <h2>Geçmiş İş Tecrübeleri</h2>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Firma Adı</mat-label>
+        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Çalıştığı Departman</mat-label>
+        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Çalıştığı Pozisyon</mat-label>
+        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+    <td style="margin-left:1%;">
+      <mat-form-field appearance="outline">
+        <mat-label>Görev Kapsamı</mat-label>
+        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+
+    <tr>
+    <td>
+    <mat-form-field appearance="outline">
+      <mat-label>Son Maaş</mat-label>
+      <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+    </mat-form-field>
+  </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>İşe Giriş Tarihi</mat-label>
+        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Hala Aktif Çalışıyorum</mat-label>
+        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>İşten Ayrılış Tarihi</mat-label>
+        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      </mat-form-field>
+    </td>
+  </tr>
+    <tr>
+
+      <td>
+      <mat-form-field appearance="outline">
+        <mat-label>İşten Ayrılış Nedeni</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+
+      </td>
+
+    </tr>
+
+
+  </tbody>
+</table>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" mat-dialog-close>İptal Et</button>
+  <button mat-raised-button color="warn" style="background-color: lawngreen" [mat-dialog-close]="true" cdkFocusInitial>Kaydet</button>
+</mat-dialog-actions>
+
+
