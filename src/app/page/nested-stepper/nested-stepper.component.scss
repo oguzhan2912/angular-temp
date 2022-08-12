@@ -14,7 +14,6 @@
   border-radius: 0.4rem;
   text-align: center;
 
-
 }
 
 .stepper-table-body{
@@ -24,4 +23,27 @@
   border-bottom: darkslateblue 2px solid;
   text-align: center;
   background-color: rgba(197, 187, 246, 0.61);
+}
+.stepper-table-header{
+  padding: 10px;
+  font-size: larger;
+  border-right: darkslateblue 2px solid;
+  border-bottom: darkslateblue 3px solid;
+  text-align: center;}
+
+
+
+.navBar{
+  background-color: #04BFBF;
+  border-bottom: #55B6C9 6px solid ;
+  border-radius:0.1rem;
+}
+.side-grid{
+  background-color: #4D6173;
+  border-right: #495065 6px solid ;
+
+}
+.footer-temp{
+  background-color: #529AD9;
+  border-top: #2b709b 6px solid;
 }
