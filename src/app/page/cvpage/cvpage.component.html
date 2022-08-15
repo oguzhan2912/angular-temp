@@ -39,6 +39,8 @@
 
           </mat-expansion-panel-header>
           <p>İş İlanı Ver</p>
+          <p><a [routerLink]="['/reports']">CV Listesi</a></p>
+
         </mat-expansion-panel>
       </mat-accordion>
       </div>
@@ -57,21 +59,21 @@
               <tr>
                 <td >
                   <p>
-                  <mat-form-field appearance="outline" >
+                  <mat-form-field appearance="outline" style="width: 100%;" >
                     <mat-label>İsim giriniz.</mat-label>
                     <input matInput placeholder="Placeholder">
 
                   </mat-form-field>
                 </p></td>
                 <td><p>
-                  <mat-form-field appearance="outline" >
+                  <mat-form-field appearance="outline" style="width: 100%;">
                     <mat-label>Soyisim giriniz.</mat-label>
                     <input matInput placeholder="Placeholder">
                   </mat-form-field>
                 </p></td>
                 <td>
                   <p>
-                  <mat-form-field appearance="outline">
+                  <mat-form-field appearance="outline"style="width: 100%;">
                     <mat-label>Cinsiyet</mat-label>
                     <select matNativeControl required>
                       <option value="male">Erkek</option>
@@ -82,7 +84,7 @@
                 </td>
                 <td >
                   <p >
-                  <mat-form-field appearance="outline">
+                  <mat-form-field appearance="outline" style="width: 100%;">
                     <mat-label>Eğitim Durumu</mat-label>
                     <select matNativeControl required>
                       <option value="male">İlkokul</option>
@@ -101,7 +103,7 @@
               <tr>
                 <td>
                   <p>
-                    <mat-form-field appearance="outline">
+                    <mat-form-field appearance="outline" style="width: 100%;">
                       <mat-label>Kimlik Türü</mat-label>
                       <select matNativeControl required>
                         <option value="male">T.C Kimlik Kartı</option>
@@ -113,7 +115,7 @@
                 </td>
                 <td>
                   <p>
-                    <mat-form-field appearance="outline" >
+                    <mat-form-field appearance="outline" style="width: 100%;">
                       <mat-label>Kimlik Numarası</mat-label>
                       <input matInput placeholder="Kimlik Numarası Giriniz.">
                     </mat-form-field>
@@ -121,7 +123,7 @@
                 </td>
                 <td>
                   <p>
-                    <mat-form-field appearance="outline">
+                    <mat-form-field appearance="outline" style="width: 100%;">
                       <mat-label>T.C Vatandaşı Değilim</mat-label>
                       <select matNativeControl required>
                         <option value="male">Evet</option>
@@ -132,7 +134,7 @@
                 </td>
                 <td>
                   <p>
-                    <mat-form-field appearance="outline">
+                    <mat-form-field appearance="outline" style="width: 100%;">
                       <mat-label>Medeni Durum</mat-label>
                       <select matNativeControl required>
                         <option value="male">Evli</option>
@@ -145,7 +147,7 @@
               <tr>
                 <td>
                   <p>
-                    <mat-form-field appearance="outline">
+                    <mat-form-field appearance="outline" style="width: 100%;">
                       <mat-label>Sürücü Belgesi Var Mı ?</mat-label>
                       <select matNativeControl required>
                         <option value="male">Evet</option>
@@ -156,7 +158,7 @@
                 </td>
                 <td>
                   <p>
-                    <mat-form-field appearance="outline">
+                    <mat-form-field appearance="outline" style="width: 100%;">
                       <mat-label>Sürücü Belgesi Türü</mat-label>
                       <select matNativeControl required>
                         <option value="male">A1</option>
@@ -167,7 +169,7 @@
                 </td>
                 <td>
                   <p>
-                    <mat-form-field appearance="outline">
+                    <mat-form-field appearance="outline" style="width: 100%;">
                       <mat-label>Uyruk</mat-label>
                       <select matNativeControl required>
                         <option value="male">Almanya</option>
@@ -226,32 +228,32 @@
 
             <table style="font-size: large">
               <thead>
-              <h2>İletişim Bİlgileri</h2>
+              <h2>İletişim Bilgileri</h2>
               </thead>
               <tbody>
               <tr>
-                <td><p><mat-form-field appearance="outline">
+                <td><p><mat-form-field appearance="outline" style="width: 100%;">
                   <mat-label>Ülke</mat-label>
                   <select matNativeControl required>
                     <option value="male">Berlin</option>
                     <option value="female">Afrika</option>
                   </select>
                 </mat-form-field></p></td>
-                <td><p><mat-form-field appearance="outline">
+                <td><p><mat-form-field appearance="outline" style="width: 100%;">
                   <mat-label>İl</mat-label>
                   <select matNativeControl required>
                     <option value="male">Berlin</option>
                     <option value="female">Afrika</option>
                   </select>
                 </mat-form-field></p></td>
-                <td><p><mat-form-field appearance="outline">
+                <td><p><mat-form-field appearance="outline" style="width: 100%;">
                   <mat-label>İlçe</mat-label>
                   <select matNativeControl required>
                     <option value="male">Berlin</option>
                     <option value="female">Afrika</option>
                   </select>
                 </mat-form-field></p></td>
-                <td><p><mat-form-field appearance="outline">
+                <td><p><mat-form-field appearance="outline" style="width: 100%;">
                   <mat-label>Adres Giriniz</mat-label>
                   <textarea matInput></textarea>
                 </mat-form-field></p></td>

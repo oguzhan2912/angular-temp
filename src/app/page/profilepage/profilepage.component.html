@@ -39,23 +39,26 @@
 
             </mat-expansion-panel-header>
             <p>İş İlanı Ver</p>
+            <p><a [routerLink]="['/reports']">CV Listesi</a></p>
+
           </mat-expansion-panel>
         </mat-accordion>
       </div>
     </mat-grid-tile>
     <mat-grid-tile colspan="5">
-      <mat-card style="width: 30%;height:40%;">
+      <mat-card style="width: 80%;height:80%;">
     <table >
       <thead>
-      <h1>Profil Bilgilerim</h1>
+      <tr>
+        <h1>Profil Bilgilerim</h1>
+      </tr>
+      <tr >
+        <td class="stepper-table-header">İsim</td>
+        <td class="stepper-table-header">Soyisim</td>
+        <td class="stepper-table-header">Cinsiyet</td>
+      </tr>
       </thead>
       <tbody style="font-size: larger">
-      <tr>
-
-        <td class="stepper-table-body">İsim</td>
-        <td class="stepper-table-body">Soyisim</td>
-        <td class="stepper-table-body">Cinsiyet</td>
-      </tr>
       <tr >
         <td class="stepper-table-body">
           Cep Telefonu

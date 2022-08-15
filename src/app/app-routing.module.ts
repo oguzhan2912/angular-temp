@@ -8,6 +8,7 @@ import {TemplatePageComponent} from "./page/template-page/template-page.componen
 import {ProfilepageComponent} from "./page/profilepage/profilepage.component";
 import {JonadvertisementpageComponent} from "./page/jonadvertisementpage/jonadvertisementpage.component";
 import {JobapplicationpageComponent} from "./page/jobapplicationpage/jobapplicationpage.component";
+import {ReportPageComponent} from "./page/report-page/report-page.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "register", pathMatch: "full" },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: "profile", component:ProfilepageComponent},
   { path: "jobAdvertise", component:JonadvertisementpageComponent},
   { path:"jobApplication", component:JobapplicationpageComponent},
+  { path:"reports",component:ReportPageComponent},
 ];
 
 @NgModule({

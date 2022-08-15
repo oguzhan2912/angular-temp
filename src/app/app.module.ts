@@ -11,6 +11,7 @@ import { DegreeModalComponent } from './page/modals/degree-modal/degree-modal.co
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 
+
 @NgModule({
   declarations: [
     AppComponent,

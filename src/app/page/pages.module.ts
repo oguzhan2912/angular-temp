@@ -29,21 +29,6 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from "@angular/material/toolbar";
 
 
-import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
-import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
-import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
-import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
-import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
-import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
-import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
-import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
-import { MdbRadioModule } from 'mdb-angular-ui-kit/radio';
-import { MdbRangeModule } from 'mdb-angular-ui-kit/range';
-import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
-import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
-import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
-import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
-import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import { SingingComponent } from './singing/singing.component';
@@ -66,6 +51,7 @@ import { TemplatePageComponent } from './template-page/template-page.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { JonadvertisementpageComponent } from './jonadvertisementpage/jonadvertisementpage.component';
 import { JobapplicationpageComponent } from './jobapplicationpage/jobapplicationpage.component';
+import { ReportPageComponent } from './report-page/report-page.component';
 
 
 
@@ -132,6 +118,7 @@ import { JobapplicationpageComponent } from './jobapplicationpage/jobapplication
         ProfilepageComponent,
         JonadvertisementpageComponent,
         JobapplicationpageComponent,
+        ReportPageComponent,
   ],
   exports: [
 
