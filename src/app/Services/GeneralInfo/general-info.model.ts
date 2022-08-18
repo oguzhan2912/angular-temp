@@ -16,24 +16,5 @@ export class GeneralInfo {
   bornedCountry:string[];
   bornedCity:string[];
 
-  constructor( ) {
-    /* ------------------------General İnfo------------------------*/
-    this.Name='';
-    this.Lastname='';
-    this.gender=[];
-    this.graduation=[];
-    this.dateOfBirth=new Date();
-    this.identityType=[];
-    this.identityNum=0;
-    this.driverLicense=true;
-    this.driverLicenseType=[];
-    this.martialStatus=[];
-    this.nation=[];
-
-    /* ------------------------Personal İnfo------------------------*/
-
-    this.bornedCity=[];
-    this.bornedCountry=[];
-
-  }
+  constructor( ) { }
 }

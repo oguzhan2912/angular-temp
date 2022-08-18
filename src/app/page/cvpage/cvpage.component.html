@@ -48,10 +48,10 @@
     <mat-grid-tile colspan="5">
       <mat-stepper [linear]="isLinear" #stepper style="width: 100%;height:100%;color: #BF9B6F">
         <mat-step  [stepControl]="firstFormGroup"style="background-color: #BF9B6F">
-          <form [formGroup]="firstFormGroup" >
-            <div class="container" style="min-height: 600px;">
+          <form [formGroup]="firstFormGroup"   autocomplete="off">
+            <div class="container form-group" style="min-height: 600px;">
             <ng-template matStepLabel>Genel Bilgiler</ng-template>
-            <table style="font-size: large">
+            <table style="font-size: medium">
               <thead>
               <h2>Genel Bilgiler</h2>
               </thead>
@@ -61,7 +61,7 @@
                   <p>
                   <mat-form-field appearance="outline" style="width: 100%;" >
                     <mat-label>İsim giriniz.</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input matInput name="generalService.formData.Name" #Name="ngModel" [(ngModel)]="generalService.formData.Name" placeholder="Placeholder">
 
                   </mat-form-field>
                 </p></td>

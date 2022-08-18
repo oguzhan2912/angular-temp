@@ -100,6 +100,8 @@ import { ReportPageComponent } from './report-page/report-page.component';
     MatExpansionModule,
 
 
+
+
   ],
   declarations: [
 
@@ -119,6 +121,9 @@ import { ReportPageComponent } from './report-page/report-page.component';
         JonadvertisementpageComponent,
         JobapplicationpageComponent,
         ReportPageComponent,
+
+
+
   ],
   exports: [
 
@@ -127,8 +132,7 @@ import { ReportPageComponent } from './report-page/report-page.component';
 
 
   ],
-  providers: [
-  ],
+  providers: [ ],
 
 })
 

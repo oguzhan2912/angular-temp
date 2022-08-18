@@ -10,13 +10,12 @@ import {PagesModule} from "./page/pages.module";
 import { DegreeModalComponent } from './page/modals/degree-modal/degree-modal.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
+import {GeneralInfoService} from "./Services/GeneralInfo/general-info.service";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
-
   ],
   imports: [
     BrowserModule,
@@ -26,9 +25,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatDialogModule,
     MatButtonModule,
 
-
   ],
-  providers: [],
+  providers: [GeneralInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

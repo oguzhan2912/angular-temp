@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
-import {DegreeModalComponent} from "../modals/degree-modal/degree-modal.component";
 import {LanguaeModalComponent} from "../modals/languae-modal/languae-modal.component";
 import {WorkmodalComponent} from "../modals/workmodal/workmodal.component";
 import {ReferanceModalComponent} from "../modals/referance-modal/referance-modal.component";
 import {SkillmodalComponent} from "../modals/skillmodal/skillmodal.component";
+import {GeneralInfoService} from "../../Services/GeneralInfo/general-info.service";
+import { GeneralInfo } from 'src/app/Services/GeneralInfo/general-info.model';
 
 @Component({
   selector: 'app-cvpage',
@@ -14,7 +15,10 @@ import {SkillmodalComponent} from "../modals/skillmodal/skillmodal.component";
 })
 export class CvpageComponent implements OnInit {
 
-  constructor(private _formBuilder: FormBuilder,public dialog: MatDialog) { }
+  generalModel: GeneralInfo=new GeneralInfo();
+
+  constructor(public _formBuilder: FormBuilder,public dialog: MatDialog,
+              public generalService:GeneralInfoService) { }
   public isCollapsed = false;
 
   selected: Date | null | undefined;
