@@ -14,7 +14,7 @@
 </p>
 
 
-<div class="container" style="margin-top:-0.7%;background-color:#cbdbfc">
+<div class="container" style="margin-top:-0.9%;background-color:#3F5576">
   <mat-grid-list cols="6" rowHeight="800px" >
     <mat-grid-tile  class="side-grid">
       <div style="margin-top:-180%;width: 120%;">
@@ -44,175 +44,15 @@
         </mat-expansion-panel>
       </mat-accordion>
       </div>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="5">
-      <mat-stepper [linear]="isLinear" #stepper style="width: 100%;height:100%;color: #BF9B6F">
-        <mat-step  [stepControl]="firstFormGroup"style="background-color: #BF9B6F">
-          <form [formGroup]="firstFormGroup"   autocomplete="off">
+    </mat-grid-tile >
+    <mat-grid-tile colspan="5" >
+      <mat-stepper [linear]="isLinear" #stepper style="width: 100%;height:100%;background-color:#8689AC">
+        <mat-step  [stepControl]="firstFormGroup" style="background-color: #BF9B6F">
+          <form [formGroup]="firstFormGroup"    >
             <div class="container form-group" style="min-height: 600px;">
             <ng-template matStepLabel>Genel Bilgiler</ng-template>
-            <table style="font-size: medium">
-              <thead>
-              <h2>Genel Bilgiler</h2>
-              </thead>
-              <tbody>
-              <tr>
-                <td >
-                  <p>
-                  <mat-form-field appearance="outline" style="width: 100%;" >
-                    <mat-label>İsim giriniz.</mat-label>
-                    <input matInput name="generalService.formData.Name" #Name="ngModel" [(ngModel)]="generalService.formData.Name" placeholder="Placeholder">
 
-                  </mat-form-field>
-                </p></td>
-                <td><p>
-                  <mat-form-field appearance="outline" style="width: 100%;">
-                    <mat-label>Soyisim giriniz.</mat-label>
-                    <input matInput placeholder="Placeholder">
-                  </mat-form-field>
-                </p></td>
-                <td>
-                  <p>
-                  <mat-form-field appearance="outline"style="width: 100%;">
-                    <mat-label>Cinsiyet</mat-label>
-                    <select matNativeControl required>
-                      <option value="male">Erkek</option>
-                      <option value="female">Kadın</option>
-                    </select>
-                  </mat-form-field>
-                  </p>
-                </td>
-                <td >
-                  <p >
-                  <mat-form-field appearance="outline" style="width: 100%;">
-                    <mat-label>Eğitim Durumu</mat-label>
-                    <select matNativeControl required>
-                      <option value="male">İlkokul</option>
-                      <option value="female">Ortaokul</option>
-                      <option value="female">Lise</option>
-                      <option value="female">Ön Lisans</option>
-                      <option value="female">Lisans</option>
-                      <option value="female">Yüksek Lisans</option>
-                      <option value="female">Doktora</option>
-                    </select>
-                  </mat-form-field>
-                  </p>
-                </td>
-
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <mat-form-field appearance="outline" style="width: 100%;">
-                      <mat-label>Kimlik Türü</mat-label>
-                      <select matNativeControl required>
-                        <option value="male">T.C Kimlik Kartı</option>
-                        <option value="female">Passaport</option>
-                        <option value="female">Geçici Kimlik Belgesi</option>
-                      </select>
-                    </mat-form-field>
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    <mat-form-field appearance="outline" style="width: 100%;">
-                      <mat-label>Kimlik Numarası</mat-label>
-                      <input matInput placeholder="Kimlik Numarası Giriniz.">
-                    </mat-form-field>
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    <mat-form-field appearance="outline" style="width: 100%;">
-                      <mat-label>T.C Vatandaşı Değilim</mat-label>
-                      <select matNativeControl required>
-                        <option value="male">Evet</option>
-                        <option value="female">Hayır</option>
-                      </select>
-                    </mat-form-field>
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    <mat-form-field appearance="outline" style="width: 100%;">
-                      <mat-label>Medeni Durum</mat-label>
-                      <select matNativeControl required>
-                        <option value="male">Evli</option>
-                        <option value="female">Bekar</option>
-                      </select>
-                    </mat-form-field>
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <mat-form-field appearance="outline" style="width: 100%;">
-                      <mat-label>Sürücü Belgesi Var Mı ?</mat-label>
-                      <select matNativeControl required>
-                        <option value="male">Evet</option>
-                        <option value="female">Hayır</option>
-                      </select>
-                    </mat-form-field>
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    <mat-form-field appearance="outline" style="width: 100%;">
-                      <mat-label>Sürücü Belgesi Türü</mat-label>
-                      <select matNativeControl required>
-                        <option value="male">A1</option>
-                        <option value="female">B2</option>
-                      </select>
-                    </mat-form-field>
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    <mat-form-field appearance="outline" style="width: 100%;">
-                      <mat-label>Uyruk</mat-label>
-                      <select matNativeControl required>
-                        <option value="male">Almanya</option>
-                        <option value="female">Afrika</option>
-                      </select>
-                    </mat-form-field>
-                  </p>
-                </td>
-              </tr>
-              <mat-divider style="width: 450%;"></mat-divider>
-              <h2>Kişisel Bilgiler</h2>
-              <tr>
-                <td >
-                  <mat-form-field appearance="outline">
-                    <mat-label>Doğum Tarihi</mat-label>
-                    <input matInput [matDatepicker]="picker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field>
-                </td>
-                <td>
-                    <mat-form-field appearance="outline">
-                      <mat-label>Doğduğu Ülke</mat-label>
-                      <select matNativeControl required>
-                        <option value="male">Almanya</option>
-                        <option value="female">Afrika</option>
-                      </select>
-                    </mat-form-field>
-                </td>
-                <td>
-                  <mat-form-field appearance="outline">
-                    <mat-label>Doğduğu Şehir</mat-label>
-                    <select matNativeControl required>
-                      <option value="male">Berlin</option>
-                      <option value="female">Afrika</option>
-                    </select>
-                  </mat-form-field>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-
+              <app-generalform></app-generalform>
 
             <div style="margin-top:5%;width: 120%;">
               <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -226,103 +66,7 @@
             <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>İletişim Bilgileri</ng-template>
 
-            <table style="font-size: large">
-              <thead>
-              <h2>İletişim Bilgileri</h2>
-              </thead>
-              <tbody>
-              <tr>
-                <td><p><mat-form-field appearance="outline" style="width: 100%;">
-                  <mat-label>Ülke</mat-label>
-                  <select matNativeControl required>
-                    <option value="male">Berlin</option>
-                    <option value="female">Afrika</option>
-                  </select>
-                </mat-form-field></p></td>
-                <td><p><mat-form-field appearance="outline" style="width: 100%;">
-                  <mat-label>İl</mat-label>
-                  <select matNativeControl required>
-                    <option value="male">Berlin</option>
-                    <option value="female">Afrika</option>
-                  </select>
-                </mat-form-field></p></td>
-                <td><p><mat-form-field appearance="outline" style="width: 100%;">
-                  <mat-label>İlçe</mat-label>
-                  <select matNativeControl required>
-                    <option value="male">Berlin</option>
-                    <option value="female">Afrika</option>
-                  </select>
-                </mat-form-field></p></td>
-                <td><p><mat-form-field appearance="outline" style="width: 100%;">
-                  <mat-label>Adres Giriniz</mat-label>
-                  <textarea matInput></textarea>
-                </mat-form-field></p></td>
-              </tr>
-              <tr>
-
-                <td>
-                  <mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>İş Telefonu</mat-label>
-                  <input type="tel" matInput placeholder="555-555-1234">
-                  <mat-icon matSuffix>mode_edit</mat-icon>
-                </mat-form-field>
-                </td>
-                <td>
-                  <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Ev Telefonu</mat-label>
-                    <input type="tel" matInput placeholder="555-555-1234">
-                    <mat-icon matSuffix>mode_edit</mat-icon>
-                  </mat-form-field>
-                </td>
-                <td>
-                  <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Cep Telefonu</mat-label>
-                    <input type="tel" matInput placeholder="555-555-1234"  required>
-                    <mat-icon matSuffix>mode_edit</mat-icon>
-                  </mat-form-field>
-                </td>
-                <td>
-                  <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Cep Telefonu-2</mat-label>
-                    <input type="tel" matInput placeholder="555-555-1234">
-                    <mat-icon matSuffix>mode_edit</mat-icon>
-                  </mat-form-field>
-                </td>
-                <td>
-                  <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Mail Adresi</mat-label>
-                    <input type="email" matInput placeholder="örnek@gmail.com">
-                    <mat-icon matSuffix>mode_edit</mat-icon>
-                  </mat-form-field>
-                </td>
-              </tr>
-              <mat-divider style="width: 600%;"></mat-divider>
-              <h2>Beklentiler</h2>
-              <tr>
-
-
-                <td><mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>Kariyer Hedefi</mat-label>
-                  <input type="text" matInput placeholder="örnek@gmail.com">
-                  <mat-icon matSuffix>mode_edit</mat-icon>
-                </mat-form-field></td>
-                <td><mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>Hedeflenen Pozisyonlar</mat-label>
-                  <input type="text" matInput placeholder="örnek@gmail.com">
-                  <mat-icon matSuffix>mode_edit</mat-icon>
-                </mat-form-field></td>
-                <td><mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>Maaş Beklentisi</mat-label>
-                  <input type="number" matInput placeholder="örnek@gmail.com">
-                  <mat-icon matSuffix>mode_edit</mat-icon>
-                </mat-form-field></td>
-                <td><mat-form-field appearance="outline">
-                  <mat-label>Genel Beklentiler</mat-label>
-                  <textarea matInput></textarea>
-                </mat-form-field></td>
-              </tr>
-              </tbody>
-            </table>
+            <app-languageform></app-languageform>
             <div style="margin-top: 11%;">
               <button mat-raised-button color="warn" matStepperPrevious>Back</button>
               <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -334,8 +78,8 @@
         <mat-step [stepControl]="thirdFormGroup" label="Eğitim Bilgileri">
           <form [formGroup]="thirdFormGroup">
           <ng-template matStepLabel>Eğitim Bilgileri</ng-template>
-            <app-nested-stepper></app-nested-stepper>
 
+            <app-educationform></app-educationform>
           </form>
           <div style="margin-top:5%;width: 120%;">
             <button mat-raised-button color="warn" matStepperPrevious>Back</button>
@@ -347,35 +91,7 @@
         <mat-step [stepControl]="fourthFormGroup" label="Dil Bilgileri">
           <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>Dil Bilgileri</ng-template>
-            <table>
-              <thead>
-              <h2>Dİl Bilgileri</h2>
-              </thead>
-              <tbody>
-              <tr >
-                <td class="stepper-table-button" >
-                  <button mat-raised-button color="primary" style="color:white;" (click)="openLanguageModal()">Dil Ekle</button></td>
-                <td class="stepper-table-header">Dil Adı</td>
-                <td class="stepper-table-header">Okuma Seviyesi</td>
-                <td class="stepper-table-header">Yazma Seviyesi</td>
-                <td class="stepper-table-header">Konuşma Seviyesi</td>
-                <td class="stepper-table-header">Anlama Seviyesi</td>
-                <td class="stepper-table-header">Ortalama Seviye</td>
-                <td class="stepper-table-header">Sınav Türü</td>
-                <td class="stepper-table-header">Sınav Puanı</td>
-              </tr>
-              <td class="stepper-table-body"></td>
-              <td class="stepper-table-body">İngilizce</td>
-              <td class="stepper-table-body"> 8</td>
-              <td class="stepper-table-body">5</td>
-              <td class="stepper-table-body">7</td>
-              <td class="stepper-table-body">9</td>
-              <td class="stepper-table-body">6.78</td>
-              <td class="stepper-table-body">YDS</td>
-              <td class="stepper-table-body">67</td>
-
-              </tbody>
-            </table>
+          <app-languageform></app-languageform>
           </div>
           <div style="margin-top:5%;width: 120%;">
           <button mat-raised-button color="warn" matStepperPrevious>Back</button>
@@ -386,34 +102,7 @@
         <mat-step [stepControl]="fifthFormGroup" label="İş Bilgileri">
           <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>İş Bilgileri</ng-template>
-            <table>
-              <thead>
-              <h2>İş Bilgileri</h2>
-              </thead>
-              <tbody>
-              <tr >
-                <td class="stepper-table-button" >
-                  <button mat-raised-button color="primary" style="color:white;" (click)="openWorkModal()">İş Ekle</button></td>
-                <td class="stepper-table-header">Firma Adı</td>
-                <td class="stepper-table-header">Çalıştığı Departman</td>
-                <td class="stepper-table-header">Çalıştığı Pozisyon</td>
-                <td class="stepper-table-header">Son Maaş</td>
-                <td class="stepper-table-header">İşe Giriş Tarihi</td>
-                <td class="stepper-table-header">Hala Aktif Çalışıyorum</td>
-                <td class="stepper-table-header">İşten Ayrılış Tarihi</td>
-              </tr>
-              <td class="stepper-table-body"></td>
-              <td class="stepper-table-body">TMV</td>
-              <td class="stepper-table-body">İnsan Kaynakları</td>
-              <td class="stepper-table-body">Genel Çaycı</td>
-              <td class="stepper-table-body">1000$</td>
-              <td class="stepper-table-body">9.08.2036</td>
-              <td class="stepper-table-body">Hayır</td>
-              <td class="stepper-table-body">9.09.2037</td>
-
-
-              </tbody>
-            </table>
+           <app-postworkform></app-postworkform>
           </div>
           <div style="margin-top:5%;width: 120%;">
             <button mat-raised-button color="warn" matStepperPrevious>Back</button>
@@ -424,30 +113,7 @@
         <mat-step [stepControl]="sixthFormGroup" label="Referans Bilgileri">
           <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>Referans Bilgileri</ng-template>
-            <table>
-              <thead>
-              <h2>Referans Bilgileri</h2>
-              </thead>
-              <tbody>
-              <tr >
-                <td class="stepper-table-button" >
-                  <button mat-raised-button color="primary" style="color:white;" (click)="openReferanceModal()">Referans Ekle Ekle</button></td>
-                <td class="stepper-table-header">Referansın Adı</td>
-                <td class="stepper-table-header">Referans Olan Kurum</td>
-                <td class="stepper-table-header">REferansın E-Mail Adresi</td>
-                <td class="stepper-table-header">Referansın Telefon Numarası</td>
-                <td class="stepper-table-header">Referansın Telefon Numarası-2</td>
-              </tr>
-              <td class="stepper-table-body"></td>
-              <td class="stepper-table-body">Ahmet Orgöz</td>
-              <td class="stepper-table-body">M.I.T</td>
-              <td class="stepper-table-body">mıt@orgoz.com</td>
-              <td class="stepper-table-body">563 665 45 78</td>
-              <td class="stepper-table-body">-</td>
-
-
-              </tbody>
-            </table>
+          <app-referanceform> </app-referanceform>
           </div>
           <div style="margin-top:5%;width: 120%;">
             <button mat-raised-button color="warn" matStepperPrevious>Back</button>
@@ -458,22 +124,7 @@
         <mat-step [stepControl]="seventhFormGroup" label="Yetenek Bilgileri">
           <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>Yeteneklerim</ng-template>
-            <table>
-              <thead>
-              <h2>Yeteneklerim</h2>
-              </thead>
-              <tbody>
-              <tr >
-                <td class="stepper-table-button" >
-                  <button mat-raised-button color="primary" style="color:white;" (click)="openSkillModal()">Yetenek Ekle</button></td>
-                <td class="stepper-table-header">Yetenek Adı</td>
-                <td class="stepper-table-header">Tecrübe Yılı</td>
-              </tr>
-              <td class="stepper-table-body"></td>
-              <td class="stepper-table-body">Excel</td>
-              <td class="stepper-table-body">7</td>
-              </tbody>
-            </table>
+            <app-skillform></app-skillform>
           </div>
           <div style="margin-top:5%;width: 120%;">
             <button mat-raised-button color="warn" matStepperPrevious>Back</button>
@@ -485,96 +136,7 @@
         <mat-step [stepControl]="eightFormGroup" label="Diğer Bilgileri">
           <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>Diğer Bilgiler</ng-template>
-            <table style="font-size: large">
-              <thead>
-              <h2>Diğer Bilgiler</h2>
-              </thead>
-              <tbody>
-              <tr>
-                <td><p><mat-form-field appearance="outline">
-                  <mat-label>İlgi Alanları</mat-label>
-                  <textarea matInput></textarea>
-                </mat-form-field>
-                </p>
-                </td>
-                <td>
-                  <p>
-                    <mat-form-field appearance="outline">
-                  <mat-label>Üye Olunan Sivil Toplum Kuruluşları</mat-label>
-                  <textarea matInput></textarea>
-                </mat-form-field>
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    <mat-form-field appearance="outline">
-                  <mat-label>Kıtalar Arası Seyahat Edebilirim.</mat-label>
-                  <select matNativeControl required>
-                    <option value="yes">Evet</option>
-                    <option value="no">Hayır</option>
-                  </select>
-                </mat-form-field>
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    <mat-form-field appearance="outline">
-                  <mat-label>Sigara Kullanıyorum.</mat-label>
-                  <select matNativeControl required>
-                    <option value="yes">Evet</option>
-                    <option value="no">Hayır</option>
-                  </select>
-                </mat-form-field>
-                </p>
-                </td>
-              </tr>
-              <mat-divider style="width: 600%;"></mat-divider>
-              <h2>Askerlik Bilgileri</h2>
-              <tr>
-                <td><p><mat-form-field appearance="outline">
-                  <mat-label>Askerlik Durumu</mat-label>
-                  <select matNativeControl required>
-                    <option value="yes">Tecil</option>
-                    <option value="no">Yapıldı</option>
-                    <option value="maybe">Muaf</option>
-                  </select>
-                </mat-form-field>
-                </p>
-                </td>
-                <td> <p>
-                  <mat-form-field appearance="outline">
-                    <mat-label>Tecil Tarihi</mat-label>
-                    <input matInput [matDatepicker]="picker3">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-                    <mat-datepicker #picker3></mat-datepicker>
-                  </mat-form-field></p>
-                </td>
-                <td><p>
-                  <mat-form-field appearance="outline">
-                    <mat-label>Tamamlanma Tarihi</mat-label>
-                    <input matInput [matDatepicker]="picker2">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                    <mat-datepicker #picker2></mat-datepicker>
-                  </mat-form-field></p>
-                </td>
-
-              </tr>
-              <mat-divider style="width: 600%;"></mat-divider>
-              <h2>Sağlık Bilgileri</h2>
-              <tr></tr>
-              <mat-divider style="width: 600%;"></mat-divider>
-              <h2>Ek Bilgileri</h2>
-              <tr><td><p>
-                <mat-form-field appearance="outline">
-                  <mat-label>Ek Açıklamalar</mat-label>
-                  <textarea matInput></textarea>
-                </mat-form-field>
-              </p></td></tr>
-
-              </tbody>
-            </table>
+            <app-otherform></app-otherform>
           </div>
           <div style="margin-top:5%;width: 120%;">
             <button mat-raised-button color="warn" matStepperPrevious>Back</button>

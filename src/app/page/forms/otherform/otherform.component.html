@@ -1,0 +1,90 @@
+<table style="font-size: large">
+  <thead>
+  <h2>Diğer Bilgiler</h2>
+  </thead>
+  <tbody>
+  <tr>
+    <td><p><mat-form-field appearance="outline">
+      <mat-label>İlgi Alanları</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+    </p>
+    </td>
+    <td>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Üye Olunan Sivil Toplum Kuruluşları</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </p>
+    </td>
+    <td>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Kıtalar Arası Seyahat Edebilirim.</mat-label>
+          <select matNativeControl required>
+            <option value="yes">Evet</option>
+            <option value="no">Hayır</option>
+          </select>
+        </mat-form-field>
+      </p>
+    </td>
+    <td>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Sigara Kullanıyorum.</mat-label>
+          <select matNativeControl required>
+            <option value="yes">Evet</option>
+            <option value="no">Hayır</option>
+          </select>
+        </mat-form-field>
+      </p>
+    </td>
+  </tr>
+  <mat-divider style="width: 600%;"></mat-divider>
+  <h2>Askerlik Bilgileri</h2>
+  <tr>
+    <td><p><mat-form-field appearance="outline">
+      <mat-label>Askerlik Durumu</mat-label>
+      <select matNativeControl required>
+        <option value="yes">Tecil</option>
+        <option value="no">Yapıldı</option>
+        <option value="maybe">Muaf</option>
+      </select>
+    </mat-form-field>
+    </p>
+    </td>
+    <td> <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Tecil Tarihi</mat-label>
+        <input matInput [matDatepicker]="picker3">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
+      </mat-form-field></p>
+    </td>
+    <td><p>
+      <mat-form-field appearance="outline">
+        <mat-label>Tamamlanma Tarihi</mat-label>
+        <input matInput [matDatepicker]="picker2">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field></p>
+    </td>
+
+  </tr>
+  <mat-divider style="width: 600%;"></mat-divider>
+  <h2>Sağlık Bilgileri</h2>
+  <tr></tr>
+  <mat-divider style="width: 600%;"></mat-divider>
+  <h2>Ek Bilgileri</h2>
+  <tr><td><p>
+    <mat-form-field appearance="outline">
+      <mat-label>Ek Açıklamalar</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </p></td></tr>
+
+  </tbody>
+</table>

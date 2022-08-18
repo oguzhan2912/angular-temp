@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
-import {LanguaeModalComponent} from "../modals/languae-modal/languae-modal.component";
-import {WorkmodalComponent} from "../modals/workmodal/workmodal.component";
-import {ReferanceModalComponent} from "../modals/referance-modal/referance-modal.component";
-import {SkillmodalComponent} from "../modals/skillmodal/skillmodal.component";
-import {GeneralInfoService} from "../../Services/GeneralInfo/general-info.service";
+
 import { GeneralInfo } from 'src/app/Services/GeneralInfo/general-info.model';
 
 @Component({
@@ -17,23 +13,11 @@ export class CvpageComponent implements OnInit {
 
   generalModel: GeneralInfo=new GeneralInfo();
 
-  constructor(public _formBuilder: FormBuilder,public dialog: MatDialog,
-              public generalService:GeneralInfoService) { }
+  constructor(public _formBuilder: FormBuilder,public dialog: MatDialog,) { }
+
   public isCollapsed = false;
 
   selected: Date | null | undefined;
-
-
-
-
-
-
-  /*---------------------------Dosya İnfo--------------------------*/
-
-  public fileType:string[]=['Özgeçmiş','Sertifika'];
-
-
-
 
 /*---------------------------Stepper --------------------*/
   firstFormGroup = this._formBuilder.group({
@@ -64,22 +48,8 @@ export class CvpageComponent implements OnInit {
     secondCtrl: ['', Validators.required],
   });
 
-
   isLinear = false;
   panelOpenState = false;
-
-  openLanguageModal() {
-    this.dialog.open(LanguaeModalComponent);
-  }
-  openWorkModal(){
-    this.dialog.open(WorkmodalComponent);
-  }
-  openReferanceModal(){
-    this.dialog.open(ReferanceModalComponent);
-  }
-  openSkillModal(){
-    this.dialog.open(SkillmodalComponent);
-  }
 
   ngOnInit(): void {
   }

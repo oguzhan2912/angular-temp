@@ -52,6 +52,17 @@ import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { JonadvertisementpageComponent } from './jonadvertisementpage/jonadvertisementpage.component';
 import { JobapplicationpageComponent } from './jobapplicationpage/jobapplicationpage.component';
 import { ReportPageComponent } from './report-page/report-page.component';
+import {MatSelectModule} from "@angular/material/select";
+import {GeneralInfoService} from "../Services/GeneralInfo/general-info.service";
+import { GeneralformComponent } from './forms/generalform/generalform.component';
+import { ContactformComponent } from './forms/contactform/contactform.component';
+import { EducationformComponent } from './forms/educationform/educationform.component';
+import { FileformComponent } from './forms/fileform/fileform.component';
+import { OtherformComponent } from './forms/otherform/otherform.component';
+import { LanguageformComponent } from './forms/languageform/languageform.component';
+import { ReferanceformComponent } from './forms/referanceform/referanceform.component';
+import { SkillformComponent } from './forms/skillform/skillform.component';
+import { PostworkformComponent } from './forms/postworkform/postworkform.component';
 
 
 
@@ -98,8 +109,7 @@ import { ReportPageComponent } from './report-page/report-page.component';
     MatRippleModule,
     MatDialogModule,
     MatExpansionModule,
-
-
+    MatSelectModule,
 
 
   ],
@@ -121,6 +131,15 @@ import { ReportPageComponent } from './report-page/report-page.component';
         JonadvertisementpageComponent,
         JobapplicationpageComponent,
         ReportPageComponent,
+        GeneralformComponent,
+        ContactformComponent,
+        EducationformComponent,
+        FileformComponent,
+        OtherformComponent,
+        LanguageformComponent,
+        ReferanceformComponent,
+        SkillformComponent,
+        PostworkformComponent,
 
 
 
@@ -132,7 +151,7 @@ import { ReportPageComponent } from './report-page/report-page.component';
 
 
   ],
-  providers: [ ],
+  providers: [ GeneralInfoService],
 
 })
 
