@@ -7,34 +7,46 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Dil Adı</mat-label>
-        <select matNativeControl required>
-          <option value="male"> İngilizce</option>
-          <option value="female"> Almanca</option>
-        </select>
-      </mat-form-field>
-    </td>
-    <td>
-      <mat-form-field appearance="outline">
-        <mat-label>Okuma Seviyesi</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
-      </mat-form-field>
-    </td>
-    <td>
-      <mat-form-field appearance="outline">
-        <mat-label>Yazma Seviyesi</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+        <mat-select [(ngModel)]="languageModel.language" required>
+          <mat-option *ngFor="let languages for languageModel.language" value="{{languageModel.language}}">
+            {{languages}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Konuşma Seviyesi</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+        <mat-select [(ngModel)]="languageModel.speakingLVL" required>
+          <mat-option *ngFor="let speaking for languageModel.speakingLVL" value="{{languageModel.speakingLVL}}">
+            {{speaking}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Okuma Seviyesi</mat-label>
+        <mat-select [(ngModel)]="languageModel.readingLVL" required>
+          <mat-option *ngFor="let readings for languageModel.readingLVL" value="{{languageModel.readingLVL}}">
+            {{readings}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
+        <mat-label>Yazma Seviyesi</mat-label>
+        <mat-select [(ngModel)]="languageModel.writingLVL" required>
+          <mat-option *ngFor="let writings for languageModel.writingLVL" value="{{languageModel.writingLVL}}">
+            {{writings}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Anlama Seviyesi</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+        <mat-select [(ngModel)]="languageModel.understandingLVL" required>
+          <mat-option *ngFor="let understandings for languageModel.understandingLVL" value="{{languageModel.understandingLVL}}">
+            {{understandings}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </td>
   </tr>
@@ -42,16 +54,16 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Sınav Türü</mat-label>
-        <select matNativeControl required>
-          <option value="male">YDS</option>
-          <option value="female">YÖK-Dil</option>
-        </select>
+        <mat-select [(ngModel)]="languageModel.languageExam" required>
+          <mat-option *ngFor="let exams for languageModel.languageExam" value="{{languageModel.languageExam}}">
+            {{exams}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Sınav Puanı</mat-label>
-        <input matInput placeholder="Bölüm Adı Giriniz." formControlName="firstCtrl" required>
+        <input matInput [(ngModel)]="languageModel.examResultNumber" placeholder="Sınav puanı giriniz." required>
       </mat-form-field>
     </td>
   </tr>

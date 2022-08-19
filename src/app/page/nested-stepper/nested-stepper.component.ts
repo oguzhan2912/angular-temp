@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {MatDialog} from '@angular/material/dialog';
 import {DegreeModalComponent} from "../modals/degree-modal/degree-modal.component";
-
-
-
-
+import {EducationInfo} from "../../Services/EducationInfo/education-info.model";
 
 
 @Component({
@@ -14,6 +11,8 @@ import {DegreeModalComponent} from "../modals/degree-modal/degree-modal.componen
   styleUrls: ['./nested-stepper.component.scss']
 })
 export class NestedStepperComponent implements OnInit {
+
+  educationModel:EducationInfo=new EducationInfo();
 
   constructor(private _formBuilder: FormBuilder,public dialog: MatDialog) { }
 

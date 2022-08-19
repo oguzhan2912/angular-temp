@@ -1,5 +1,5 @@
 
-<mat-stepper  [linear]="isLinear" #stepper>
+<mat-stepper  [linear]="isLinear" #stepper style="background-color:#B6ADAF">
   <mat-step [stepControl]="firstForm2Group">
     <form [formGroup]="firstForm2Group">
       <ng-template matStepLabel>İlkokul Bilgileri</ng-template>
@@ -13,7 +13,7 @@
           <td>
             <mat-form-field appearance="outline">
               <mat-label>Okul Adı</mat-label>
-              <input matInput placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
+              <input matInput [(ngModel)]="educationModel.primarySchoolName"   placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
             </mat-form-field>
           </td>
           <td style="margin-left:1%;">
@@ -87,16 +87,16 @@
           <td>
             <mat-form-field appearance="outline">
               <mat-label>Okul Adı</mat-label>
-              <input matInput placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
+              <input matInput placeholder="Okul adı giriniz." required>
             </mat-form-field>
           </td>
           <td style="margin-left:1%;">
             <mat-form-field appearance="outline">
               <mat-label>Mezuniyet Tarihi</mat-label>
-              <input matInput [matDatepicker]="picker">
+              <input matInput [matDatepicker]="picker1">
               <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
           </td>
           <td>
@@ -158,10 +158,10 @@
             <td style="margin-left:1%;">
               <mat-form-field appearance="outline">
                 <mat-label>Mezuniyet Tarihi</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input matInput [matDatepicker]="picker2">
                 <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
               </mat-form-field>
             </td>
             <td>
@@ -308,10 +308,10 @@
         <td style="margin-left:1%;">
           <mat-form-field appearance="outline">
             <mat-label>Mezuniyet Tarihi</mat-label>
-            <input matInput [matDatepicker]="picker">
+            <input matInput [matDatepicker]="picker3">
             <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+            <mat-datepicker #picker3></mat-datepicker>
           </mat-form-field>
         </td>
         <td>

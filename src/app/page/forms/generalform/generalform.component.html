@@ -8,24 +8,22 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;" >
           <mat-label>İsim giriniz.</mat-label>
-          <input matInput placeholder="Placeholder"  required>
+          <input matInput [(ngModel)]="generalModel.Name"  placeholder="İsim" >
         </mat-form-field>
       </p></td>
     <td><p>
       <mat-form-field appearance="outline" style="width: 100%;">
         <mat-label>Soyisim giriniz.</mat-label>
-        <input matInput [(ngModel)]="generalService.formData.Name"  placeholder="{{generalModel.Name}}"  required>
+        <input matInput [(ngModel)]="generalModel.Lastname" placeholder="Soyisim"  >
       </mat-form-field>
-
     </p></td>
-
     <td>
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Cinsiyet</mat-label>
-          <mat-select matNativeControl required>
-            <option value="male">Erkek</option>
-            <option value="female">Kadın</option>
+          <mat-select  [(ngModel)]="generalModel.gender"  >
+            <mat-option *ngFor="let genders of generalModel.gender" value="{{generalModel.gender}}" formControlName="firstCtrl">
+              {{genders}}</mat-option>
           </mat-select>
         </mat-form-field>
       </p>
@@ -34,49 +32,36 @@
       <p >
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Eğitim Durumu</mat-label>
-          <select matNativeControl required>
-            <option value="male">İlkokul</option>
-            <option value="female">Ortaokul</option>
-            <option value="female">Lise</option>
-            <option value="female">Ön Lisans</option>
-            <option value="female">Lisans</option>
-            <option value="female">Yüksek Lisans</option>
-            <option value="female">Doktora</option>
-          </select>
+          <mat-select  [(ngModel)]="generalModel.graduation"  >
+            <mat-option *ngFor="let graduations of generalModel.graduation" value="{{generalModel.graduation}}">{{graduations}}</mat-option>
+          </mat-select>
         </mat-form-field>
       </p>
     </td>
-
   </tr>
   <tr>
     <td>
       <p>
-        <mat-form-field appearance="outline" style="width: 100%;">
-          <mat-label>Kimlik Türü</mat-label>
-          <select matNativeControl required>
-            <option value="male">T.C Kimlik Kartı</option>
-            <option value="female">Passaport</option>
-            <option value="female">Geçici Kimlik Belgesi</option>
-          </select>
-        </mat-form-field>
+      <p>
+        <mat-checkbox style="margin-bottom: 30px;" [formControl]="disableSelectCitizen">Türk Vatandaşı Değilim</mat-checkbox>
+    </p>
+    </td>
+    <td>
+      <p>
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Kimlik Türü</mat-label>
+        <mat-select [disabled]="disableSelectCitizen.value"  [(ngModel)]="generalModel.identityType" >
+          <mat-option *ngFor="let identypes of generalModel.identityType">{{identypes}}</mat-option>
+        </mat-select>
+      </mat-form-field>
       </p>
+
     </td>
     <td>
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Kimlik Numarası</mat-label>
-          <input matInput placeholder="Kimlik Numarası Giriniz.">
-        </mat-form-field>
-      </p>
-    </td>
-    <td>
-      <p>
-        <mat-form-field appearance="outline" style="width: 100%;">
-          <mat-label>T.C Vatandaşı Değilim</mat-label>
-          <select matNativeControl required>
-            <option value="male">Evet</option>
-            <option value="female">Hayır</option>
-          </select>
+          <input matInput [disabled]="disableSelectCitizen.value" [(ngModel)]="generalModel.identityNum" placeholder="Kimlik Numarası Giriniz.">
         </mat-form-field>
       </p>
     </td>
@@ -84,10 +69,9 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Medeni Durum</mat-label>
-          <select matNativeControl required>
-            <option value="male">Evli</option>
-            <option value="female">Bekar</option>
-          </select>
+          <mat-select  [(ngModel)]="generalModel.martialStatus" >
+            <mat-option *ngFor="let status of generalModel.martialStatus"  value="{{generalModel.martialStatus}}">{{status}}</mat-option>
+          </mat-select>
         </mat-form-field>
       </p>
     </td>
@@ -95,23 +79,17 @@
   <tr>
     <td>
       <p>
-        <mat-form-field appearance="outline" style="width: 100%;">
-          <mat-label>Sürücü Belgesi Var Mı ?</mat-label>
-          <select matNativeControl required>
-            <option value="male">Evet</option>
-            <option value="female">Hayır</option>
-          </select>
-        </mat-form-field>
+        <mat-checkbox style="margin-bottom: 30px;" [formControl]="disableSelectDriver">Sürücü Belgesi Var Mı?</mat-checkbox>
       </p>
     </td>
     <td>
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Sürücü Belgesi Türü</mat-label>
-          <select matNativeControl required>
-            <option value="male">A1</option>
-            <option value="female">B2</option>
-          </select>
+          <mat-select  [(ngModel)]="generalModel.driverLicenseType" [disabled]="disableSelectDriver.value" >
+            <mat-option *ngFor="let driverTypes of generalModel.driverLicenseType" value="{{generalModel.driverLicenseType}}">
+              {{driverTypes}}</mat-option>
+          </mat-select>
         </mat-form-field>
       </p>
     </td>
@@ -119,16 +97,15 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Uyruk</mat-label>
-          <select matNativeControl required>
-            <option value="male">Almanya</option>
-            <option value="female">Afrika</option>
-          </select>
+          <mat-select [(ngModel)]="generalModel.nation" >
+            <mat-option *ngFor="let nations of generalModel.nation" value="{{generalModel.nation}}">{{nations}}</mat-option>
+          </mat-select>
         </mat-form-field>
       </p>
     </td>
   </tr>
   <mat-divider style="width: 450%;"></mat-divider>
-  <h2>Kişisel Bilgiler</h2>
+  <h2 style="margin-top:13px;">Kişisel Bilgiler</h2>
   <tr>
     <td >
       <mat-form-field appearance="outline">
@@ -142,19 +119,20 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Doğduğu Ülke</mat-label>
-        <select matNativeControl required>
-          <option value="male">Almanya</option>
-          <option value="female">Afrika</option>
-        </select>
+        <mat-select [(ngModel)]="generalModel.bornedCountry" >
+          <mat-option *ngFor="let countries of generalModel.bornedCountry" value="{{generalModel.bornedCountry}}">
+            {{countries}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Doğduğu Şehir</mat-label>
-        <select matNativeControl required>
-          <option value="male">Berlin</option>
+        <mat-select [(ngModel)]="generalModel.bornedCity"  >
+          <mat-option *ngFor="let cities of generalModel.bornedCity" value="{{generalModel.bornedCity}}">
+            {{cities}}</mat-option>
           <option value="female">Afrika</option>
-        </select>
+        </mat-select>
       </mat-form-field>
     </td>
   </tr>

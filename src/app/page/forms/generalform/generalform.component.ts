@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GeneralInfoService} from "../../../Services/GeneralInfo/general-info.service";
 import {GeneralInfo} from "../../../Services/GeneralInfo/general-info.model";
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-generalform',
@@ -11,6 +11,8 @@ import {FormBuilder} from "@angular/forms";
 export class GeneralformComponent implements OnInit {
 
   generalModel: GeneralInfo=new GeneralInfo();
+  disableSelectCitizen = new FormControl();
+  disableSelectDriver = new FormControl();
 
   constructor(public _formBuilder: FormBuilder,public generalService:GeneralInfoService) { }
 

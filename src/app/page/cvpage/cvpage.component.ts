@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
-
-import { GeneralInfo } from 'src/app/Services/GeneralInfo/general-info.model';
+import {MatFormFieldControl} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-cvpage',
@@ -11,7 +10,6 @@ import { GeneralInfo } from 'src/app/Services/GeneralInfo/general-info.model';
 })
 export class CvpageComponent implements OnInit {
 
-  generalModel: GeneralInfo=new GeneralInfo();
 
   constructor(public _formBuilder: FormBuilder,public dialog: MatDialog,) { }
 

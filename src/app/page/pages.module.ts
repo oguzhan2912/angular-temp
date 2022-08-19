@@ -18,7 +18,6 @@ import { PopoverModule } from "ngx-bootstrap/popover";
 
 import {RegisterpageComponent} from "./registerpage/registerpage.component";
 
-
 import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatStepperModule} from "@angular/material/stepper";
@@ -27,7 +26,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from "@angular/material/toolbar";
-
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCheckboxModule} from "@angular/material/checkbox";
@@ -98,7 +97,7 @@ import { PostworkformComponent } from './forms/postworkform/postworkform.compone
 
     MatButtonModule,
     MatToolbarModule,
-
+    MatFormFieldModule,
     MatNativeDateModule,
     MatGridListModule,
     MatCheckboxModule,

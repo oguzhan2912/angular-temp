@@ -9,7 +9,7 @@
     </button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     </button>
-    <button mat-raised-button color="warn" style="margin-left: 75%;background-color: #fa0000"><a [routerLink]="['/singing']">Çıkış Yap</a></button>
+    <button mat-raised-button color="warn" style="margin-left: 65%;background-color: #fa0000"><a [routerLink]="['/singing']">Çıkış Yap</a></button>
   </mat-toolbar>
 </p>
 
@@ -48,7 +48,7 @@
     <mat-grid-tile colspan="5" >
       <mat-stepper [linear]="isLinear" #stepper style="width: 100%;height:100%;background-color:#8689AC">
         <mat-step  [stepControl]="firstFormGroup" style="background-color: #BF9B6F">
-          <form [formGroup]="firstFormGroup"    >
+          <form [formGroup]="firstFormGroup" >
             <div class="container form-group" style="min-height: 600px;">
             <ng-template matStepLabel>Genel Bilgiler</ng-template>
 
@@ -67,7 +67,7 @@
             <ng-template matStepLabel>İletişim Bilgileri</ng-template>
 
             <app-languageform></app-languageform>
-            <div style="margin-top: 11%;">
+            <div style="margin-top:40%;">
               <button mat-raised-button color="warn" matStepperPrevious>Back</button>
               <button mat-raised-button color="primary" matStepperNext>Next</button>
             </div>
@@ -81,7 +81,7 @@
 
             <app-educationform></app-educationform>
           </form>
-          <div style="margin-top:5%;width: 120%;">
+          <div style="margin-top:14%;width: 120%;">
             <button mat-raised-button color="warn" matStepperPrevious>Back</button>
             <button mat-raised-button color="danger" (click)="stepper.reset()">Reset</button>
             <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -89,10 +89,12 @@
         </mat-step>
 
         <mat-step [stepControl]="fourthFormGroup" label="Dil Bilgileri">
+          <form [formGroup]="fourthFormGroup" >
           <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>Dil Bilgileri</ng-template>
           <app-languageform></app-languageform>
           </div>
+          </form>
           <div style="margin-top:5%;width: 120%;">
           <button mat-raised-button color="warn" matStepperPrevious>Back</button>
           <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -100,10 +102,12 @@
         </mat-step>
 
         <mat-step [stepControl]="fifthFormGroup" label="İş Bilgileri">
+          <form [formGroup]="fifthFormGroup" >
           <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>İş Bilgileri</ng-template>
            <app-postworkform></app-postworkform>
           </div>
+          </form>
           <div style="margin-top:5%;width: 120%;">
             <button mat-raised-button color="warn" matStepperPrevious>Back</button>
             <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -111,10 +115,12 @@
         </mat-step>
 
         <mat-step [stepControl]="sixthFormGroup" label="Referans Bilgileri">
+          <form [formGroup]="sixthFormGroup" >
           <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>Referans Bilgileri</ng-template>
           <app-referanceform> </app-referanceform>
           </div>
+          </form>
           <div style="margin-top:5%;width: 120%;">
             <button mat-raised-button color="warn" matStepperPrevious>Back</button>
             <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -122,10 +128,12 @@
         </mat-step>
 
         <mat-step [stepControl]="seventhFormGroup" label="Yetenek Bilgileri">
+          <form [formGroup]="seventhFormGroup" >
           <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>Yeteneklerim</ng-template>
             <app-skillform></app-skillform>
           </div>
+          </form>
           <div style="margin-top:5%;width: 120%;">
             <button mat-raised-button color="warn" matStepperPrevious>Back</button>
             <button mat-raised-button color="danger" (click)="stepper.reset()">Reset</button>
@@ -134,10 +142,12 @@
         </mat-step>
 
         <mat-step [stepControl]="eightFormGroup" label="Diğer Bilgileri">
+          <form [formGroup]="eightFormGroup" >
           <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>Diğer Bilgiler</ng-template>
             <app-otherform></app-otherform>
           </div>
+          </form>
           <div style="margin-top:5%;width: 120%;">
             <button mat-raised-button color="warn" matStepperPrevious>Back</button>
             <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -145,11 +155,12 @@
         </mat-step>
 
         <mat-step [stepControl]="ninthFormGroup" label="Dosya Ekle">
-
+          <form [formGroup]="ninthFormGroup" >
           <div style="margin-top:5%;width: 120%;">
             <button mat-raised-button color="warn" matStepperPrevious>Back</button>
             <button mat-raised-button color="primary" matStepperNext>Next</button>
           </div>
+          </form>
         </mat-step>
       </mat-stepper>
     </mat-grid-tile>
@@ -157,9 +168,7 @@
 
 
 
-  <mat-grid-list cols="3" rowHeight="130px" class="footer-temp" >
-    <mat-grid-tile>TMV LOGO</mat-grid-tile>
-    <mat-grid-tile>GİRİŞ ÇIKIŞ</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-list cols="3" rowHeight="30px" class="footer-temp" >
+
   </mat-grid-list>
 </div>
