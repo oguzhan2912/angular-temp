@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EducationInfo} from "../../../Services/EducationInfo/education-info.model";
 
 @Component({
   selector: 'app-postgraduate-degree',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./postgraduate-degree.component.scss']
 })
 export class PostgraduateDegreeComponent implements OnInit {
+
+  educationModel: EducationInfo=new EducationInfo();
 
   constructor() { }
 

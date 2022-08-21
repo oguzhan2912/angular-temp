@@ -5,68 +5,71 @@
   <tbody>
   <tr>
     <td>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" style="width:100%;">
         <mat-label>Firma Adı</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+        <input matInput [(ngModel)]="postWorkModel.company" placeholder="Firma ismi Giriniz"  required>
       </mat-form-field>
     </td>
     <td>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" style="width:100%;">
         <mat-label>Çalıştığı Departman</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+        <input matInput [(ngModel)]="postWorkModel.companyDepartment" placeholder="Departman ismi Giriniz."  required>
       </mat-form-field>
     </td>
     <td>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" style="width:100%;">
         <mat-label>Çalıştığı Pozisyon</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+        <input matInput [(ngModel)]="postWorkModel.companyPosition" placeholder="Posizyon ismi Giriniz."  required>
       </mat-form-field>
     </td>
     <td style="margin-left:1%;">
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" style="width:100%;">
         <mat-label>Görev Kapsamı</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+        <input matInput [(ngModel)]="postWorkModel.companyMission" placeholder="Varsa görev kapsamını giriniz." >
       </mat-form-field>
     </td>
 
     <tr>
     <td>
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" style="width:100%;">
       <mat-label>Son Maaş</mat-label>
-      <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      <input matInput placeholder="Puan Giriniz." required>
     </mat-form-field>
   </td>
     <td>
-      <mat-form-field appearance="outline">
-        <mat-label>İşe Giriş Tarihi</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      <mat-form-field appearance="outline" style="width:100%;">
+        <mat-label>İş Başlangıç Tarihi</mat-label>
+        <input matInput [matDatepicker]="workStartingDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="workStartingDate"></mat-datepicker-toggle>
+        <mat-datepicker #workStartingDate></mat-datepicker>
       </mat-form-field>
+    </td>
+    <td>
+        <mat-checkbox style="margin-bottom: 30px;" [formControl]="disableSelectWork">Hala aynı firmada çalışıyorum.</mat-checkbox>
 
     </td>
     <td>
-      <mat-form-field appearance="outline">
-        <mat-label>Hala Aktif Çalışıyorum</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+      <mat-form-field appearance="outline" style="width:100%;" >
+        <mat-label>İş Çıkış Tarihi</mat-label>
+        <input matInput [matDatepicker]="workEndingDate" [disabled]="disableSelectWork.value">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="workEndingDate"></mat-datepicker-toggle>
+        <mat-datepicker #workEndingDate></mat-datepicker>
       </mat-form-field>
 
-    </td>
-    <td>
-      <mat-form-field appearance="outline">
-        <mat-label>İşten Ayrılış Tarihi</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
-      </mat-form-field>
+
     </td>
   </tr>
-    <tr>
 
-      <td>
-      <mat-form-field appearance="outline">
+    <tr>
+      <td></td>
+      <td colspan="2">
+      <mat-form-field appearance="outline"  style="width:100%;">
         <mat-label>İşten Ayrılış Nedeni</mat-label>
         <textarea matInput></textarea>
       </mat-form-field>
-
       </td>
-
     </tr>
 
 

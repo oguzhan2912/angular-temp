@@ -20,8 +20,8 @@ export class EducationInfo {
   degreeCountry:string[];
   graduationState:string[];
   degreeGPA:number;
-  newSchool:string;
-  newDepartment:string;
+  newDegreeSchool:string;
+  newDegreeDepartment:string;
 
   /* ------------------Associate İnfo------------------*/
   associateName:string[];
@@ -34,9 +34,9 @@ export class EducationInfo {
   newAssociateDepartment:string;
 
   /* ------------------Postgraduation İnfo------------------*/
-  postGraduateName:string[];
+  postgraduationName:string[];
   postgraduationDateDegree:Date;
-  departmentPostgradation:string[];
+  departmentPostgraduation:string[];
   postgraduationCountry:string[];
   postgraduationState:string[];
   postgraduationGPA:number;
@@ -54,59 +54,7 @@ export class EducationInfo {
   newPhDDepartment:string;
 
   constructor() {
-    /* ------------------Primary School İnfo----------------*/
-    this.primarySchoolName=[];
-    this.graduationDatePrimary=new Date();
 
-    /* ------------------Secondary School İnfo-------------*/
-    this.secondarySchoolName=[];
-    this.graduationDateSecondary=new Date();
-
-    /* ------------------High School İnfo------------------*/
-    this.highSchoolName=[];
-    this.departmentHigh=[];
-    this.highGPA=0;
-    this.graduationDateHigh=new Date();
-
-    /* ------------------Associate İnfo------------------*/
-    this.associateName=[];
-    this.associateDateDegree=new Date();
-    this.departmentAssociate=[];
-    this.associateCountry=[];
-    this.associateState=[];
-    this.associateGPA=0;
-    this.newAssociateSchool='';
-    this.newAssociateDepartment='';
-
-    /* ------------------Degree İnfo------------------*/
-    this.degreeName=[];
-    this.departmentDegree=[];
-    this.degreeCountry=[];
-    this.graduationState=[];
-    this.degreeGPA=0;
-    this.newSchool='';
-    this.newDepartment='';
-    this.graduationDateDegree=new Date();
-
-    /* ------------------Postgraduation İnfo------------------*/
-    this.postGraduateName=[];
-    this.postgraduationCountry=[];
-    this.departmentPostgradation=[];
-    this.postgraduationState=[];
-    this.postgraduationGPA=0;
-    this.newPostgraduationSchool='';
-    this.newPostgraduationDepartment='';
-    this.postgraduationDateDegree=new Date();
-
-    /* ------------------PhD İnfo------------------*/
-    this.phdName=[];
-    this.departmentPhD=[];
-    this.phdCountry=[];
-    this.phdState=[];
-    this.phdGPA=0;
-    this.newPhDSchool='';
-    this.newPhDDepartment='';
-    this.phdDate=new Date();
   }
 
 

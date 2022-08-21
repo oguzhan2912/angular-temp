@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+import {EducationInfo} from "../../../Services/EducationInfo/education-info.model";
 
 @Component({
   selector: 'app-degree-modal',
@@ -8,6 +9,7 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class DegreeModalComponent implements OnInit {
 
+  educationModel: EducationInfo=new EducationInfo();
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {

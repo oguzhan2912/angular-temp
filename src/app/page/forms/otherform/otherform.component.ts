@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {OtherInfo} from "../../../Services/OtherInfo/other-info.model";
 
 @Component({
   selector: 'app-otherform',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OtherformComponent implements OnInit {
 
+  otherModel: OtherInfo= new OtherInfo();
   constructor() { }
 
   ngOnInit(): void {

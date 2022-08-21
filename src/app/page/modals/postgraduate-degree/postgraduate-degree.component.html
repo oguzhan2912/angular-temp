@@ -7,43 +7,40 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Okul Adı</mat-label>
-        <select matNativeControl required>
-          <option value="male">Sakarya Üniversitesi</option>
-          <option value="female">İstanbul Üniversitesi</option>
-        </select>
+        <mat-select [(ngModel)]="educationModel.postgraduationName" required>
+          <mat-option *ngFor="let postgraduationNames for educationModel.postgraduationName" value="{{educationModel.postgraduationName}}">{{postgraduationNames}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Bölüm Adı</mat-label>
-        <select matNativeControl required>
-          <option value="male">Bilgisayar müh.</option>
-          <option value="female">Makine Müh.</option>
-        </select>
+        <mat-select [(ngModel)]="educationModel.departmentPostgraduation" required>
+          <mat-option *ngFor="let postgraduationDepartments for educationModel.departmentPostgraduation">{{postgraduationDepartments}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Öğrenim Türü</mat-label>
-        <select matNativeControl required>
-          <option value="male">Mezun</option>
-          <option value="female">Devam Ediyor</option>
-        </select>
+        <mat-select [(ngModel)]="educationModel.graduationState" required>
+          <mat-option *ngFor="let degraaStates for educationModel.graduationState" value="{{educationModel.graduationState}}">{{degraaStates}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </td>
     <td style="margin-left:1%;">
       <mat-form-field appearance="outline">
         <mat-label>Mezuniyet Tarihi</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input matInput [matDatepicker]="postgraduationGraduationDate">
         <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker-toggle matSuffix [for]="postgraduationGraduationDate"></mat-datepicker-toggle>
+        <mat-datepicker #postgraduationGraduationDate></mat-datepicker>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Mezuniyet Notu</mat-label>
-        <input matInput placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+        <input matInput [(ngModel)]="educationModel.postgraduationGPA" placeholder="Puan Giriniz." formControlName="firstCtrl" required>
       </mat-form-field>
     </td>
   </tr>
@@ -52,13 +49,13 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Okul Adı</mat-label>
-        <input matInput placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
+        <input matInput [(ngModel)]="educationModel.newPostgraduationSchool" placeholder="Okul adı giriniz." >
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Bölüm Adı</mat-label>
-        <input matInput placeholder="Bölüm Adı Giriniz." formControlName="firstCtrl" required>
+        <input matInput [(ngModel)]="educationModel.newPostgraduationDepartment" placeholder="Bölüm Adı Giriniz."  >
       </mat-form-field>
     </td>
   </tr>

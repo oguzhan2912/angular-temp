@@ -6,7 +6,7 @@
   <tr>
     <td><p><mat-form-field appearance="outline">
       <mat-label>İlgi Alanları</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput [(ngModel)]="otherModel.interests"></textarea>
     </mat-form-field>
     </p>
     </td>
@@ -14,7 +14,7 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Üye Olunan Sivil Toplum Kuruluşları</mat-label>
-          <textarea matInput></textarea>
+          <textarea matInput [(ngModel)]="otherModel.memberNGO"></textarea>
         </mat-form-field>
       </p>
     </td>
@@ -22,10 +22,9 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Kıtalar Arası Seyahat Edebilirim.</mat-label>
-          <select matNativeControl required>
-            <option value="yes">Evet</option>
-            <option value="no">Hayır</option>
-          </select>
+          <mat-select  required [(ngModel)]="otherModel.travelContinents">
+            <mat-option *ngFor="let travels for otherModel.travelContinents" value="{{otherModel.travelContinents}}">{{travels}}</mat-option>
+          </mat-select>
         </mat-form-field>
       </p>
     </td>
@@ -33,10 +32,9 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Sigara Kullanıyorum.</mat-label>
-          <select matNativeControl required>
-            <option value="yes">Evet</option>
-            <option value="no">Hayır</option>
-          </select>
+          <mat-select  required  [(ngModel)]="otherModel.cigarette">
+            <mat-option *ngFor="let cigar for otherModel.cigarette" value="{{otherModel.cigarette}}">{{cigar}}</mat-option>
+          </mat-select>
         </mat-form-field>
       </p>
     </td>
@@ -46,30 +44,28 @@
   <tr>
     <td><p><mat-form-field appearance="outline">
       <mat-label>Askerlik Durumu</mat-label>
-      <select matNativeControl required>
-        <option value="yes">Tecil</option>
-        <option value="no">Yapıldı</option>
-        <option value="maybe">Muaf</option>
-      </select>
+      <mat-select  required [(ngModel)]="otherModel.militaryStatus">
+        <mat-option *ngFor="let military for otherModel.militaryStatus" value="{{otherModel.militaryStatus}}">{{military}}</mat-option>
+      </mat-select>
     </mat-form-field>
     </p>
     </td>
     <td> <p>
       <mat-form-field appearance="outline">
         <mat-label>Tecil Tarihi</mat-label>
-        <input matInput [matDatepicker]="picker3">
+        <input matInput [matDatepicker]="militaryDate">
         <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-        <mat-datepicker #picker3></mat-datepicker>
+        <mat-datepicker-toggle matSuffix [for]="militaryDate"></mat-datepicker-toggle>
+        <mat-datepicker #militaryDate></mat-datepicker>
       </mat-form-field></p>
     </td>
     <td><p>
       <mat-form-field appearance="outline">
         <mat-label>Tamamlanma Tarihi</mat-label>
-        <input matInput [matDatepicker]="picker2">
+        <input matInput [matDatepicker]="complectionStatus">
         <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-        <mat-datepicker #picker2></mat-datepicker>
+        <mat-datepicker-toggle matSuffix [for]="complectionStatus"></mat-datepicker-toggle>
+        <mat-datepicker #complectionStatus></mat-datepicker>
       </mat-form-field></p>
     </td>
 

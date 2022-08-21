@@ -7,10 +7,6 @@ export class ReferanceInfo {
   referancePhone2:number;
 
   constructor( ) {
-    this.referanceName='';
-    this.referanceFoundation='';
-    this.referanceEmail='';
-    this.referancePhone=0;
-    this.referancePhone2=0;
+
   }
 }

@@ -25,25 +25,25 @@ export class CvpageComponent implements OnInit {
     secondCtrl: ['', Validators.required],
   });
   thirdFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    thirdCtrl: ['', Validators.required],
   });
   fourthFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    fourthCtrl: ['', Validators.required],
   });
   fifthFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    fifthCtrl: ['', Validators.required],
   });
   sixthFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    sixthCtrl: ['', Validators.required],
   });
   seventhFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    seventhCtrl: ['', Validators.required],
   });
   eightFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    eightCtrl: ['', Validators.required],
   });
   ninthFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    ninthCtrl: ['', Validators.required],
   });
 
   isLinear = false;

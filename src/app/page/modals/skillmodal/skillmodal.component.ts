@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SkillInfo} from "../../../Services/SkillInfo/skill-info.model";
 
 @Component({
   selector: 'app-skillmodal',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skillmodal.component.scss']
 })
 export class SkillmodalComponent implements OnInit {
+  skillModel: SkillInfo= new SkillInfo();
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 export class LanguageInfo{
-
+  languageID:number;
   language:string[];
   speakingLVL:number[];
   readingLVL:number[];

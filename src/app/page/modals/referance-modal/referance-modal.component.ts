@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ReferanceInfo} from "../../../Services/ReferanceInfo/referance-info.model";
 
 @Component({
   selector: 'app-referance-modal',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReferanceModalComponent implements OnInit {
 
+  referanceModel: ReferanceInfo=new ReferanceInfo();
   constructor() { }
 
   ngOnInit(): void {

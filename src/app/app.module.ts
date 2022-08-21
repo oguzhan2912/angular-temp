@@ -10,11 +10,14 @@ import {PagesModule} from "./page/pages.module";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import {GeneralInfoService} from "./Services/GeneralInfo/general-info.service";
+import {LanguaeModalComponent} from "./page/modals/languae-modal/languae-modal.component";
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import {GeneralInfoService} from "./Services/GeneralInfo/general-info.service";
 
 
   ],
+  entryComponents:[LanguaeModalComponent],
   providers: [GeneralInfoService],
   bootstrap: [AppComponent]
 })

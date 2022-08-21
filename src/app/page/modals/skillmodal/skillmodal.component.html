@@ -7,13 +7,13 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Yetenek</mat-label>
-        <input matInput placeholder="İsim Giriniz." formControlName="firstCtrl" required>
+        <input matInput [(ngModel)]="skillModel.skillName" placeholder="İsim Giriniz."  required>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Tecrübe Yılı</mat-label>
-        <input matInput placeholder="Ad Giriniz." formControlName="firstCtrl" >
+        <input matInput [(ngModel)]="skillModel.skillYear" placeholder="Ad Giriniz." >
       </mat-form-field>
     </td>
   </tr>
