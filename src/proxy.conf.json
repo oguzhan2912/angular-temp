@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "/#/*": {
+    "target": "http://localhost:55725/api",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": false,
+    "pathRewrite": {
+      "^/#/": ""
+    }
+  },
+  "headers": {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*"
+  }
+}

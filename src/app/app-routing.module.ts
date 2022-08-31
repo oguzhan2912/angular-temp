@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { BrowserModule } from '@angular/platform-browser';
 import  {RegisterpageComponent} from "./page/registerpage/registerpage.component";
 import {SingingComponent} from "./page/singing/singing.component";
 import {CvpageComponent} from "./page/cvpage/cvpage.component";
@@ -26,7 +26,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       useHash: true
-    })
+    }),
+    BrowserModule,
 
   ],
   exports: [RouterModule]

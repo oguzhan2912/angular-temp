@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../../environments/environment";
 import {LanguageInfo} from "./language-info.model";
 
 
@@ -7,6 +9,10 @@ import {LanguageInfo} from "./language-info.model";
 })
 export class LanguageInfoService {
 
-    formData: LanguageInfo=new LanguageInfo();
-  constructor() { }
+  languageModel: Array<LanguageInfo>=[];
+  constructor(private http: HttpClient) { }
+
+  getItemList(){
+    return this.http.get(environment.apiUrl + "Languages/GetLanguages").toPromise();
+  }
 }

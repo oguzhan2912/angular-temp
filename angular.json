@@ -27,6 +27,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
+
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
@@ -68,12 +69,18 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angular-temp:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "angular-temp:build:production"
+
             },
             "development": {
-              "browserTarget": "angular-temp:build:development"
+              "browserTarget": "angular-temp:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

@@ -15,7 +15,7 @@
 
 
 <div class="container" style="margin-top:-0.9%;background-color:#3F5576">
-  <mat-grid-list cols="6" rowHeight="800px" >
+  <mat-grid-list cols="6" rowHeight="900px" >
     <mat-grid-tile  class="side-grid">
       <div style="margin-top:-180%;width: 120%;">
       <mat-accordion  >
@@ -48,11 +48,11 @@
     <mat-grid-tile colspan="5" >
       <mat-stepper [linear]="isLinear" #stepper style="width: 100%;height:100%;background-color:#8689AC">
         <mat-step  [stepControl]="firstFormGroup" style="background-color: #BF9B6F">
-          <form [formGroup]="firstFormGroup" >
+          <form [formGroup]="firstFormGroup " >
             <div class="container form-group" style="min-height: 600px;">
             <ng-template matStepLabel>Genel Bilgiler</ng-template>
 
-              <app-generalform></app-generalform>
+              <app-generalform ></app-generalform>
 
             <div style="margin-top:5%;width: 120%;">
               <button mat-raised-button color="primary" matStepperNext>Next</button>
@@ -66,8 +66,8 @@
             <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>İletişim Bilgileri</ng-template>
 
-            <app-languageform></app-languageform>
-            <div style="margin-top:40%;">
+              <app-contactform></app-contactform>
+            <div style="margin-top:10%;">
               <button mat-raised-button color="warn" matStepperPrevious>Back</button>
               <button mat-raised-button color="primary" matStepperNext>Next</button>
             </div>
@@ -168,7 +168,7 @@
 
 
 
-  <mat-grid-list cols="3" rowHeight="30px" class="footer-temp" >
+  <mat-grid-list cols="3" class="footer-temp" >
 
   </mat-grid-list>
 </div>

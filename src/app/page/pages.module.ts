@@ -1,4 +1,3 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -73,7 +72,6 @@ import { PostworkformComponent } from './forms/postworkform/postworkform.compone
 @NgModule({
   imports: [
     CommonModule,
-    BrowserModule,
     FormsModule,
     RouterModule,
     BsDropdownModule.forRoot(),
@@ -144,11 +142,7 @@ import { PostworkformComponent } from './forms/postworkform/postworkform.compone
 
   ],
   exports: [
-
-
     RegisterpageComponent,
-
-
   ],
   providers: [ GeneralInfoService],
 

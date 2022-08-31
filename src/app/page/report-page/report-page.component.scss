@@ -1,9 +1,10 @@
 .stepper-table-header{
-  padding: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+;
   font-size: larger;
-  border-right: darkslateblue 2px solid;
-  border-bottom: darkslateblue 3px solid;
   text-align: center;
+  background-image: linear-gradient( rgb(15, 217, 182), rgba(255,0,0,0));
 }
 
 .stepper-table-button{
@@ -16,7 +17,7 @@
   padding: 8px;
   font-size: larger;
   text-align: center;
-  background-color: rgb(170, 216, 225);
+  background-color: rgba(191, 221, 225, 0.35),;
 }
 
 .navBar{

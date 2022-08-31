@@ -6,7 +6,7 @@
   <tbody>
   <tr >
     <td class="stepper-table-button" >
-      <button mat-raised-button color="primary" style="color:white;" (click)="openLanguageModal(null,languageModel.languageID)">Dil Ekle</button></td>
+      <button mat-raised-button color="primary" style="color:white;" (click)="openLanguageModal(null,languageModel.LanguageID)">Dil Ekle</button></td>
     <td class="stepper-table-header">Dil Adı</td>
     <td class="stepper-table-header">Okuma Seviyesi</td>
     <td class="stepper-table-header">Yazma Seviyesi</td>
@@ -16,19 +16,31 @@
     <td class="stepper-table-header">Sınav Türü</td>
     <td class="stepper-table-header">Sınav Puanı</td>
   </tr>
+  <tr >
+    <td class="stepper-table-body-first" ><i class=" fa fa-pencil"></i></td>
+    <td class="stepper-table-body"></td>
+    <td class="stepper-table-body"></td>
+    <td class="stepper-table-body"> </td>
+    <td class="stepper-table-body"></td>
+    <td class="stepper-table-body"></td>
+    <td class="stepper-table-body">Ortalaama</td>
+    <td class="stepper-table-body"></td>
+    <td class="stepper-table-body-last"></td>
+
+  </tr>
   <tr *ngIf="languageItemModel.length==0">
-    <td style="text-align:center" colspan="8"> <strong>Lütfen Dil Bilgisi Ekleyiniz.</strong> </td>
+    <td style="text-align:center;" colspan="8"> <strong>Lütfen Dil Bilgisi Ekleyiniz.</strong> </td>
   </tr>
   <tr *ngFor="let item of languageItemModel;let i=index">
-    <td class="stepper-table-body" (click)="openLanguageModal(null,languageModel.languageID)"><i class=" fa fa-pencil"></i></td>
-    <td class="stepper-table-body">{{item.language}}</td>
-    <td class="stepper-table-body">{{item.readingLVL}}</td>
-    <td class="stepper-table-body"> {{item.writingLVL}}</td>
-    <td class="stepper-table-body">{{item.speakingLVL}}</td>
-    <td class="stepper-table-body">{{item.understandingLVL}}</td>
+    <td class="stepper-table-body" (click)="openLanguageModal(null,languageModel.LanguageID)"><i class=" fa fa-pencil"></i></td>
+    <td class="stepper-table-body">{{item.LanguageName}}</td>
+    <td class="stepper-table-body">{{item.ReadingLvl}}</td>
+    <td class="stepper-table-body"> {{item.WritingLvl}}</td>
+    <td class="stepper-table-body">{{item.SpeakingLvl}}</td>
+    <td class="stepper-table-body">{{item.UnderstandingLvl}}</td>
     <td class="stepper-table-body">Ortalaama</td>
-    <td class="stepper-table-body">{{item.languageExam}}</td>
-    <td class="stepper-table-body">{{item.examResultNumber}}</td>
+    <td class="stepper-table-body">{{item.LanguageExam}}</td>
+    <td class="stepper-table-body">{{item.ExamResult}}</td>
 
   </tr>
   </tbody>

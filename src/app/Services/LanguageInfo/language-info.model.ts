@@ -1,12 +1,12 @@
 export class LanguageInfo{
-  languageID:number;
-  language:string[];
-  speakingLVL:number[];
-  readingLVL:number[];
-  writingLVL:number[];
-  understandingLVL:number[];
-  languageExam:string[];
-  examResultNumber:number;
+  LanguageID:number;
+  LanguageName:string[];
+  SpeakingLvl:number[];
+  ReadingLvl:number[];
+  WritingLvl:number[];
+  UnderstandingLvl:number[];
+  LanguageExam:string[];
+  ExamResult:number;
 
   constructor() {
 
