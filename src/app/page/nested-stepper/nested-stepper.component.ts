@@ -3,6 +3,9 @@ import {FormBuilder, Validators} from "@angular/forms";
 import {MatDialog} from '@angular/material/dialog';
 import {DegreeModalComponent} from "../modals/degree-modal/degree-modal.component";
 import {EducationInfo} from "../../Services/EducationInfo/education-info.model";
+import {departmentAssociate} from "../../Data/Education/associatestore";
+import {departmentsDegree} from "../../Data/Education/departmentstore";
+import {schools} from "../../Data/Education/educationstore";
 
 
 @Component({
@@ -13,7 +16,9 @@ import {EducationInfo} from "../../Services/EducationInfo/education-info.model";
 export class NestedStepperComponent implements OnInit {
 
   educationModel:EducationInfo=new EducationInfo();
-
+  public departmentAssociate:any=departmentAssociate;
+  public departmentsDegree:any=departmentsDegree;
+  public schools:any=schools;
   constructor(private _formBuilder: FormBuilder,public dialog: MatDialog) { }
 
   /* ------------------------Stepper2 ----------------------*/

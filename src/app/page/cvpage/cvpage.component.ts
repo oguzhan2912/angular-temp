@@ -10,12 +10,14 @@ import {MatFormFieldControl} from "@angular/material/form-field";
 })
 export class CvpageComponent implements OnInit {
 
-
-  constructor(public _formBuilder: FormBuilder,public dialog: MatDialog,) { }
-
+  isLinear = false;
+  panelOpenState = false;
   public isCollapsed = false;
 
   selected: Date | null | undefined;
+
+  constructor(public _formBuilder: FormBuilder,public dialog: MatDialog) { }
+
 
 /*---------------------------Stepper --------------------*/
   firstFormGroup = this._formBuilder.group({
@@ -46,8 +48,8 @@ export class CvpageComponent implements OnInit {
     ninthCtrl: ['', Validators.required],
   });
 
-  isLinear = false;
-  panelOpenState = false;
+
+
 
   ngOnInit(): void {
   }

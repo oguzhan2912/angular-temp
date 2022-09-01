@@ -21,9 +21,9 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Cinsiyet</mat-label>
-          <mat-select  [(ngModel)]="generalModel.gender"  >
-            <mat-option *ngFor="let genders of generalModel.gender" value="{{generalModel.gender}}" formControlName="firstCtrl">
-              {{genders}}</mat-option>
+          <mat-select  required  >
+            <mat-option *ngFor="let gender  of genders" [value]="gender.name">
+              {{gender.name}}</mat-option>
           </mat-select>
         </mat-form-field>
       </p>
@@ -32,8 +32,8 @@
       <p >
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Eğitim Durumu</mat-label>
-          <mat-select  [(ngModel)]="generalModel.graduation"  >
-            <mat-option *ngFor="let graduations of generalModel.graduation" value="{{generalModel.graduation}}">{{graduations}}</mat-option>
+          <mat-select  required  >
+            <mat-option *ngFor="let education of educations" value="{{education.name}}">{{education.name}}</mat-option>
           </mat-select>
         </mat-form-field>
       </p>
@@ -50,8 +50,8 @@
       <p>
       <mat-form-field appearance="outline" style="width: 100%;">
         <mat-label>Kimlik Türü</mat-label>
-        <mat-select [disabled]="disableSelectCitizen.value"  [(ngModel)]="generalModel.identityType" >
-          <mat-option *ngFor="let identypes of generalModel.identityType">{{identypes}}</mat-option>
+        <mat-select [disabled]="disableSelectCitizen.value"  required >
+          <mat-option *ngFor="let identy of identities" [value]="identy.name">{{identy.name}}</mat-option>
         </mat-select>
       </mat-form-field>
       </p>
@@ -69,8 +69,8 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Medeni Durum</mat-label>
-          <mat-select  [(ngModel)]="generalModel.martialStatus" >
-            <mat-option *ngFor="let status of generalModel.martialStatus"  value="{{generalModel.martialStatus}}">{{status}}</mat-option>
+          <mat-select  required >
+            <mat-option *ngFor="let marriage of marriages"  value="{{marriage.name}}">{{marriage.name}}</mat-option>
           </mat-select>
         </mat-form-field>
       </p>
@@ -86,9 +86,9 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Sürücü Belgesi Türü</mat-label>
-          <mat-select  [(ngModel)]="generalModel.driverLicenseType" [disabled]="disableSelectDriver.value" >
-            <mat-option *ngFor="let driverTypes of generalModel.driverLicenseType" value="{{generalModel.driverLicenseType}}">
-              {{driverTypes}}</mat-option>
+          <mat-select  [disabled]="disableSelectDriver.value" required >
+            <mat-option *ngFor="let driver of drivers" value="{{driver.name}}">
+              {{driver.name}}</mat-option>
           </mat-select>
         </mat-form-field>
       </p>
@@ -97,8 +97,8 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Uyruk</mat-label>
-          <mat-select [(ngModel)]="generalModel.nation" >
-            <mat-option *ngFor="let nations of generalModel.nation" value="{{generalModel.nation}}">{{nations}}</mat-option>
+          <mat-select required >
+            <mat-option *ngFor="let nation of nations" value="{{nation.name}}">{{nation.name}}</mat-option>
           </mat-select>
         </mat-form-field>
       </p>
@@ -119,19 +119,18 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Doğduğu Ülke</mat-label>
-        <mat-select [(ngModel)]="generalModel.bornedCountry" >
-          <mat-option *ngFor="let countries of generalModel.bornedCountry" value="{{generalModel.bornedCountry}}">
-            {{countries}}</mat-option>
+        <mat-select required >
+          <mat-option *ngFor="let country of countries" value="{{country.name}}">
+            {{country.name}}</mat-option>
         </mat-select>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Doğduğu Şehir</mat-label>
-        <mat-select [(ngModel)]="generalModel.bornedCity"  >
-          <mat-option *ngFor="let cities of generalModel.bornedCity" value="{{generalModel.bornedCity}}">
-            {{cities}}</mat-option>
-          <option value="female">Afrika</option>
+        <mat-select required >
+          <mat-option *ngFor="let city of cities" value="{{city.name}}">
+            {{city.name}}</mat-option>
         </mat-select>
       </mat-form-field>
     </td>

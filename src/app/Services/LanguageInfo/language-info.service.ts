@@ -15,4 +15,6 @@ export class LanguageInfoService {
   getItemList(){
     return this.http.get(environment.apiUrl + "Languages/GetLanguages").toPromise();
   }
+
+
 }

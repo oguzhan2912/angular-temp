@@ -7,16 +7,16 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Okul Adı</mat-label>
-        <mat-select [(ngModel)]="educationModel.degreeName" required>
-          <mat-option *ngFor="let degreeNames for educationModel.degreeName" value="{{educationModel.degreeName}}">{{degreeNames}}</mat-option>
+        <mat-select required >
+          <mat-option *ngFor="let school of schools" value="{{school.name}}">{{school.name}}</mat-option>
         </mat-select>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Bölüm Adı</mat-label>
-        <mat-select [(ngModel)]="educationModel.departmentDegree" required>
-          <mat-option *ngFor="let degreeDepartments for educationModel.departmentDegree">{{degreeDepartments}}</mat-option>
+        <mat-select required >
+          <mat-option *ngFor="let departmanD of departmentsDegree" value="{{departmanD.name}}">{{departmanD.name}}</mat-option>
         </mat-select>
       </mat-form-field>
     </td>

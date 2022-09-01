@@ -6,24 +6,21 @@
   <tr>
     <td><p><mat-form-field appearance="outline" style="width: 100%;">
       <mat-label>Ülke</mat-label>
-      <select matNativeControl required>
-        <option value="male">Berlin</option>
-        <option value="female">Afrika</option>
-      </select>
+      <mat-select required >
+        <mat-option *ngFor="let country of countries" value="{{country.name}}">{{country.name}}</mat-option>
+      </mat-select>
     </mat-form-field></p></td>
     <td><p><mat-form-field appearance="outline" style="width: 100%;">
       <mat-label>İl</mat-label>
-      <select matNativeControl required>
-        <option value="male">Berlin</option>
-        <option value="female">Afrika</option>
-      </select>
+      <mat-select required >
+        <mat-option *ngFor="let city of cities" value="{{city.name}}">{{city.name}}</mat-option>
+      </mat-select>
     </mat-form-field></p></td>
     <td><p><mat-form-field appearance="outline" style="width: 100%;">
       <mat-label>İlçe</mat-label>
-      <select matNativeControl required>
-        <option value="male">Berlin</option>
-        <option value="female">Afrika</option>
-      </select>
+      <mat-select required >
+        <mat-option *ngFor="let district of districts" value="{{district.name}}">{{district.name}}</mat-option>
+      </mat-select>
     </mat-form-field></p></td>
     <td><p><mat-form-field appearance="outline" style="width: 100%;">
       <mat-label>Adres Giriniz</mat-label>

@@ -131,16 +131,16 @@
             <td>
               <mat-form-field appearance="outline">
                 <mat-label>Okul Adı</mat-label>
-                <mat-select [(ngModel)]="educationModel.associateName" required>
-                  <mat-option *ngFor="let associateNames for educationModel.associateName" value="{{educationModel.associateName}}">{{associateNames}}</mat-option>
+                <mat-select required >
+                  <mat-option *ngFor="let school of schools" value="{{school.name}}">{{school.name}}</mat-option>
                 </mat-select>
               </mat-form-field>
             </td>
             <td>
               <mat-form-field appearance="outline">
                 <mat-label>Bölüm Adı</mat-label>
-                <mat-select [(ngModel)]="educationModel.departmentAssociate" required>
-                  <mat-option *ngFor="let associateDepartments for educationModel.departmentAssociate">{{associateDepartments}}</mat-option>
+                <mat-select required >
+                  <mat-option *ngFor="let departmentA of departmentAssociate" value="{{departmentA.name}}">{{departmentA.name}}</mat-option>
                 </mat-select>
               </mat-form-field>
             </td>
