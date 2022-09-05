@@ -1,5 +1,5 @@
 
-<mat-stepper  [linear]="isLinear" #stepper style="background-color:#B6ADAF">
+<mat-stepper  [linear]="isLinear" #stepper style="background-color:#BDD9BF">
   <mat-step [stepControl]="firstForm2Group">
     <form [formGroup]="firstForm2Group">
       <ng-template matStepLabel>İlkokul Bilgileri</ng-template>
@@ -30,7 +30,8 @@
       </table>
       </div>
       <div>
-        <button mat-raised-button color="primary" matStepperNext>Next</button>
+
+        <button mat-raised-button class="next-button" matStepperNext>Next</button>
       </div>
 
     </form>
@@ -67,8 +68,8 @@
       </table>
       </div>
       <div>
-        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-        <button mat-raised-button color="primary" matStepperNext>Next</button>
+        <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+        <button mat-raised-button class="next-button" matStepperNext>Next</button>
       </div>
 
     </form>
@@ -110,8 +111,8 @@
       </table>
       </div>
       <div>
-        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-        <button mat-raised-button color="primary" matStepperNext>Next</button>
+        <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+        <button mat-raised-button class="next-button" matStepperNext>Next</button>
       </div>
 
     </form>
@@ -188,8 +189,8 @@
 
       </div>
       <div >
-        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-        <button mat-raised-button color="primary" matStepperNext>Next</button>
+        <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+        <button mat-raised-button class="next-button" matStepperNext>Next</button>
       </div >
 
     </form>
@@ -224,8 +225,8 @@
       </table>
       </div>
       <div>
-        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-        <button mat-raised-button color="primary" matStepperNext>Next</button>
+        <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+        <button mat-raised-button class="next-button" matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
@@ -259,8 +260,8 @@
       </table>
       </div>
       <div>
-        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-        <button mat-raised-button color="primary" matStepperNext>Next</button>
+        <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+        <button mat-raised-button class="next-button" matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
@@ -334,9 +335,9 @@
       </table>
     </div>
     <div>
-      <button mat-raised-button color="danger" (click)="stepper.reset()">Next</button>
-      <button mat-raised-button color="warn" matStepperPrevious>Başa Dön!</button>
-      <button mat-raised-button color="primary" matStepperNext>Devam et</button>
+      <button mat-raised-button color="danger" (click)="stepper.reset()">Reset</button>
+      <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+      <button mat-raised-button class="next-button" matStepperNext>Next</button>
     </div>
   </form>
   </mat-step>

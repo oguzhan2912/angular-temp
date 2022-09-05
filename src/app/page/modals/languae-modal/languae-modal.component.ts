@@ -18,7 +18,6 @@ import {exams} from "../../../Data/Languages/Exam/examstore";
 export class LanguaeModalComponent implements OnInit {
 
   formData:LanguageInfo;
-  languageItem:LanguageItemModel=new LanguageItemModel();
   languageModel: LanguageInfo=new LanguageInfo();
   LanguageList:LanguageInfo[];
   public languages:any=languages;
@@ -40,12 +39,12 @@ export class LanguaeModalComponent implements OnInit {
     if (this.data==null){
       this.formData={
         LanguageID:0,
-        LanguageName:[],
-        SpeakingLvl:[],
-        ReadingLvl:[],
-        WritingLvl:[],
-        UnderstandingLvl:[],
-        LanguageExam:[],
+        LanguageName:"",
+        SpeakingLvl:0,
+        ReadingLvl:0,
+        WritingLvl:0,
+        UnderstandingLvl:0,
+        LanguageExam:"",
         ExamResult:0,
       }
     }else{

@@ -9,12 +9,12 @@
     </button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     </button>
-    <button mat-raised-button color="warn" style="margin-left: 65%;background-color: #fa0000"><a [routerLink]="['/singing']">Çıkış Yap</a></button>
+    <button mat-raised-button color="warn" style="margin-left: 65%;color:white;background-color: #fa0000"><a [routerLink]="['/singing']">Çıkış Yap</a></button>
   </mat-toolbar>
 </p>
 
 
-<div class="container" style="margin-top:-0.9%;background-color:#3F5576">
+<div class="container" style="margin-top:-0.9%;background-color:#75B8C8">
   <mat-grid-list cols="6" rowHeight="900px" >
     <mat-grid-tile  class="side-grid">
       <div style="margin-top:-180%;width: 120%;">
@@ -46,7 +46,7 @@
       </div>
     </mat-grid-tile >
     <mat-grid-tile colspan="5" >
-      <mat-stepper [linear]="isLinear" #stepper style="width: 100%;height:100%;background-color:#8689AC">
+      <mat-stepper [linear]="isLinear" #stepper style="width: 100%;height:100%;background-color:#75B8C8">
         <mat-step  [stepControl]="firstFormGroup" style="background-color: #BF9B6F">
           <form [formGroup]="firstFormGroup " >
             <div class="container form-group" style="min-height: 600px;">
@@ -55,7 +55,7 @@
               <app-generalform ></app-generalform>
 
             <div style="margin-top:5%;width: 120%;">
-              <button mat-raised-button color="primary" matStepperNext>Next</button>
+              <button mat-raised-button class="next-button" matStepperNext>Next</button>
             </div>
             </div>
           </form>
@@ -68,8 +68,8 @@
 
               <app-contactform></app-contactform>
             <div style="margin-top:10%;">
-              <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-              <button mat-raised-button color="primary" matStepperNext>Next</button>
+              <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+              <button mat-raised-button class="next-button" matStepperNext>Next</button>
             </div>
             </div>
           </form>
@@ -82,22 +82,21 @@
             <app-educationform></app-educationform>
           </form>
           <div style="margin-top:14%;width: 120%;">
-            <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-            <button mat-raised-button color="danger" (click)="stepper.reset()">Reset</button>
-            <button mat-raised-button color="primary" matStepperNext>Next</button>
+            <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+            <button mat-raised-button class="next-button" matStepperNext>Next</button>
           </div>
         </mat-step>
 
         <mat-step [stepControl]="fourthFormGroup" label="Dil Bilgileri">
-          <form [formGroup]="fourthFormGroup" >
+          <form  [formGroup]="fourthFormGroup" >
           <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>Dil Bilgileri</ng-template>
           <app-languageform></app-languageform>
           </div>
           </form>
           <div style="margin-top:5%;width: 120%;">
-          <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" matStepperNext>Next</button>
+            <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+            <button mat-raised-button class="next-button" matStepperNext>Next</button>
           </div>
         </mat-step>
 
@@ -109,8 +108,8 @@
           </div>
           </form>
           <div style="margin-top:5%;width: 120%;">
-            <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-            <button mat-raised-button color="primary" matStepperNext>Next</button>
+            <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+            <button mat-raised-button class="next-button" matStepperNext>Next</button>
           </div>
         </mat-step>
 
@@ -122,8 +121,8 @@
           </div>
           </form>
           <div style="margin-top:5%;width: 120%;">
-            <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-            <button mat-raised-button color="primary" matStepperNext>Next</button>
+            <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+            <button mat-raised-button class="next-button" matStepperNext>Next</button>
           </div>
         </mat-step>
 
@@ -135,9 +134,8 @@
           </div>
           </form>
           <div style="margin-top:5%;width: 120%;">
-            <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-            <button mat-raised-button color="danger" (click)="stepper.reset()">Reset</button>
-            <button mat-raised-button color="primary" matStepperNext>Next</button>
+            <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+            <button mat-raised-button class="next-button" matStepperNext>Next</button>
           </div>
         </mat-step>
 
@@ -149,16 +147,16 @@
           </div>
           </form>
           <div style="margin-top:5%;width: 120%;">
-            <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-            <button mat-raised-button color="primary" matStepperNext>Next</button>
+            <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+            <button mat-raised-button class="next-button" matStepperNext>Next</button>
           </div>
         </mat-step>
 
         <mat-step [stepControl]="ninthFormGroup" label="Dosya Ekle">
           <form [formGroup]="ninthFormGroup" >
           <div style="margin-top:5%;width: 120%;">
-            <button mat-raised-button color="warn" matStepperPrevious>Back</button>
-            <button mat-raised-button color="primary" matStepperNext>Next</button>
+            <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+            <button mat-raised-button class="next-button" matStepperNext>Next</button>
           </div>
           </form>
         </mat-step>
@@ -172,3 +170,4 @@
 
   </mat-grid-list>
 </div>
+

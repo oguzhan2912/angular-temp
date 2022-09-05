@@ -13,6 +13,7 @@
   border-bottom: darkslateblue 3px solid;
   border-radius: 0.4rem;
   text-align: center;
+  background-color:#BF9B6F ;
 
 }
 
@@ -24,26 +25,26 @@
   text-align: center;
   background-color: rgba(197, 187, 246, 0.61);
 }
-.stepper-table-header{
-  padding: 10px;
-  font-size: larger;
-  border-right: darkslateblue 2px solid;
-  border-bottom: darkslateblue 3px solid;
-  text-align: center;}
-
-
 
 .navBar{
-  background-color: #04BFBF;
-  border-bottom: #55B6C9 6px solid ;
+  background-color: #283F3B;
+  border-bottom: #283F3B 6px solid ;
   border-radius:0.1rem;
+
 }
 .side-grid{
-  background-color: #4D6173;
-  border-right: #495065 6px solid ;
+  background-color: #0D5D56;
+  border-right: #0D5D56 6px solid ;
 
 }
 .footer-temp{
-  background-color: #529AD9;
-  border-top: #2b709b 6px solid;
+  background-color: #283F3B;
+  border-top: #283F3B 6px solid;
+  min-height: 30px;
+}
+.previous-button{
+  background-color: #90A955;
+}
+.next-button{
+  background-color: #ECF39E;
 }
