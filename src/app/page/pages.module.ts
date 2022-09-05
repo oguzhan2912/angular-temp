@@ -61,6 +61,8 @@ import { LanguageformComponent } from './forms/languageform/languageform.compone
 import { ReferanceformComponent } from './forms/referanceform/referanceform.component';
 import { SkillformComponent } from './forms/skillform/skillform.component';
 import { PostworkformComponent } from './forms/postworkform/postworkform.component';
+import { ImageCropperModule } from "ngx-image-cropper";
+import { PPhotoModelComponent } from './modals/p-photo-model/p-photo-model.component';
 
 
 
@@ -107,6 +109,7 @@ import { PostworkformComponent } from './forms/postworkform/postworkform.compone
     MatDialogModule,
     MatExpansionModule,
     MatSelectModule,
+    ImageCropperModule
 
 
   ],
@@ -137,6 +140,7 @@ import { PostworkformComponent } from './forms/postworkform/postworkform.compone
         ReferanceformComponent,
         SkillformComponent,
         PostworkformComponent,
+        PPhotoModelComponent,
 
 
 

@@ -4,19 +4,21 @@
   </thead>
   <tbody>
   <tr>
-    <td >
+    <td>
       <p>
         <mat-form-field appearance="outline" style="width: 100%;" >
           <mat-label>İsim giriniz.</mat-label>
           <input matInput [(ngModel)]="generalModel.Name"  placeholder="İsim" >
         </mat-form-field>
       </p></td>
-    <td><p>
+    <td>
+      <p>
       <mat-form-field appearance="outline" style="width: 100%;">
         <mat-label  >Soyisim giriniz.</mat-label>
         <input matInput  [(ngModel)]="generalModel.Lastname" placeholder="Soyisim"  >
       </mat-form-field>
-    </p></td>
+    </p>
+    </td>
     <td>
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
@@ -39,6 +41,7 @@
       </p>
     </td>
   </tr>
+
   <tr>
     <td>
       <p>
@@ -76,6 +79,7 @@
       </p>
     </td>
   </tr>
+
   <tr>
     <td>
       <p>
@@ -103,7 +107,9 @@
         </mat-form-field>
       </p>
     </td>
+    <td ><button mat-raised-button  style="color:white;background-color: #0ed7d7;margin-left: 25%;margin-bottom:17% " (click)="openModal()">Fotoğraf Ekle</button></td>
   </tr>
+
   <mat-divider style="width: 450%;"></mat-divider>
   <h2 style="margin-top:13px;">Kişisel Bilgiler</h2>
   <tr>

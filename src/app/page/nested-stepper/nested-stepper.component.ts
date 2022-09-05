@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {DegreeModalComponent} from "../modals/degree-modal/degree-modal.component";
 import {EducationInfo} from "../../Services/EducationInfo/education-info.model";
 import {departmentAssociate} from "../../Data/Education/associatestore";
 import {departmentsDegree} from "../../Data/Education/departmentstore";
 import {schools} from "../../Data/Education/educationstore";
+import {PostgraduateDegreeComponent} from "../modals/postgraduate-degree/postgraduate-degree.component";
 
 
 @Component({
@@ -50,8 +51,17 @@ export class NestedStepperComponent implements OnInit {
 
   isLinear = false;
   openDialog() {
-    this.dialog.open(DegreeModalComponent);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.width = "200%";
+    this.dialog.open(DegreeModalComponent,dialogConfig);
   }
+
+  openPostDegreeDialog() {
+    this.dialog.open(PostgraduateDegreeComponent);
+  }
+
   ngOnInit(): void {
   }
 

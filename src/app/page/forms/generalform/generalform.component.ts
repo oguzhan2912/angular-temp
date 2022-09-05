@@ -11,6 +11,10 @@ import {cities} from "../../../Data/General/citystore";
 import {countries} from "../../../Data/General/countrystore";
 import {marriages} from "../../../Data/General/marriagestore";
 
+import {PostgraduateDegreeComponent} from "../../modals/postgraduate-degree/postgraduate-degree.component";
+import{MatDialog} from "@angular/material/dialog";
+import {PPhotoModelComponent} from "../../modals/p-photo-model/p-photo-model.component";
+
 @Component({
   selector: 'app-generalform',
   templateUrl: './generalform.component.html',
@@ -31,9 +35,14 @@ export class GeneralformComponent implements OnInit {
   public marriages:any=marriages;
 
 
-  constructor(public _formBuilder: FormBuilder,public generalService:GeneralInfoService) { }
+
+  constructor(public _formBuilder: FormBuilder,public generalService:GeneralInfoService, public dialog:MatDialog) { }
+
 
   ngOnInit(): void {
+  }
+  openModal() {
+    this.dialog.open(PPhotoModelComponent);
   }
 
 }

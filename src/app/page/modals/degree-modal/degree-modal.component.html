@@ -12,8 +12,8 @@
         </mat-select>
       </mat-form-field>
     </td>
-    <td>
-      <mat-form-field appearance="outline">
+    <td style="width: 1400%">
+      <mat-form-field appearance="outline" style="width: 100%">
         <mat-label>Bölüm Adı</mat-label>
         <mat-select required >
           <mat-option *ngFor="let departmanD of departmentsDegree" value="{{departmanD.name}}">{{departmanD.name}}</mat-option>
@@ -23,8 +23,8 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Öğrenim Türü</mat-label>
-        <mat-select [(ngModel)]="educationModel.graduationState" required>
-          <mat-option *ngFor="let degraaStates for educationModel.graduationState" value="{{educationModel.graduationState}}">{{degraaStates}}</mat-option>
+        <mat-select required>
+          <mat-option *ngFor="let state of states" value="{{state.name}}">{{state.name}}</mat-option>
         </mat-select>
       </mat-form-field>
     </td>

@@ -11,9 +11,11 @@
       </mat-form-field>
     </td>
     <td>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" style="width: 100%;">
         <mat-label>Tecrübe Yılı</mat-label>
-        <input matInput [(ngModel)]="skillModel.skillYear" placeholder="Ad Giriniz." >
+        <mat-select required >
+          <mat-option *ngFor="let year of years" [value]="year.model">{{year.model}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </td>
   </tr>

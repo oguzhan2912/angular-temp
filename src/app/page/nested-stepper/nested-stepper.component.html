@@ -136,11 +136,11 @@
                 </mat-select>
               </mat-form-field>
             </td>
-            <td>
-              <mat-form-field appearance="outline">
+            <td style="width: 160%">
+              <mat-form-field appearance="outline" style="width: 100%">
                 <mat-label>Bölüm Adı</mat-label>
                 <mat-select required >
-                  <mat-option *ngFor="let departmentA of departmentAssociate" value="{{departmentA.name}}">{{departmentA.name}}</mat-option>
+                  <mat-option  *ngFor="let departmentA of departmentAssociate" value="{{departmentA.name}}">{{departmentA.name}}</mat-option>
                 </mat-select>
               </mat-form-field>
             </td>
@@ -148,7 +148,7 @@
               <mat-form-field appearance="outline">
                 <mat-label>Öğrenim Türü</mat-label>
                 <mat-select [(ngModel)]="educationModel.associateState" required>
-                  <mat-option *ngFor="let associateStates for educationModel.associateState" value="{{educationModel.associateState}}">{{associateStates}}</mat-option>
+                  <mat-option *ngFor="let associateStates of educationModel.associateState" value="{{educationModel.associateState}}">{{associateStates}}</mat-option>
                 </mat-select>
               </mat-form-field>
             </td>
@@ -206,7 +206,7 @@
         <tbody>
         <tr >
           <td class="stepper-table-button" >
-            <button mat-raised-button color="primary" style="color:white;" (click)="openDialog()">Lisans Ekle</button></td>
+            <button mat-raised-button color="primary" style="color:white;" (click)="openDialog()"><mat-icon>library_add</mat-icon></button></td>
           <td class="stepper-table-header">Okul İsmi</td>
           <td class="stepper-table-header">Bölüm İsmi</td>
           <td class="stepper-table-header">Öğrenim Durumu</td>
@@ -241,7 +241,7 @@
         <tbody>
         <tr >
           <td class="stepper-table-button" >
-            <button mat-raised-button color="primary" style="color:white;" (click)="openDialog()">Yüksek Ekle</button></td>
+            <button mat-raised-button color="primary" style="color:white;" (click)="openPostDegreeDialog()"><mat-icon>library_add</mat-icon></button></td>
           <td class="stepper-table-header">Okul İsmi</td>
           <td class="stepper-table-header">Bölüm İsmi</td>
           <td class="stepper-table-header">Öğrenim Durumu</td>
