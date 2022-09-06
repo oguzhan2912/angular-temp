@@ -1,7 +1,7 @@
 
 export class LanguageItemModel  {
 
-  LanguageID:number;
+  LanguageId:number;
   LanguageItemID:number;
   LanguageName:string[];
   SpeakingLvl:number[];

@@ -1,16 +1,23 @@
-<table>
+<table style="width: 100%">
   <thead>
   <h2>Yeteneklerim</h2>
   </thead>
   <tbody>
   <tr >
     <td class="stepper-table-button" >
-      <button mat-raised-button color="primary" style="color:white;" (click)="openSkillModal()">Yetenek Ekle</button></td>
+      <button mat-raised-button color="primary" style="color:white;" (click)="openSkillModal(null,SkillModal.SkillId)">Yetenek Ekle</button></td>
     <td class="stepper-table-header">Yetenek Adı</td>
     <td class="stepper-table-header">Tecrübe Yılı</td>
   </tr>
-  <td class="stepper-table-body"></td>
-  <td class="stepper-table-body">Excel</td>
-  <td class="stepper-table-body">7</td>
+  <tr style="text-align: center" *ngIf="SkillList.length==0">
+    <td style="text-align:center;" colspan="8"> <strong>Lütfen Yetenek Bilgisi Ekleyiniz.</strong> </td>
+  </tr>
+  <tr *ngFor="let item of SkillList">
+    <td class="stepper-table-button" (click)="openSkillModal(null,item.SkillId)"><i class=" fa fa-pencil"></i></td>
+    <td class="stepper-table-body">{{item.SkillName}}</td>
+    <td class="stepper-table-body">Yıl</td>
+
+
+  </tr>
   </tbody>
 </table>

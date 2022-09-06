@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {ReferanceModalComponent} from "../../modals/referance-modal/referance-modal.component";
+import {ReferanceInfo} from "../../../Services/ReferanceInfo/referance-info.model";
+import {ReferanceInfoService} from "../../../Services/ReferanceInfo/referance-info.service";
 
 @Component({
   selector: 'app-referanceform',
@@ -9,13 +11,19 @@ import {ReferanceModalComponent} from "../../modals/referance-modal/referance-mo
 })
 export class ReferanceformComponent implements OnInit {
 
-  constructor(public dialog: MatDialog,) { }
-
-  openReferanceModal(){
-    this.dialog.open(ReferanceModalComponent);
-  }
+  ReferanceList:ReferanceInfo[];
+  referanceModal:ReferanceInfo=new ReferanceInfo();
+  constructor(public dialog: MatDialog,private referanceService:ReferanceInfoService) { }
 
   ngOnInit(): void {
+    this.referanceService.getItemList().then(res=>this.ReferanceList=res as ReferanceInfo[])
   }
+
+  openReferanceModal(ReferanceModelIndex,ReferanceId){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = { ReferanceModelIndex, ReferanceId };
+    this.dialog.open(ReferanceModalComponent,dialogConfig);
+  }
+
 
 }

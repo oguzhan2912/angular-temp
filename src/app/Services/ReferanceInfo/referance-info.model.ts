@@ -1,10 +1,11 @@
 export class ReferanceInfo {
 
-  referanceName:string;
-  referanceFoundation:string;
-  referanceEmail:string;
-  referancePhone:number;
-  referancePhone2:number;
+  ReferanceId:number
+  ReferanceName:string;
+  ReferanceFoundation:string;
+  ReferanceEmail:string;
+  ReferancePhoneNumber:number;
+  ReferancePhoneNumber2:number;
 
   constructor( ) {
 

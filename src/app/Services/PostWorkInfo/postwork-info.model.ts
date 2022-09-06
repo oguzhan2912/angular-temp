@@ -1,23 +1,14 @@
 export class PostworkInfo {
-  company:string;
-  companyDepartment:string;
-  companyPosition:string;
-  companyMission:string;
-  lastSalary:number;
-  companyStartingDate:Date;
-  stillWorking:boolean;
-  companyLeavingDate:Date;
-  companyLeavingReason:string;
+  PostWorkId:number;
+  CompanyName:string;
+  CompanyDepartment:string;
+  CompanyPosition:string;
+  CompanyMission:string;
+  CompanySalary:number;
+  CompanyStartingDate:Date;
+  CompanyStillWorking:boolean;
+  CompanyLeavingDate:Date;
+  CompanyLeavingReason:string;
 
-  constructor() {
-    this.company='';
-    this.companyDepartment='';
-    this.companyPosition='';
-    this.companyMission='';
-    this.lastSalary=0;
-    this.companyStartingDate=new Date();
-    this.stillWorking=true;
-    this.companyLeavingReason='';
-    this.companyLeavingDate=new Date();
-  }
+
 }

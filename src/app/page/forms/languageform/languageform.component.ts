@@ -3,8 +3,7 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig} from "@angular/material/dia
 import {LanguaeModalComponent} from "../../modals/languae-modal/languae-modal.component";
 import {LanguageInfo} from "../../../Services/LanguageInfo/language-info.model";
 import {LanguageInfoService} from "../../../Services/LanguageInfo/language-info.service";
-import {LanguageItemModel} from "../../../Services/LanguageInfo/language-item/language-item.model";
- import {NgForm} from "@angular/forms";
+
 
 
 @Component({
@@ -15,18 +14,17 @@ import {LanguageItemModel} from "../../../Services/LanguageInfo/language-item/la
 export class LanguageformComponent implements OnInit {
 
 
+  LanguageList:LanguageInfo[];
   languageModel: LanguageInfo=new LanguageInfo();
-  languageItemModel:Array<LanguageInfo>=new Array<LanguageInfo>();
 
 
 
-
-  constructor(@Inject(MAT_DIALOG_DATA) public data,
-              public dialog: MatDialog,
-              private languageService:LanguageInfoService,) { }
+  constructor(public dialog: MatDialog,private languageService:LanguageInfoService) { }
 
   ngOnInit(): void {
-  this.languageItemModel=this.languageService.languageModel;
+    this.LanguageList=this.languageService.languageModel;
+    this.languageService.getItemList().then(res=>this.LanguageList=res as LanguageInfo[]);
+
   }
 
 
@@ -34,11 +32,9 @@ export class LanguageformComponent implements OnInit {
 
 
 
-
-  openLanguageModal(languageItemModelIndex,languageID):void {
+  openLanguageModal(LanguageModelIndex,LanguageId):void {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = { languageItemModelIndex, languageID };
-
+    dialogConfig.data = { LanguageModelIndex, LanguageId };
     this.dialog.open(LanguaeModalComponent,dialogConfig);
   }
 

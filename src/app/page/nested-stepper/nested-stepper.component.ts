@@ -7,6 +7,7 @@ import {departmentAssociate} from "../../Data/Education/associatestore";
 import {departmentsDegree} from "../../Data/Education/departmentstore";
 import {schools} from "../../Data/Education/educationstore";
 import {PostgraduateDegreeComponent} from "../modals/postgraduate-degree/postgraduate-degree.component";
+import {EducationInfoService} from "../../Services/EducationInfo/education-info.service";
 
 
 @Component({
@@ -16,11 +17,14 @@ import {PostgraduateDegreeComponent} from "../modals/postgraduate-degree/postgra
 })
 export class NestedStepperComponent implements OnInit {
 
+  EducationList:EducationInfo[];
   educationModel:EducationInfo=new EducationInfo();
   public departmentAssociate:any=departmentAssociate;
   public departmentsDegree:any=departmentsDegree;
   public schools:any=schools;
-  constructor(private _formBuilder: FormBuilder,public dialog: MatDialog) { }
+  constructor(private _formBuilder: FormBuilder,
+              public dialog: MatDialog,
+              private educationService:EducationInfoService) { }
 
   /* ------------------------Stepper2 ----------------------*/
   firstForm2Group = this._formBuilder.group({
@@ -50,19 +54,24 @@ export class NestedStepperComponent implements OnInit {
 
 
   isLinear = false;
-  openDialog() {
+  openDialog(DegreeModalIndex,DegreeId) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = "200%";
+    dialogConfig.data={DegreeModalIndex,DegreeId}
     this.dialog.open(DegreeModalComponent,dialogConfig);
   }
 
-  openPostDegreeDialog() {
+  openPostDegreeDialog(AssociateModalIndex,AssociateId) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data={AssociateModalIndex,AssociateId}
     this.dialog.open(PostgraduateDegreeComponent);
   }
 
   ngOnInit(): void {
+    this.educationService.getDegreeList().then(res=>this.EducationList=res as EducationInfo[])
+    this.educationService.getAssociateList().then(res=>this.EducationList=res as EducationInfo[])
   }
 
 }

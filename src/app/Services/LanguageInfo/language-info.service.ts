@@ -12,13 +12,17 @@ export class LanguageInfoService {
 
   formData:LanguageInfo= new LanguageInfo();
   languageModel: Array<LanguageInfo>=[];
+  languageInfo:LanguageInfo[];
   constructor(private http: HttpClient) { }
 
   getItemList(){
     return this.http.get(environment.apiUrl + "Languages/GetLanguages").toPromise();
+
+
+
   }
   saveLanguage(languageModal:LanguageInfo){
-    this.formData.LanguageID=languageModal.LanguageID;
+    this.formData.LanguageId=languageModal.LanguageId;
     this.formData.LanguageName=languageModal.LanguageName;
     this.formData.LanguageExam=languageModal.LanguageExam;
     this.formData.SpeakingLvl=languageModal.SpeakingLvl;

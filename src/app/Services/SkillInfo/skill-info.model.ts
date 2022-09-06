@@ -1,6 +1,6 @@
 export class SkillInfo {
-  skillName:string;
-  skillYear:number;
+  SkillId:number;
+  SkillName:string;
 
   constructor() {
 

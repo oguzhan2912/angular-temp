@@ -1,5 +1,5 @@
 export class LanguageInfo{
-  LanguageID:number;
+  LanguageId:number;
   LanguageName:string;
   SpeakingLvl:number;
   ReadingLvl:number;
@@ -7,8 +7,4 @@ export class LanguageInfo{
   UnderstandingLvl:number;
   LanguageExam:string;
   ExamResult:number;
-
-  constructor() {
-
-  }
 }

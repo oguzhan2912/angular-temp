@@ -14,6 +14,7 @@ export class EducationInfo {
   highGPA:number;
 
   /* ------------------Degree İnfo------------------*/
+  DegreeId:number;
   degreeName:string[];
   graduationDateDegree:Date;
   departmentDegree:string[];
@@ -34,6 +35,7 @@ export class EducationInfo {
   newAssociateDepartment:string;
 
   /* ------------------Postgraduation İnfo------------------*/
+  PostDegreeId:number;
   postgraduationName:string[];
   postgraduationDateDegree:Date;
   departmentPostgraduation:string[];

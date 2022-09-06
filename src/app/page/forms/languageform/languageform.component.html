@@ -1,12 +1,11 @@
 
-<table>
+<table style="width: 100%">
   <thead>
   <h2>Dil Bilgileri</h2>
   </thead>
   <tbody>
   <tr >
-    <td class="stepper-table-button" >
-      <button mat-raised-button color="primary" style="color:white;" (click)="openLanguageModal(null,languageModel.LanguageID)">Dil Ekle</button></td>
+
     <td class="stepper-table-header">Dil Adı</td>
     <td class="stepper-table-header">Okuma Seviyesi</td>
     <td class="stepper-table-header">Yazma Seviyesi</td>
@@ -15,34 +14,34 @@
     <td class="stepper-table-header">Ortalama Seviye</td>
     <td class="stepper-table-header">Sınav Türü</td>
     <td class="stepper-table-header">Sınav Puanı</td>
+    <td class="stepper-table-button" >
+    <button mat-raised-button  style="background-color:#8a9b6e;" (click)="openLanguageModal(null,languageModel.LanguageId)">Dil Ekle</button></td>
   </tr>
-  <tr >
-    <td class="stepper-table-body-first" ><i class=" fa fa-pencil"></i></td>
-    <td class="stepper-table-body"></td>
-    <td class="stepper-table-body"></td>
-    <td class="stepper-table-body"> </td>
-    <td class="stepper-table-body"></td>
-    <td class="stepper-table-body"></td>
-    <td class="stepper-table-body">Ortalaama</td>
-    <td class="stepper-table-body"></td>
-    <td class="stepper-table-body-last"></td>
 
-  </tr>
-  <tr *ngIf="languageItemModel.length==0">
+  <tr *ngIf="LanguageList.length==0" [class.text-danger]="!isValid&&LanguageList.length==0">
     <td style="text-align:center;" colspan="8"> <strong>Lütfen Dil Bilgisi Ekleyiniz.</strong> </td>
   </tr>
-  <tr *ngFor="let item of languageItemModel;let i=index">
-    <td class="stepper-table-body" (click)="openLanguageModal(null,languageModel.LanguageID)"><i class=" fa fa-pencil"></i></td>
-    <td class="stepper-table-body">{{item.LanguageName}}</td>
+  <tr *ngFor="let item of LanguageList,let i= index;">
+
+    <td class="stepper-table-body" >{{item.LanguageName}}</td>
     <td class="stepper-table-body">{{item.ReadingLvl}}</td>
     <td class="stepper-table-body"> {{item.WritingLvl}}</td>
     <td class="stepper-table-body">{{item.SpeakingLvl}}</td>
     <td class="stepper-table-body">{{item.UnderstandingLvl}}</td>
-    <td class="stepper-table-body">Ortalaama</td>
+    <td class="stepper-table-body">Değer</td>
     <td class="stepper-table-body">{{item.LanguageExam}}</td>
     <td class="stepper-table-body">{{item.ExamResult}}</td>
+    <td class="stepper-table-button">
+    <button mat-fab color="primary" (click)="openLanguageModal(i,item.LanguageId)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-fab color="accent" (click)="openLanguageModal(i,item.LanguageId)">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </td>
 
   </tr>
   </tbody>
 </table>
+
 

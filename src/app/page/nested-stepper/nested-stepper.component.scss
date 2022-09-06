@@ -1,50 +1,45 @@
 .stepper-table-header{
-  padding: 10px;
   font-size: larger;
-  border-right: darkslateblue 2px solid;
-  border-bottom: darkslateblue 3px solid;
   text-align: center;
+  background-color: #76918D;
+  color:white;
 }
-
 .stepper-table-button{
   padding: 10px;
   font-size: larger;
-  border-right: darkslateblue 2px solid;
-  border-bottom: darkslateblue 3px solid;
-  border-radius: 0.4rem;
   text-align: center;
-  background-color:#BF9B6F ;
-
+  background-color: #76918D;
+  color:#8a9b6e;
 }
-
 .stepper-table-body{
   padding: 8px;
   font-size: larger;
-  border-right: darkslateblue 1px solid;
-  border-bottom: darkslateblue 2px solid;
   text-align: center;
-  background-color: rgba(197, 187, 246, 0.61);
+  background-color: #C8F7F0;
 }
-
+.stepper-table-body-first{
+  padding: 8px;
+  font-size: larger;
+  text-align: center;
+  background-color: #C8F7F0;
+}
+.stepper-table-body-last{
+  padding: 8px;
+  font-size: larger;
+  text-align: center;
+  background-color: #C8F7F0;
+}
 .navBar{
-  background-color: #283F3B;
-  border-bottom: #283F3B 6px solid ;
+  background-color: #2F3148;
+  border-bottom: #2F3148 6px solid ;
   border-radius:0.1rem;
-
 }
 .side-grid{
-  background-color: #0D5D56;
-  border-right: #0D5D56 6px solid ;
+  background-color: #587099;
+  border-right: #495065 6px solid ;
 
 }
 .footer-temp{
-  background-color: #283F3B;
-  border-top: #283F3B 6px solid;
-  min-height: 30px;
-}
-.previous-button{
-  background-color: #90A955;
-}
-.next-button{
-  background-color: #ECF39E;
+  background-color: #2F3148;
+  border-top: #2F3148 6px solid;
 }

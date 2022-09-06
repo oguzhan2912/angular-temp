@@ -1,11 +1,11 @@
-<table>
+<table style="width: 100%">
   <thead>
   <h2>İş Bilgileri</h2>
   </thead>
   <tbody>
   <tr >
     <td class="stepper-table-button" >
-      <button mat-raised-button color="primary" style="color:white;" (click)="openWorkModal()">İş Ekle</button></td>
+      <button mat-raised-button color="primary" style="color:white;" (click)="openWorkModal(null,workModal.PostWorkId)">İş Ekle</button></td>
     <td class="stepper-table-header">Firma Adı</td>
     <td class="stepper-table-header">Çalıştığı Departman</td>
     <td class="stepper-table-header">Çalıştığı Pozisyon</td>
@@ -14,15 +14,19 @@
     <td class="stepper-table-header">Hala Aktif Çalışıyorum</td>
     <td class="stepper-table-header">İşten Ayrılış Tarihi</td>
   </tr>
-  <tr style="text-align: center">
-  <td class="stepper-table-body"></td>
-  <td class="stepper-table-body">TMV</td>
-  <td class="stepper-table-body">İnsan Kaynakları</td>
-  <td class="stepper-table-body">Genel Çaycı</td>
-  <td class="stepper-table-body">1000$</td>
-  <td class="stepper-table-body">9.08.2036</td>
-  <td class="stepper-table-body">Hayır</td>
-  <td class="stepper-table-body">9.09.2037</td>
+  <tr style="text-align: center" *ngIf="WorkList.length==0">
+    <td style="text-align:center;" colspan="8"> <strong>Lütfen İş Bilgisi Ekleyiniz.</strong> </td>
+  </tr>
+  <tr *ngFor="let item of WorkList">
+    <td class="stepper-table-button" (click)="openWorkModal(null,item.PostWorkId)"><i class=" fa fa-pencil"></i></td>
+    <td class="stepper-table-body">{{item.CompanyName}}</td>
+    <td class="stepper-table-body">{{item.CompanyDepartment}}</td>
+    <td class="stepper-table-body"> {{item.CompanyPosition}}</td>
+    <td class="stepper-table-body">{{item.CompanySalary}}</td>
+    <td class="stepper-table-body">{{item.CompanyStartingDate}}</td>
+    <td class="stepper-table-body">{{item.CompanyStillWorking}}</td>
+    <td class="stepper-table-body">{{item.CompanyLeavingDate}}</td>
+
   </tr>
 
   </tbody>

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {SkillmodalComponent} from "../../modals/skillmodal/skillmodal.component";
 import {years} from "../../../Data/Skills/yearsstore";
+import {SkillInfo} from "../../../Services/SkillInfo/skill-info.model";
+import {SkillInfoService} from "../../../Services/SkillInfo/skill-info.service";
+
 
 @Component({
   selector: 'app-skillform',
@@ -10,15 +13,21 @@ import {years} from "../../../Data/Skills/yearsstore";
 })
 export class SkillformComponent implements OnInit {
 
-  constructor(public dialog: MatDialog,) { }
+  SkillList: SkillInfo[];
+  SkillModal:SkillInfo=new SkillInfo();
+
+  constructor(public dialog: MatDialog,private SkillService:SkillInfoService,) { }
 
 
 
 
-  openSkillModal(){
-    this.dialog.open(SkillmodalComponent);
+  openSkillModal(SkillModalIndex,SkillId){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = { SkillModalIndex, SkillId };
+    this.dialog.open(SkillmodalComponent,dialogConfig);
   }
   ngOnInit(): void {
+    this.SkillService.getItemList().then(res=>this.SkillList=res as SkillInfo[])
   }
 
 }

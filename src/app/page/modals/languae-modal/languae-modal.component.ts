@@ -38,7 +38,7 @@ export class LanguaeModalComponent implements OnInit {
 
 
 
-  resetForm(form?:NgForm ){
+  /*resetForm(form?:NgForm ){
     //if(form = null)
       //form.resetForm();
     this.languageModel={
@@ -53,29 +53,14 @@ export class LanguaeModalComponent implements OnInit {
     };
     this.languageItemModel=[];
 
-  }
+  }*/
 
   onSubmit(form: NgForm) {
-    this.languagesService.saveLanguage(this.languageModel).subscribe(res=>{this.resetForm()});
+    this.languagesService.saveLanguage(this.languageModel).subscribe();
   }
 
 
   ngOnInit(): void {
-    this.languagesService.getItemList().then(res=>this.LanguageList=res as LanguageInfo[]);
 
-    if (this.data==null){
-      this.formData={
-        LanguageID:0,
-        LanguageName:"",
-        SpeakingLvl:0,
-        ReadingLvl:0,
-        WritingLvl:0,
-        UnderstandingLvl:0,
-        LanguageExam:"",
-        ExamResult:0,
-      }
-    }else{
-      this.formData=Object.assign({},this.languagesService.languageModel[this.data.languageItemModelIndex]);
-    }
   }
 }

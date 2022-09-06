@@ -63,6 +63,14 @@ import { SkillformComponent } from './forms/skillform/skillform.component';
 import { PostworkformComponent } from './forms/postworkform/postworkform.component';
 import { ImageCropperModule } from "ngx-image-cropper";
 import { PPhotoModelComponent } from './modals/p-photo-model/p-photo-model.component';
+import {LanguageInfoService} from "../Services/LanguageInfo/language-info.service";
+import {ContactInfoService} from "../Services/ContactInfo/contact-info.service";
+import {EducationInfoService} from "../Services/EducationInfo/education-info.service";
+import {PostworkInfoService} from "../Services/PostWorkInfo/postwork-info.service";
+import {ReferanceInfoService} from "../Services/ReferanceInfo/referance-info.service";
+import {SkillInfoService} from "../Services/SkillInfo/skill-info.service";
+import {OtherInfoService} from "../Services/OtherInfo/other-info.service";
+import {FileInfoService} from "../Services/FileInfo/file-info.service";
 
 
 
@@ -148,7 +156,18 @@ import { PPhotoModelComponent } from './modals/p-photo-model/p-photo-model.compo
   exports: [
     RegisterpageComponent,
   ],
-  providers: [ GeneralInfoService],
+  providers: [
+    GeneralInfoService,
+    LanguageInfoService,
+    ContactInfoService,
+    EducationInfoService,
+    PostworkInfoService,
+    ReferanceInfoService,
+    SkillInfoService,
+    OtherInfoService,
+    FileInfoService,
+
+  ],
 
 })
 
