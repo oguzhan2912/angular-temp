@@ -10,6 +10,7 @@ import {understandings} from "../../../Data/Languages/Understanding/understandin
 import {speakings} from "../../../Data/Languages/Speaking/speakingstore";
 import {exams} from "../../../Data/Languages/Exam/examstore";
 
+import {NgForm} from "@angular/forms";
 @Component({
   selector: 'app-languae-modal',
   templateUrl: './languae-modal.component.html',
@@ -28,10 +29,36 @@ export class LanguaeModalComponent implements OnInit {
   public exams:any=exams;
   public averageLvl:number;
 
+  languageItemModel:Array<LanguageInfo>=new Array<LanguageInfo>();
+
 
     constructor(@Inject(MAT_DIALOG_DATA)public data,
               public dialogRef:MatDialogRef<LanguaeModalComponent>,
               private languagesService:LanguageInfoService) { }
+
+
+
+  resetForm(form?:NgForm ){
+    //if(form = null)
+      //form.resetForm();
+    this.languageModel={
+      LanguageID:0,
+      LanguageName:"",
+      WritingLvl:0,
+      ReadingLvl:0,
+      UnderstandingLvl:0,
+      SpeakingLvl:0,
+      LanguageExam:"",
+      ExamResult:0
+    };
+    this.languageItemModel=[];
+
+  }
+
+  onSubmit(form: NgForm) {
+    this.languagesService.saveLanguage(this.languageModel).subscribe(res=>{this.resetForm()});
+  }
+
 
   ngOnInit(): void {
     this.languagesService.getItemList().then(res=>this.LanguageList=res as LanguageInfo[]);
@@ -51,7 +78,4 @@ export class LanguaeModalComponent implements OnInit {
       this.formData=Object.assign({},this.languagesService.languageModel[this.data.languageItemModelIndex]);
     }
   }
-
-
-
 }

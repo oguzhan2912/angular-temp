@@ -31,22 +31,7 @@ export class LanguageformComponent implements OnInit {
 
 
 
-  resetForm(form?: NgForm ){
-    if(form == null)
-      form.resetForm();
-    this.languageModel={
-      LanguageID:0,
-      LanguageName:"",
-      WritingLvl:0,
-      ReadingLvl:0,
-      UnderstandingLvl:0,
-      SpeakingLvl:0,
-      LanguageExam:"",
-      ExamResult:0
-    };
-    this.languageItemModel=[];
 
-  }
 
 
 
@@ -57,7 +42,5 @@ export class LanguageformComponent implements OnInit {
     this.dialog.open(LanguaeModalComponent,dialogConfig);
   }
 
-  onSubmit(form: NgForm) {
-    this.languageService.saveLanguage(this.languageModel).subscribe(res=>{this.resetForm();});
-  }
+
 }
