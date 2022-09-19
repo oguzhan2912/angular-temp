@@ -1,5 +1,5 @@
 export class PostworkInfo {
-  PostWorkId:number;
+  id:number;
   CompanyName:string;
   CompanyDepartment:string;
   CompanyPosition:string;

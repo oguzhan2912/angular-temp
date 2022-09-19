@@ -1,10 +1,10 @@
 export class LanguageInfo{
-  LanguageId:number;
-  LanguageName:string;
-  SpeakingLvl:number;
-  ReadingLvl:number;
-  WritingLvl:number
-  UnderstandingLvl:number;
-  LanguageExam:string;
-  ExamResult:number;
+  id:number;
+  languageName:string;
+  speakingLvl:number;
+  readingLvl:number;
+  writingLvl:number
+  understandingLvl:number;
+  languageExam:string;
+  examResult:number;
 }

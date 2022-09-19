@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {EducationInfo} from "../../../Services/EducationInfo/education-info.model";
+import {EducationInfo, PostDegreeInfo} from "../../../Services/EducationInfo/education-info.model";
 import {schools} from "../../../Data/Education/educationstore";
 import {states} from "../../../Data/Education/eduState";
 
@@ -10,7 +10,7 @@ import {states} from "../../../Data/Education/eduState";
 })
 export class PostgraduateDegreeComponent implements OnInit {
 
-  educationModel: EducationInfo=new EducationInfo();
+  educationModel: PostDegreeInfo=new PostDegreeInfo();
   public schools:any=schools;
   public states:any=states;
   constructor() { }

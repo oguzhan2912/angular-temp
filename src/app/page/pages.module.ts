@@ -71,6 +71,14 @@ import {ReferanceInfoService} from "../Services/ReferanceInfo/referance-info.ser
 import {SkillInfoService} from "../Services/SkillInfo/skill-info.service";
 import {OtherInfoService} from "../Services/OtherInfo/other-info.service";
 import {FileInfoService} from "../Services/FileInfo/file-info.service";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import { PrimarySchoolComponent } from './nested-stepper/forms/primary-school/primary-school.component';
+import { SecondarySchoolComponent } from './nested-stepper/forms/secondary-school/secondary-school.component';
+import { HighSchoolComponent } from './nested-stepper/forms/high-school/high-school.component';
+import { AssociateSchoolComponent } from './nested-stepper/forms/associate-school/associate-school.component';
+import { DegreeSchoolComponent } from './nested-stepper/forms/degree-school/degree-school.component';
+import { PostDegreeSchoolComponent } from './nested-stepper/forms/post-degree-school/post-degree-school.component';
+import { PhdSchoolComponent } from './nested-stepper/forms/phd-school/phd-school.component';
 
 
 
@@ -117,7 +125,8 @@ import {FileInfoService} from "../Services/FileInfo/file-info.service";
     MatDialogModule,
     MatExpansionModule,
     MatSelectModule,
-    ImageCropperModule
+    ImageCropperModule,
+    MatPaginatorModule
 
 
   ],
@@ -149,6 +158,13 @@ import {FileInfoService} from "../Services/FileInfo/file-info.service";
         SkillformComponent,
         PostworkformComponent,
         PPhotoModelComponent,
+        PrimarySchoolComponent,
+        SecondarySchoolComponent,
+        HighSchoolComponent,
+        AssociateSchoolComponent,
+        DegreeSchoolComponent,
+        PostDegreeSchoolComponent,
+        PhdSchoolComponent,
 
 
 

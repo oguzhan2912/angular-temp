@@ -1,5 +1,5 @@
 export class EducationInfo {
-
+  id:number;
   /* ------------------Primary School İnfo----------------*/
   primarySchoolName:string[];
   graduationDatePrimary:Date;
@@ -13,17 +13,6 @@ export class EducationInfo {
   departmentHigh:string[];
   highGPA:number;
 
-  /* ------------------Degree İnfo------------------*/
-  DegreeId:number;
-  degreeName:string[];
-  graduationDateDegree:Date;
-  departmentDegree:string[];
-  degreeCountry:string[];
-  graduationState:string[];
-  degreeGPA:number;
-  newDegreeSchool:string;
-  newDegreeDepartment:string;
-
   /* ------------------Associate İnfo------------------*/
   associateName:string[];
   associateDateDegree:Date;
@@ -34,17 +23,6 @@ export class EducationInfo {
   newAssociateSchool:string;
   newAssociateDepartment:string;
 
-  /* ------------------Postgraduation İnfo------------------*/
-  PostDegreeId:number;
-  postgraduationName:string[];
-  postgraduationDateDegree:Date;
-  departmentPostgraduation:string[];
-  postgraduationCountry:string[];
-  postgraduationState:string[];
-  postgraduationGPA:number;
-  newPostgraduationSchool:string;
-  newPostgraduationDepartment:string;
-
   /* ------------------PhD İnfo------------------*/
   phdName:string[];
   phdDate:Date=new Date();
@@ -54,10 +32,38 @@ export class EducationInfo {
   phdGPA:number;
   newPhDSchool:string;
   newPhDDepartment:string;
+  constructor() { }
+}
+
+export class DegreeInfo{
+
+  /* ------------------Degree İnfo------------------*/
+  id:number;
+  degreeName:string[];
+  graduationDateDegree:Date;
+  departmentDegree:string[];
+  degreeCountry:string[];
+  graduationState:string[];
+  degreeGPA:number;
+  newDegreeSchool:string;
+  newDegreeDepartment:string;
+
+  constructor() { }
+}
+
+export class PostDegreeInfo{
+
+  /**********Postgraduation İnfo*************/
+  id:number;
+  postgraduationName:string[];
+  postgraduationDateDegree:Date;
+  departmentPostgraduation:string[];
+  postgraduationCountry:string[];
+  postgraduationState:string[];
+  postgraduationGPA:number;
+  newPostgraduationSchool:string;
+  newPostgraduationDepartment:string;
 
   constructor() {
-
   }
-
-
 }

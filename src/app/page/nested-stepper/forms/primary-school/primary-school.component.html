@@ -1,0 +1,31 @@
+
+<div class="container" style="min-height: 450px;">
+  <table style="font-size: large">
+    <thead>
+    <h2>İlkokul Bilgileri</h2>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <mat-form-field appearance="outline">
+          <mat-label>Okul Adı</mat-label>
+          <input matInput [(ngModel)]="educationModel.primarySchoolName"   placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
+        </mat-form-field>
+      </td>
+      <td style="margin-left:1%;">
+        <mat-form-field appearance="outline">
+          <mat-label>Mezuniyet Tarihi</mat-label>
+          <input matInput [matDatepicker]="primaryGraduation">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="primaryGraduation"></mat-datepicker-toggle>
+          <mat-datepicker #primaryGraduation></mat-datepicker>
+        </mat-form-field>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+
+  <button mat-raised-button class="next-button" matStepperNext>Next</button>
+</div>

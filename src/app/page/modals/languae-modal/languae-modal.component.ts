@@ -1,7 +1,6 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import {LanguageInfo} from "../../../Services/LanguageInfo/language-info.model";
 import{MAT_DIALOG_DATA,MatDialogRef} from "@angular/material/dialog";
-import {LanguageItemModel} from "../../../Services/LanguageInfo/language-item/language-item.model";
 import {LanguageInfoService} from "../../../Services/LanguageInfo/language-info.service";
 import {languages} from "../../../Data/Languages/language-store/language-store.component";
 import {readings} from "../../../Data/Languages/Reading/readingstore";
@@ -10,7 +9,7 @@ import {understandings} from "../../../Data/Languages/Understanding/understandin
 import {speakings} from "../../../Data/Languages/Speaking/speakingstore";
 import {exams} from "../../../Data/Languages/Exam/examstore";
 
-import {NgForm} from "@angular/forms";
+import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 @Component({
   selector: 'app-languae-modal',
   templateUrl: './languae-modal.component.html',
@@ -18,9 +17,8 @@ import {NgForm} from "@angular/forms";
 })
 export class LanguaeModalComponent implements OnInit {
 
-  formData:LanguageInfo;
-  languageModel: LanguageInfo=new LanguageInfo();
-  LanguageList:LanguageInfo[];
+  languageForm:FormGroup;
+
   public languages:any=languages;
   public readings:any=readings;
   public writings:any=writings;
@@ -29,38 +27,38 @@ export class LanguaeModalComponent implements OnInit {
   public exams:any=exams;
   public averageLvl:number;
 
-  languageItemModel:Array<LanguageInfo>=new Array<LanguageInfo>();
-
-
-    constructor(@Inject(MAT_DIALOG_DATA)public data,
+  constructor(@Inject(MAT_DIALOG_DATA)public data,
               public dialogRef:MatDialogRef<LanguaeModalComponent>,
               private languagesService:LanguageInfoService) { }
 
-
-
-  /*resetForm(form?:NgForm ){
-    //if(form = null)
-      //form.resetForm();
-    this.languageModel={
-      LanguageID:0,
-      LanguageName:"",
-      WritingLvl:0,
-      ReadingLvl:0,
-      UnderstandingLvl:0,
-      SpeakingLvl:0,
-      LanguageExam:"",
-      ExamResult:0
-    };
-    this.languageItemModel=[];
-
-  }*/
-
-  onSubmit(form: NgForm) {
-    this.languagesService.saveLanguage(this.languageModel).subscribe();
-  }
-
-
   ngOnInit(): void {
-
+    this.createNewForm();
   }
+
+  createNewForm(){
+    this.languageForm=new FormGroup(
+      {
+        languageName:new FormControl("",[Validators.required,]),
+        speakingLvl:new FormControl("",[Validators.required,]),
+        readingLvl:new FormControl("",[Validators.required,]),
+        writingLvl:new FormControl("",[Validators.required,]),
+        understandingLvl:new FormControl("",[Validators.required,]),
+        languageExam:new FormControl("",[Validators.required,]),
+        examResult:new FormControl("",[Validators.required,]),
+      })
+  }
+
+  save(){
+    this.languagesService.add(this.languageForm.value).subscribe({
+      next:(res)=>this.languagesService.getList(),
+      error:(err)=>console.log(err)
+    })
+    console.warn(this.languageForm.value);
+    this.createNewForm();
+    this.dialogRef.close();
+  }
+
+
+
+
 }

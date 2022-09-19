@@ -29,8 +29,7 @@
             <p><a [routerLink]="['/jobAdvertise']">İş İlanlar</a></p>
             <p><a [routerLink]="['/jobApplication']">Başvurularım</a></p>
           </mat-expansion-panel>
-          <mat-expansion-panel (opened)="panelOpenState = true"
-                               (closed)="panelOpenState = false">
+          <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title>
                 İnsan Kaynakları
@@ -44,7 +43,39 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile colspan="5">
+      <mat-paginator [length]="100"
+                     [pageSize]="10"
+                     [pageSizeOptions]="[5, 10, 25, 100]"
+                     aria-label="Select page">
+      <table style="width: 100%">
+        <thead>
+        <h2>Dil Bilgileri</h2>
+        </thead>
+        <tbody>
+        <tr >
 
+          <td class="stepper-table-header">Dil Adı</td>
+          <td class="stepper-table-header">Okuma Seviyesi</td>
+          <td class="stepper-table-header">Yazma Seviyesi</td>
+          <td class="stepper-table-header">Konuşma Seviyesi</td>
+          <td class="stepper-table-header">Anlama Seviyesi</td>
+          <td class="stepper-table-header">Ortalama Seviye</td>
+          <td class="stepper-table-header">Sınav Türü</td>
+          <td class="stepper-table-header">Sınav Puanı</td>
+
+
+        <tr >
+          <td style="text-align:center;" colspan="8"> <strong>Lütfen Dil Bilgisi Ekleyiniz.</strong> </td>
+        </tr>
+        <tr >
+
+
+
+
+        </tr>
+        </tbody>
+      </table>
+      </mat-paginator>
     </mat-grid-tile>
   </mat-grid-list>
 

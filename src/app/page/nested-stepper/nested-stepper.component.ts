@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {DegreeModalComponent} from "../modals/degree-modal/degree-modal.component";
-import {EducationInfo} from "../../Services/EducationInfo/education-info.model";
+import {DegreeInfo, EducationInfo, PostDegreeInfo} from "../../Services/EducationInfo/education-info.model";
 import {departmentAssociate} from "../../Data/Education/associatestore";
 import {departmentsDegree} from "../../Data/Education/departmentstore";
 import {schools} from "../../Data/Education/educationstore";
@@ -16,14 +16,10 @@ import {EducationInfoService} from "../../Services/EducationInfo/education-info.
   styleUrls: ['./nested-stepper.component.scss']
 })
 export class NestedStepperComponent implements OnInit {
-
-  EducationList:EducationInfo[];
   educationModel:EducationInfo=new EducationInfo();
-  public departmentAssociate:any=departmentAssociate;
-  public departmentsDegree:any=departmentsDegree;
-  public schools:any=schools;
+  isLinear = false;
+
   constructor(private _formBuilder: FormBuilder,
-              public dialog: MatDialog,
               private educationService:EducationInfoService) { }
 
   /* ------------------------Stepper2 ----------------------*/
@@ -49,29 +45,6 @@ export class NestedStepperComponent implements OnInit {
     seventhForm2Group: ['', Validators.required],
   });
 
-
-
-
-
-  isLinear = false;
-  openDialog(DegreeModalIndex,DegreeId) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = true;
-    dialogConfig.width = "200%";
-    dialogConfig.data={DegreeModalIndex,DegreeId}
-    this.dialog.open(DegreeModalComponent,dialogConfig);
-  }
-
-  openPostDegreeDialog(AssociateModalIndex,AssociateId) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.data={AssociateModalIndex,AssociateId}
-    this.dialog.open(PostgraduateDegreeComponent);
-  }
-
-  ngOnInit(): void {
-    this.educationService.getDegreeList().then(res=>this.EducationList=res as EducationInfo[])
-    this.educationService.getAssociateList().then(res=>this.EducationList=res as EducationInfo[])
-  }
+  ngOnInit(): void { }
 
 }

@@ -2,40 +2,32 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {LanguageInfo} from "./language-info.model";
-import {LanguageItemModel} from "./language-item/language-item.model";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageInfoService {
-
-  formData:LanguageInfo= new LanguageInfo();
   languageModel: Array<LanguageInfo>=[];
-  languageInfo:LanguageInfo[];
+  apiUrl=environment.apiUrl;
+
   constructor(private http: HttpClient) { }
 
-  getItemList(){
-    return this.http.get(environment.apiUrl + "Languages/GetLanguages").toPromise();
-
-
-
+  add(model: LanguageInfo){
+    let api= this.apiUrl+ "Languages/SaveLanguages";
+    return this.http.post<any>(api,model);
   }
-  saveLanguage(languageModal:LanguageInfo){
-    this.formData.LanguageId=languageModal.LanguageId;
-    this.formData.LanguageName=languageModal.LanguageName;
-    this.formData.LanguageExam=languageModal.LanguageExam;
-    this.formData.SpeakingLvl=languageModal.SpeakingLvl;
-    this.formData.ReadingLvl=languageModal.ReadingLvl;
-    this.formData.UnderstandingLvl=languageModal.UnderstandingLvl;
-    this.formData.WritingLvl=languageModal.WritingLvl;
-    this.formData.LanguageExam=languageModal.LanguageExam;
-
-    var body={
-       LanguageDto:this.formData,
-    }
-
-    return this.http.post(environment.apiUrl + '/api/Language/SaveLanguage',body);
+  update(model: LanguageInfo){
+    let api = this.apiUrl + "Languages/UpdateLanguages";
+    return this.http.post<any>(api,model);
+  }
+  delete(model: LanguageInfo){
+    let api = this.apiUrl + "Languages/DeleteLanguages";
+    return this.http.post<any>(api,model.id);
+  }
+  getList(){
+    let api = this.apiUrl + "Languages/GetLanguages";
+    return this.http.get<any>(api);
   }
 
 }

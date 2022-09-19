@@ -1,5 +1,5 @@
 export class OtherInfo {
-
+  id:number;
   interests:string;
   memberNGO:string;
   travelContinents:boolean;

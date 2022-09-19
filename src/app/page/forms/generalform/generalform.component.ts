@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {GeneralInfoService} from "../../../Services/GeneralInfo/general-info.service";
 import {GeneralInfo} from "../../../Services/GeneralInfo/general-info.model";
-import {FormBuilder, FormControl} from "@angular/forms";
+import {FormBuilder, FormControl, NgForm} from "@angular/forms";
 import {genders} from "../../../Data/General/genderstore";
 import {educations} from "../../../Data/General/educationstore";
 import {identities} from "../../../Data/General/identitystore";
@@ -22,7 +22,9 @@ import {PPhotoModelComponent} from "../../modals/p-photo-model/p-photo-model.com
 })
 export class GeneralformComponent implements OnInit {
 
+  formData:GeneralInfo;
   generalModel: GeneralInfo=new GeneralInfo();
+
   disableSelectCitizen = new FormControl();
   disableSelectDriver = new FormControl();
   public genders:any=genders;
@@ -36,10 +38,43 @@ export class GeneralformComponent implements OnInit {
 
 
 
-  constructor(public _formBuilder: FormBuilder,public generalService:GeneralInfoService, public dialog:MatDialog) { }
+  constructor( _formBuilder: FormBuilder,public generalService:GeneralInfoService, public dialog:MatDialog) { }
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {/*
+    if(this.data==null){
+      this.formData={
+        id:0,
+        name:"",
+        lastname:"",
+        graduation:"",
+        gender:"",
+        identityType:"",
+        identityNum:0,
+        driverLicense:false,
+        martialStatus:"",
+        driverLicenseType:"",
+        nation:"",
+        dateOfBirth:"",
+        bornedCountry:"",
+        bornedCity:"",
+      }
+    }else{
+      this.formData=Object.assign({},this.generalService.generalModel[this.data.GeneralModelIndex]);
+    }
+*/
+
+  }
+
+  resetForm(form?: NgForm) {
+    form?.resetForm();
+  }
+
+
+
+  onSubmit(form:NgForm){
+    this.generalService.saveGeneral(this.generalModel).subscribe(res=>{this.resetForm();});
+
   }
   openModal() {
     this.dialog.open(PPhotoModelComponent);

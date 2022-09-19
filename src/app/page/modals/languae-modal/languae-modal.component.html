@@ -1,4 +1,4 @@
-<form #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)" >
+<form [formGroup]="languageForm"  >
 <table style="font-size: large">
   <thead>
   <h2>Dil Bilgileri</h2>
@@ -9,8 +9,8 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Dil Adı</mat-label>
-        <mat-select   required>
-          <mat-option *ngFor="let language  of languages" [value]="language.name">
+        <mat-select formControlName="languageName"  >
+          <mat-option *ngFor="let language  of languages" value="{{language.name}}">
             {{language.name}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -19,8 +19,8 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Konuşma Seviyesi</mat-label>
-        <mat-select  required>
-          <mat-option *ngFor="let speaking  of speakings" [value]="speaking.level">
+        <mat-select formControlName="speakingLvl" >
+          <mat-option *ngFor="let speaking  of speakings" value="{{speaking.level}}">
             {{speaking.level}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -28,8 +28,8 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Okuma Seviyesi</mat-label>
-        <mat-select  required>
-          <mat-option *ngFor="let reading  of readings" [value]="reading.level">
+        <mat-select  formControlName="readingLvl">
+          <mat-option *ngFor="let reading  of readings" value="{{reading.level}}">
             {{reading.level}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -37,8 +37,8 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Yazma Seviyesi</mat-label>
-        <mat-select  required>
-          <mat-option *ngFor="let writing  of writings" [value]="writing.level">
+        <mat-select  formControlName="writingLvl">
+          <mat-option *ngFor="let writing  of writings" value="{{writing.level}}">
             {{writing.level}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -46,8 +46,8 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Anlama Seviyesi</mat-label>
-        <mat-select  required >
-          <mat-option *ngFor="let understanding  of understandings" [value]="understanding.level">
+        <mat-select  formControlName="understandingLvl" >
+          <mat-option *ngFor="let understanding  of understandings" value="{{understanding.level}}">
             {{understanding.level}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -57,8 +57,8 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Sınav Türü</mat-label>
-        <mat-select  required>
-          <mat-option *ngFor="let exam  of exams" [value]="exam.name">
+        <mat-select  formControlName="languageExam">
+          <mat-option *ngFor="let exam  of exams" value="{{exam.name}}">
             {{exam.name}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -66,7 +66,7 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Sınav Puanı</mat-label>
-        <input matInput name="languageModel.ExamResult" [(ngModel)]="languageModel.ExamResult" placeholder="Sınav puanı giriniz." required>
+        <input matInput formControlName="examResult" placeholder="Sınav puanı giriniz." required>
       </mat-form-field>
     </td>
 
@@ -78,7 +78,7 @@
 
 
 <mat-dialog-actions align="end">
-  <button mat-raised-button color="warn" mat-dialog-close>İptal Et</button>
-  <button mat-raised-button color="warn" style="background-color: lawngreen" [mat-dialog-close]="true" cdkFocusInitial>Kaydet</button>
+  <button  mat-raised-button color="warn" [mat-dialog-close]="true">İptal Et</button>
+  <button  (click)="save()" mat-raised-button color="warn" style="background-color: lawngreen"  >Kaydet</button>
 </mat-dialog-actions>
 

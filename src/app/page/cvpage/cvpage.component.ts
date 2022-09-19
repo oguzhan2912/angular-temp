@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {MatFormFieldControl} from "@angular/material/form-field";
+import {LanguageInfoService} from "../../Services/LanguageInfo/language-info.service";
+import {Language} from "countrycitystatejson/src/countries-list";
+import {LanguageInfo} from "../../Services/LanguageInfo/language-info.model";
 
 @Component({
   selector: 'app-cvpage',
@@ -16,7 +19,9 @@ export class CvpageComponent implements OnInit {
 
   selected: Date | null | undefined;
 
-  constructor(public _formBuilder: FormBuilder,public dialog: MatDialog) { }
+  languageList: LanguageInfo[]= [];
+
+  constructor(public _formBuilder: FormBuilder,public dialog: MatDialog,private languageService: LanguageInfoService) { }
 
 
 /*---------------------------Stepper --------------------*/
@@ -48,6 +53,12 @@ export class CvpageComponent implements OnInit {
     ninthCtrl: ['', Validators.required],
   });
 
+  deleteLanguage(event:any){
+    this.languageService.delete(event).subscribe({
+      next:(res)=>{this.languageService.getList();},
+      error:(err)=>{console.log(err);}
+    })
+  }
 
 
 

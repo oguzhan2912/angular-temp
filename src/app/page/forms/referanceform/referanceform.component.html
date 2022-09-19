@@ -5,7 +5,7 @@
   <tbody>
   <tr >
     <td class="stepper-table-button" >
-      <button mat-raised-button color="primary" style="color:white;" (click)="openReferanceModal(null,referanceModal.ReferanceId)">Referans  Ekle</button></td>
+      <button mat-raised-button color="primary" style="color:white;" (click)="openReferanceModal(null,referanceModal.id)">Referans  Ekle</button></td>
     <td class="stepper-table-header">Referansın Adı</td>
     <td class="stepper-table-header">Referans Olan Kurum</td>
     <td class="stepper-table-header">Referansın E-Mail Adresi</td>
@@ -16,7 +16,7 @@
     <td style="text-align:center;" colspan="8"> <strong>Lütfen Referans Bilgisi Ekleyiniz.</strong> </td>
   </tr>
   <tr *ngFor="let item of ReferanceList">
-    <td class="stepper-table-button" (click)="openReferanceModal(null,item.ReferanceId)"><i class=" fa fa-pencil"></i></td>
+    <td class="stepper-table-button" (click)="openReferanceModal(null,item.id)"><i class=" fa fa-pencil"></i></td>
     <td class="stepper-table-body">{{item.ReferanceName}}</td>
     <td class="stepper-table-body">{{item.ReferanceFoundation}}</td>
     <td class="stepper-table-body"> {{item.ReferanceEmail}}</td>

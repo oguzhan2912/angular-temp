@@ -1,0 +1,70 @@
+<div class="container" style="min-height: 450px;">
+
+  <table style="font-size: large">
+    <thead>
+    <h2>Doktora Bilgileri</h2>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <mat-form-field appearance="outline">
+          <mat-label>Okul Adı</mat-label>
+          <mat-select required >
+            <mat-option *ngFor="let school of schools" value="{{school.name}}">{{school.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field appearance="outline">
+          <mat-label>Bölüm Adı</mat-label>
+          <input  matInput required>
+
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field appearance="outline">
+          <mat-label>Öğrenim Türü</mat-label>
+          <mat-select required>
+            <mat-option *ngFor="let state of states" value="{{state.name}}">{{state.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td style="margin-left:1%;">
+        <mat-form-field appearance="outline">
+          <mat-label>Mezuniyet Tarihi</mat-label>
+          <input matInput [matDatepicker]="PhDGraduationDate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="PhDGraduationDate"></mat-datepicker-toggle>
+          <mat-datepicker #PhDGraduationDate></mat-datepicker>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field appearance="outline">
+          <mat-label>Mezuniyet Notu</mat-label>
+          <input matInput [(ngModel)]="educationModel.phdGPA" placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+        </mat-form-field>
+      </td>
+    </tr>
+    <h3>Okulunuz listede yoksa</h3>
+    <tr>
+      <td>
+        <mat-form-field appearance="outline">
+          <mat-label>Okul Adı</mat-label>
+          <input matInput [(ngModel)]="educationModel.newPhDSchool" placeholder="Okul adı giriniz." >
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field appearance="outline">
+          <mat-label>Bölüm Adı</mat-label>
+          <input matInput [(ngModel)]="educationModel.newPhDDepartment" placeholder="Bölüm Adı Giriniz."  >
+        </mat-form-field>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+
+  <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+  <button mat-raised-button class="next-button" matStepperNext>Next</button>
+</div>

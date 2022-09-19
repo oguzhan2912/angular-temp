@@ -27,7 +27,7 @@ export class SkillformComponent implements OnInit {
     this.dialog.open(SkillmodalComponent,dialogConfig);
   }
   ngOnInit(): void {
-    this.SkillService.getItemList().then(res=>this.SkillList=res as SkillInfo[])
+    this.SkillService.getSkills().then(res=>this.SkillList=res as SkillInfo[])
   }
 
 }

@@ -1,0 +1,38 @@
+<div class="container" style="min-height: 450px;">
+
+  <table style="width: 100%">
+    <thead>
+    <h2>Lisans Bilgileri</h2>
+    </thead>
+    <tbody>
+    <tr >
+      <td class="stepper-table-button" >
+        <button mat-raised-button color="primary" style="color:white;" (click)="openDialog(null,degreeModel.id)"><mat-icon>library_add</mat-icon></button></td>
+      <td class="stepper-table-header">Okul İsmi</td>
+      <td class="stepper-table-header">Bölüm İsmi</td>
+      <td class="stepper-table-header">Öğrenim Durumu</td>
+      <td class="stepper-table-header">Mezuniyet Ortalaması</td>
+      <td class="stepper-table-header">Mezuniyet Tarihi</td>
+    </tr>
+    <tr style="text-align: center" *ngIf="DegreeList.length==0">
+      <td style="text-align:center;" colspan="8"> <strong>Lütfen Lisans Bilgisi Ekleyiniz.</strong> </td>
+    </tr>
+    <tr *ngFor="let item of DegreeList">
+      <td class="stepper-table-button" (click)="openDialog(null,item.id)"><i class=" fa fa-pencil"></i></td>
+      <td class="stepper-table-body">{{item.degreeName}}</td>
+      <td class="stepper-table-body">{{item.departmentDegree}}</td>
+      <td class="stepper-table-body">{{item.graduationState}}</td>
+      <td class="stepper-table-body">{{item.degreeGPA}}</td>
+      <td class="stepper-table-body">{{item.graduationDateDegree}}</td>
+
+
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<div>
+  <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+  <button mat-raised-button class="next-button" matStepperNext>Next</button>
+</div>
+

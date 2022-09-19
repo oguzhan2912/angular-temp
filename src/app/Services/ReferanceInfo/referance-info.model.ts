@@ -1,6 +1,6 @@
 export class ReferanceInfo {
 
-  ReferanceId:number
+  id:number;
   ReferanceName:string;
   ReferanceFoundation:string;
   ReferanceEmail:string;

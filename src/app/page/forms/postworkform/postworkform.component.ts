@@ -17,7 +17,7 @@ export class PostworkformComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.workService.getItemList().then(res=>this.WorkList=res as PostworkInfo[])
+    this.workService.getPostWork().then(res=>this.WorkList=res as PostworkInfo[])
   }
 
   openWorkModal(WorkModalIndex,PostWorkId){

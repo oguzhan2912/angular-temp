@@ -1,5 +1,5 @@
 export class ContactInfo {
-
+  id:number;
   country:string[];
   city:string[];
   district:string[];

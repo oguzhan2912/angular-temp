@@ -16,7 +16,7 @@ export class ReferanceformComponent implements OnInit {
   constructor(public dialog: MatDialog,private referanceService:ReferanceInfoService) { }
 
   ngOnInit(): void {
-    this.referanceService.getItemList().then(res=>this.ReferanceList=res as ReferanceInfo[])
+    this.referanceService.getReferances().then(res=>this.ReferanceList=res as ReferanceInfo[])
   }
 
   openReferanceModal(ReferanceModelIndex,ReferanceId){

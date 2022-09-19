@@ -3,355 +3,49 @@
   <mat-step [stepControl]="firstForm2Group">
     <form [formGroup]="firstForm2Group">
       <ng-template matStepLabel>İlkokul Bilgileri</ng-template>
-      <div class="container" style="min-height: 450px;">
-      <table style="font-size: large">
-        <thead>
-        <h2>İlkokul Bilgileri</h2>
-        </thead>
-        <tbody>
-        <tr>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Okul Adı</mat-label>
-              <input matInput [(ngModel)]="educationModel.primarySchoolName"   placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
-            </mat-form-field>
-          </td>
-          <td style="margin-left:1%;">
-            <mat-form-field appearance="outline">
-              <mat-label>Mezuniyet Tarihi</mat-label>
-              <input matInput [matDatepicker]="primaryGraduation">
-              <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle matSuffix [for]="primaryGraduation"></mat-datepicker-toggle>
-              <mat-datepicker #primaryGraduation></mat-datepicker>
-            </mat-form-field>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-      </div>
-      <div>
-
-        <button mat-raised-button class="next-button" matStepperNext>Next</button>
-      </div>
-
+      <app-primary-school></app-primary-school>
     </form>
-
   </mat-step>
 
   <mat-step [stepControl]="secondForm2Group">
     <form [formGroup]="secondForm2Group">
-      <div class="container" style="min-height: 450px;">
       <ng-template matStepLabel>Ortaokul Bilgileri</ng-template>
-      <table style="font-size: large">
-        <thead>
-        <h2>Ortaokul Bilgileri</h2>
-        </thead>
-        <tbody>
-        <tr>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Okul Adı</mat-label>
-              <input matInput [(ngModel)]="educationModel.secondarySchoolName" placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
-            </mat-form-field>
-          </td>
-          <td style="margin-left:1%;">
-            <mat-form-field appearance="outline">
-              <mat-label>Mezuniyet Tarihi</mat-label>
-              <input matInput [matDatepicker]="secondaryGraduation">
-              <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle matSuffix [for]="secondaryGraduation"></mat-datepicker-toggle>
-              <mat-datepicker #secondaryGraduation></mat-datepicker>
-            </mat-form-field>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-      </div>
-      <div>
-        <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
-        <button mat-raised-button class="next-button" matStepperNext>Next</button>
-      </div>
-
+      <app-secondary-school></app-secondary-school>
     </form>
   </mat-step>
 
   <mat-step [stepControl]="thirdForm2Group">
     <form [formGroup]="thirdForm2Group">
-      <div class="container" style="min-height: 450px;">
       <ng-template matStepLabel>Lise Bilgileri</ng-template>
-      <table style="font-size: large">
-        <thead>
-        <h2>Lise Bilgileri</h2>
-        </thead>
-        <tbody>
-        <tr>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Okul Adı</mat-label>
-              <input matInput [(ngModel)]="educationModel.highSchoolName" placeholder="Okul adı giriniz." required>
-            </mat-form-field>
-          </td>
-          <td style="margin-left:1%;">
-            <mat-form-field appearance="outline">
-              <mat-label>Mezuniyet Tarihi</mat-label>
-              <input matInput [matDatepicker]="highSchoolGraduation">
-              <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle matSuffix [for]="highSchoolGraduation"></mat-datepicker-toggle>
-              <mat-datepicker #highSchoolGraduation></mat-datepicker>
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Mezuniyet Notu</mat-label>
-              <input matInput [(ngModel)]="educationModel.highGPA" placeholder="Puan Giriniz." formControlName="firstCtrl" required>
-            </mat-form-field>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-      </div>
-      <div>
-        <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
-        <button mat-raised-button class="next-button" matStepperNext>Next</button>
-      </div>
-
+      <app-high-school></app-high-school>
     </form>
   </mat-step>
 
   <mat-step [stepControl]="fourthForm2Group">
     <form [formGroup]="fourthForm2Group">
-      <div class="container" style="min-height: 450px;">
       <ng-template matStepLabel>Ön Lisans</ng-template>
-
-        <table style="font-size: large">
-          <thead>
-          <h2>Ön Lisans Bilgileri</h2>
-          </thead>
-          <tbody>
-          <tr>
-            <td>
-              <mat-form-field appearance="outline">
-                <mat-label>Okul Adı</mat-label>
-                <mat-select required >
-                  <mat-option *ngFor="let school of schools" value="{{school.name}}">{{school.name}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </td>
-            <td style="width: 160%">
-              <mat-form-field appearance="outline" style="width: 100%">
-                <mat-label>Bölüm Adı</mat-label>
-                <mat-select required >
-                  <mat-option  *ngFor="let departmentA of departmentAssociate" value="{{departmentA.name}}">{{departmentA.name}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </td>
-            <td>
-              <mat-form-field appearance="outline">
-                <mat-label>Öğrenim Türü</mat-label>
-                <mat-select [(ngModel)]="educationModel.associateState" required>
-                  <mat-option *ngFor="let associateStates of educationModel.associateState" value="{{educationModel.associateState}}">{{associateStates}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </td>
-            <td style="margin-left:1%;">
-              <mat-form-field appearance="outline">
-                <mat-label>Mezuniyet Tarihi</mat-label>
-                <input matInput [matDatepicker]="associateGraduationDate">
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matSuffix [for]="associateGraduationDate"></mat-datepicker-toggle>
-                <mat-datepicker #associateGraduationDate></mat-datepicker>
-              </mat-form-field>
-            </td>
-            <td>
-              <mat-form-field appearance="outline">
-                <mat-label>Mezuniyet Notu</mat-label>
-                <input matInput [(ngModel)]="educationModel.associateGPA" placeholder="Puan Giriniz." formControlName="firstCtrl" required>
-              </mat-form-field>
-            </td>
-          </tr>
-          <h3>Okulunuz listede yoksa</h3>
-          <tr>
-            <td>
-              <mat-form-field appearance="outline">
-                <mat-label>Okul Adı</mat-label>
-                <input matInput [(ngModel)]="educationModel.newAssociateSchool" placeholder="Okul adı giriniz." >
-              </mat-form-field>
-            </td>
-            <td>
-              <mat-form-field appearance="outline">
-                <mat-label>Bölüm Adı</mat-label>
-                <input matInput [(ngModel)]="educationModel.newAssociateDepartment" placeholder="Bölüm Adı Giriniz."  >
-              </mat-form-field>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-
-      </div>
-      <div >
-        <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
-        <button mat-raised-button class="next-button" matStepperNext>Next</button>
-      </div >
-
+      <app-associate-school></app-associate-school>
     </form>
   </mat-step>
 
    <mat-step [stepControl]="fifthForm2Group">
     <form [formGroup]="fifthForm2Group">
-      <div class="container" style="min-height: 450px;">
       <ng-template matStepLabel>Lisans Bilgileri</ng-template>
-      <table style="width: 100%">
-        <thead>
-        <h2>Lisans Bilgileri</h2>
-        </thead>
-        <tbody>
-        <tr >
-          <td class="stepper-table-button" >
-            <button mat-raised-button color="primary" style="color:white;" (click)="openDialog(null,educationModel.DegreeId)"><mat-icon>library_add</mat-icon></button></td>
-          <td class="stepper-table-header">Okul İsmi</td>
-          <td class="stepper-table-header">Bölüm İsmi</td>
-          <td class="stepper-table-header">Öğrenim Durumu</td>
-          <td class="stepper-table-header">Mezuniyet Ortalaması</td>
-          <td class="stepper-table-header">Mezuniyet Tarihi</td>
-        </tr>
-        <tr style="text-align: center" *ngIf="EducationList.length==0">
-          <td style="text-align:center;" colspan="8"> <strong>Lütfen Lisans Bilgisi Ekleyiniz.</strong> </td>
-        </tr>
-        <tr *ngFor="let item of EducationList">
-          <td class="stepper-table-button" (click)="openDialog(null,item.DegreeId)"><i class=" fa fa-pencil"></i></td>
-          <td class="stepper-table-body">{{item.degreeName}}</td>
-          <td class="stepper-table-body">{{item.departmentDegree}}</td>
-          <td class="stepper-table-body">Durum</td>
-          <td class="stepper-table-body">{{item.degreeGPA}}</td>
-          <td class="stepper-table-body">{{item.graduationDateDegree}}</td>
-
-
-        </tr>
-
-        </tbody>
-      </table>
-      </div>
-      <div>
-        <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
-        <button mat-raised-button class="next-button" matStepperNext>Next</button>
-      </div>
+      <app-degree-school></app-degree-school>
     </form>
   </mat-step>
 
   <mat-step [stepControl]="sixthForm2Group">
     <form [formGroup]="sixthForm2Group">
-      <div class="container" style="min-height: 450px;">
       <ng-template matStepLabel>Yüksek Lisans Bilgileri</ng-template>
-      <table style="width: 100%">
-        <thead>
-        <h2>Yüksek Lisans Bilgileri</h2>
-        </thead>
-        <tbody>
-        <tr >
-          <td class="stepper-table-button" >
-            <button mat-raised-button  style="color:white;" (click)="openPostDegreeDialog(null,educationModel.PostDegreeId)"><mat-icon>library_add</mat-icon></button></td>
-          <td class="stepper-table-header">Okul İsmi</td>
-          <td class="stepper-table-header">Bölüm İsmi</td>
-          <td class="stepper-table-header">Öğrenim Durumu</td>
-          <td class="stepper-table-header">Mezuniyet Ortalaması</td>
-          <td class="stepper-table-header">Mezuniyet Tarihi</td>
-        </tr>
-        <tr style="text-align: center" *ngIf="EducationList.length==0">
-          <td style="text-align:center;" colspan="8"> <strong>Lütfen Yüksek Lisans Bilgisi Ekleyiniz.</strong> </td>
-        </tr>
-        <tr *ngFor="let item of EducationList">
-          <td class="stepper-table-button" (click)="openDialog(null,item.PostDegreeId)"><i class=" fa fa-pencil"></i></td>
-          <td class="stepper-table-body">{{item.postgraduationName}}</td>
-          <td class="stepper-table-body">{{item.departmentPostgraduation}}</td>
-          <td class="stepper-table-body">Durum</td>
-          <td class="stepper-table-body">{{item.postgraduationGPA}}</td>
-          <td class="stepper-table-body">{{item.postgraduationDateDegree}}</td>
-
-
-        </tr>
-        </tbody>
-      </table>
-      </div>
-      <div>
-        <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
-        <button mat-raised-button class="next-button" matStepperNext>Next</button>
-      </div>
+      <app-post-degree-school></app-post-degree-school>
     </form>
   </mat-step>
 
   <mat-step [stepControl]="seventhForm2Group">
   <form [formGroup]="seventhForm2Group">
-    <div class="container" style="min-height: 450px;">
     <ng-template matStepLabel>Doktora Bilgileri</ng-template>
-      <table style="font-size: large">
-        <thead>
-        <h2>Ön Lisans Bilgileri</h2>
-        </thead>
-        <tbody>
-        <tr>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Okul Adı</mat-label>
-              <mat-select [(ngModel)]="educationModel.phdName" required>
-                <mat-option *ngFor="let PhDNames for educationModel.phdName" value="{{educationModel.phdName}}">{{PhDNames}}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Bölüm Adı</mat-label>
-              <mat-select [(ngModel)]="educationModel.departmentPhD" required>
-                <mat-option *ngFor="let PhDDepartments for educationModel.departmentPhD">{{PhDDepartments}}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Öğrenim Türü</mat-label>
-              <mat-select [(ngModel)]="educationModel.graduationState" required>
-                <mat-option *ngFor="let degraaStates for educationModel.graduationState" value="{{educationModel.graduationState}}">{{degraaStates}}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </td>
-          <td style="margin-left:1%;">
-            <mat-form-field appearance="outline">
-              <mat-label>Mezuniyet Tarihi</mat-label>
-              <input matInput [matDatepicker]="PhDGraduationDate">
-              <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle matSuffix [for]="PhDGraduationDate"></mat-datepicker-toggle>
-              <mat-datepicker #PhDGraduationDate></mat-datepicker>
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Mezuniyet Notu</mat-label>
-              <input matInput [(ngModel)]="educationModel.phdGPA" placeholder="Puan Giriniz." formControlName="firstCtrl" required>
-            </mat-form-field>
-          </td>
-        </tr>
-        <h3>Okulunuz listede yoksa</h3>
-        <tr>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Okul Adı</mat-label>
-              <input matInput [(ngModel)]="educationModel.newPhDSchool" placeholder="Okul adı giriniz." >
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Bölüm Adı</mat-label>
-              <input matInput [(ngModel)]="educationModel.newPhDDepartment" placeholder="Bölüm Adı Giriniz."  >
-            </mat-form-field>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <div>
-      <button mat-raised-button color="danger" (click)="stepper.reset()">Reset</button>
-      <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
-      <button mat-raised-button class="next-button" matStepperNext>Next</button>
-    </div>
+    <app-phd-school></app-phd-school>
   </form>
   </mat-step>
 
