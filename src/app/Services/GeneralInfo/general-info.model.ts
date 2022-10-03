@@ -7,13 +7,12 @@ export class GeneralInfo {
   gender:string;
   identityType:string;
   identityNum:number;
-  driverLicense:boolean;
   martialStatus:string;
   driverLicenseType:string;
   nation:string;
 
   /* ------------------------Personal İnfo------------------------*/
-  dateOfBirth:string;
+  dateOfBirth:Date;
   bornedCountry:string;
   bornedCity:string;
 

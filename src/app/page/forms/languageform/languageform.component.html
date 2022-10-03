@@ -15,7 +15,7 @@
     <td class="stepper-table-header">Sınav Türü</td>
     <td class="stepper-table-header">Sınav Puanı</td>
     <td class="stepper-table-button" >
-    <button mat-raised-button  style="background-color:#8a9b6e;" (click)="openLanguageModal(null,languageModel.id)">Dil Ekle</button></td>
+    <button mat-raised-button  style="background-color:#8a9b6e;" (click)="openLanguageModal(languageModel.id)">Dil Ekle</button></td>
   </tr>
 
   <tr *ngIf="LanguageList.length==0" >
@@ -35,7 +35,7 @@
     <button mat-mini-fab color="primary" (click)="deleteRecord(item)" >
       <mat-icon>delete</mat-icon>
     </button>
-    <button mat-mini-fab color="accent"  (click)="openLanguageModal(i,item.id)">
+    <button mat-mini-fab color="accent"  (click)="openLanguageModal(item.id)">
       <mat-icon>edit</mat-icon>
     </button>
   </td>
@@ -44,4 +44,7 @@
   </tbody>
 </table>
 </form>
+
+
+
 

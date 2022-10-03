@@ -1,3 +1,4 @@
+<form [formGroup]="referanceForm">
 <table style="font-size: large">
   <thead>
   <h2>Referans Bilgileri</h2>
@@ -7,39 +8,40 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Referans Adı</mat-label>
-        <input matInput [(ngModel)]="referanceModel.ReferanceName" placeholder="İsim Giriniz."  required>
+        <input matInput formControlName="referanceName" placeholder="İsim Giriniz.">
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Kurum Adı</mat-label>
-        <input matInput [(ngModel)]="referanceModel.ReferanceFoundation" placeholder="Ad Giriniz.">
+        <input matInput formControlName="referanceFoundation" placeholder="Ad Giriniz.">
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>E-mail Adresi</mat-label>
-        <input matInput [(ngModel)]="referanceModel.ReferanceEmail" placeholder="Mail Adresi Giriniz"  required>
+        <input matInput formControlName="referanceEmail"  placeholder="Mail Adresi Giriniz">
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Telefon numarası</mat-label>
-        <input matInput [(ngModel)]="referanceModel.ReferancePhoneNumber" placeholder="Numara Giriniz."  required>
+        <input matInput formControlName="referancePhoneNumber" placeholder="Numara Giriniz.">
       </mat-form-field>
     </td>
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Telefon Numarası-2</mat-label>
-        <input matInput [(ngModel)]="referanceModel.ReferancePhoneNumber2" placeholder="Numara Giriniz." >
+        <input matInput formControlName="refernacePhoneNumber2" placeholder="Numara Giriniz." >
       </mat-form-field>
     </td>
   </tr>
   </tbody>
 </table>
+</form>
 
 <mat-dialog-actions align="end">
-  <button mat-raised-button color="warn" mat-dialog-close>İptal Et</button>
-  <button mat-raised-button color="warn" style="background-color: lawngreen" [mat-dialog-close]="true" cdkFocusInitial>Kaydet</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="true">İptal Et</button>
+  <button (click)="save()" mat-raised-button color="warn" style="background-color: lawngreen"  >Kaydet</button>
 </mat-dialog-actions>
 

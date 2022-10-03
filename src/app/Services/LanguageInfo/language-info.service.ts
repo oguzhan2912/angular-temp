@@ -2,6 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {LanguageInfo} from "./language-info.model";
+import {Observable} from "rxjs";
+import {Language} from "countrycitystatejson/src/countries-list";
+import {SingleResponseModel} from "../Model/single-response-model/single-response-model.model";
 
 
 @Injectable({
@@ -29,5 +32,8 @@ export class LanguageInfoService {
     let api = this.apiUrl + "Languages/GetLanguages";
     return this.http.get<any>(api);
   }
-
+  getItemByID(languageId: number):Observable<SingleResponseModel<Language>>{
+    let api = this.apiUrl + "Languages/GetLanguageById?languageId="+languageId;
+    return this.http.get<SingleResponseModel<Language>>(api);
+  }
 }

@@ -51,12 +51,7 @@
           <form [formGroup]="firstFormGroup " >
             <div class="container form-group" style="min-height: 600px;">
             <ng-template matStepLabel>Genel Bilgiler</ng-template>
-
               <app-generalform ></app-generalform>
-
-            <div style="margin-top:5%;width: 120%;">
-              <button mat-raised-button class="next-button" matStepperNext>Next</button>
-            </div>
             </div>
           </form>
         </mat-step>
@@ -65,12 +60,7 @@
           <form [formGroup]="secondFormGroup">
             <div class="container" style="min-height: 600px;">
             <ng-template matStepLabel>İletişim Bilgileri</ng-template>
-
               <app-contactform></app-contactform>
-            <div style="margin-top:10%;">
-              <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
-              <button mat-raised-button class="next-button" matStepperNext>Next</button>
-            </div>
             </div>
           </form>
         </mat-step>

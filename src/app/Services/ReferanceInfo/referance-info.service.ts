@@ -8,27 +8,26 @@ import {ReferanceInfo} from "./referance-info.model";
 })
 export class ReferanceInfoService {
 
-  formData:ReferanceInfo= new ReferanceInfo();
+  apiUrl=environment.apiUrl;
   referanceModel: Array<ReferanceInfo>=[];
-  referanceInfo:ReferanceInfo[];
 
   constructor(private http: HttpClient) { }
 
-  getReferances(){
-    return this.http.get(environment.apiUrl + "Referances/GetReferances").toPromise();
+  add(model: ReferanceInfo){
+    let api= this.apiUrl+ "Referances/SaveReferances";
+    return this.http.post<any>(api,model);
+  }
+  update(model: ReferanceInfo){
+    let api = this.apiUrl + "Referances/UpdateReferances";
+    return this.http.post<any>(api,model);
+  }
+  delete(model: ReferanceInfo){
+    let api = this.apiUrl + "Referances/DeleteReferances";
+    return this.http.post<any>(api,model.id);
+  }
+  getList(){
+    let api = this.apiUrl + "Referances/GetReferances";
+    return this.http.get<any>(api);
   }
 
-  saveReferance(referanceModel:ReferanceInfo){
-    this.formData.id =referanceModel.id;
-    this.formData.ReferancePhoneNumber2=referanceModel.ReferancePhoneNumber2;
-    this.formData.ReferanceEmail=referanceModel.ReferanceEmail;
-    this.formData.ReferanceName=referanceModel.ReferanceName;
-    this.formData.ReferancePhoneNumber=referanceModel.ReferancePhoneNumber;
-    this.formData.ReferanceFoundation=referanceModel.ReferanceFoundation;
-
-    var body={
-      referanceDto:this.formData,    }
-
-    return this.http.post(environment.apiUrl + "Referances/SaveReferances",body);
-  }
 }

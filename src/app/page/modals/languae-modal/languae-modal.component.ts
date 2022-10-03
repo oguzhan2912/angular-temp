@@ -1,5 +1,4 @@
-import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
-import {LanguageInfo} from "../../../Services/LanguageInfo/language-info.model";
+import {Component,  Inject, OnInit} from '@angular/core';
 import{MAT_DIALOG_DATA,MatDialogRef} from "@angular/material/dialog";
 import {LanguageInfoService} from "../../../Services/LanguageInfo/language-info.service";
 import {languages} from "../../../Data/Languages/language-store/language-store.component";
@@ -57,8 +56,4 @@ export class LanguaeModalComponent implements OnInit {
     this.createNewForm();
     this.dialogRef.close();
   }
-
-
-
-
 }

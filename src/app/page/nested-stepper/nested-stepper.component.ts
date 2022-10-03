@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, Validators} from "@angular/forms";
-import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import {DegreeModalComponent} from "../modals/degree-modal/degree-modal.component";
-import {DegreeInfo, EducationInfo, PostDegreeInfo} from "../../Services/EducationInfo/education-info.model";
-import {departmentAssociate} from "../../Data/Education/associatestore";
-import {departmentsDegree} from "../../Data/Education/departmentstore";
-import {schools} from "../../Data/Education/educationstore";
-import {PostgraduateDegreeComponent} from "../modals/postgraduate-degree/postgraduate-degree.component";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { EducationInfo} from "../../Services/EducationInfo/education-info.model";
 import {EducationInfoService} from "../../Services/EducationInfo/education-info.service";
+import {DegreeModalComponent} from "../modals/degree-modal/degree-modal.component";
 
 
 @Component({
@@ -18,7 +13,7 @@ import {EducationInfoService} from "../../Services/EducationInfo/education-info.
 export class NestedStepperComponent implements OnInit {
   educationModel:EducationInfo=new EducationInfo();
   isLinear = false;
-
+  educationForm:FormGroup;
   constructor(private _formBuilder: FormBuilder,
               private educationService:EducationInfoService) { }
 
@@ -46,5 +41,8 @@ export class NestedStepperComponent implements OnInit {
   });
 
   ngOnInit(): void { }
+  save(){
+
+  }
 
 }

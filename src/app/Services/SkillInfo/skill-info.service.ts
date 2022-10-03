@@ -8,24 +8,25 @@ import {SkillInfo} from "./skill-info.model";
 })
 export class SkillInfoService {
 
-  formData:SkillInfo= new SkillInfo();
+  apiUrl=environment.apiUrl;
   skillModel: Array<SkillInfo>=[];
-  skillInfo:SkillInfo[];
 
   constructor(private http: HttpClient) { }
 
-  getSkills(){
-    return this.http.get(environment.apiUrl + "Skills/GetSkills").toPromise();
+  add(model: SkillInfo){
+    let api= this.apiUrl+ "Skills/SaveSkills";
+    return this.http.post<any>(api,model);
   }
-
-  saveSkills(skillModel:SkillInfo){
-    this.formData.id =skillModel.id;
-    this.formData.SkillName=skillModel.SkillName;
-
-    var body={
-      skillDto:this.formData,
-    }
-
-    return this.http.post(environment.apiUrl + "Skills/SaveSkills",body);
+  update(model: SkillInfo){
+    let api = this.apiUrl + "Skills/UpdateSkills";
+    return this.http.post<any>(api,model);
+  }
+  delete(model: SkillInfo){
+    let api = this.apiUrl + "Skills/DeleteSkills";
+    return this.http.post<any>(api,model.id);
+  }
+  getList(){
+    let api = this.apiUrl + "Skills/GetSkills";
+    return this.http.get<any>(api);
   }
 }

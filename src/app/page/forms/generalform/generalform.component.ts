@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {GeneralInfoService} from "../../../Services/GeneralInfo/general-info.service";
 import {GeneralInfo} from "../../../Services/GeneralInfo/general-info.model";
-import {FormBuilder, FormControl, NgForm} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 import {genders} from "../../../Data/General/genderstore";
 import {educations} from "../../../Data/General/educationstore";
 import {identities} from "../../../Data/General/identitystore";
@@ -22,11 +22,10 @@ import {PPhotoModelComponent} from "../../modals/p-photo-model/p-photo-model.com
 })
 export class GeneralformComponent implements OnInit {
 
-  formData:GeneralInfo;
+  generalForm:FormGroup;
   generalModel: GeneralInfo=new GeneralInfo();
 
-  disableSelectCitizen = new FormControl();
-  disableSelectDriver = new FormControl();
+
   public genders:any=genders;
   public educations:any=educations;
   public identities:any=identities;
@@ -37,47 +36,69 @@ export class GeneralformComponent implements OnInit {
   public marriages:any=marriages;
 
 
+  constructor( public dialog: MatDialog,public generalService:GeneralInfoService) { }
 
-  constructor( _formBuilder: FormBuilder,public generalService:GeneralInfoService, public dialog:MatDialog) { }
+  ngOnInit(): void {
+    this.createNewForm();
+    this.enableNation();
+    this.enableDriverLicense();
+  }
 
-
-  ngOnInit(): void {/*
-    if(this.data==null){
-      this.formData={
-        id:0,
-        name:"",
-        lastname:"",
-        graduation:"",
-        gender:"",
-        identityType:"",
-        identityNum:0,
-        driverLicense:false,
-        martialStatus:"",
-        driverLicenseType:"",
-        nation:"",
-        dateOfBirth:"",
-        bornedCountry:"",
-        bornedCity:"",
+  createNewForm(){
+    this.generalForm=new FormGroup(
+      {
+        name:new FormControl("",[Validators.required,]),
+        lastname:new FormControl("",[Validators.required,]),
+        graduation:new FormControl("",[Validators.required,]),
+        gender:new FormControl("",[Validators.required,]),
+        identityType:new FormControl("",[Validators.required,]),
+        identityNum:new FormControl("",[Validators.required,]),
+        martialStatus:new FormControl("",[Validators.required,]),
+        driverLicenseType:new FormControl("",[Validators.required,]),
+        nation:new FormControl("",[Validators.required,]),
+        dateOfBirth:new FormControl("",[Validators.required,]),
+        bornedCountry:new FormControl("",[Validators.required,]),
+        bornedCity:new FormControl("",[Validators.required,]),
+        disableSelectCitizen :new FormControl("",[Validators.required,]),
+        disableSelectDriver :new FormControl("",[Validators.required,]),
       }
-    }else{
-      this.formData=Object.assign({},this.generalService.generalModel[this.data.GeneralModelIndex]);
-    }
-*/
-
+    )
   }
 
-  resetForm(form?: NgForm) {
-    form?.resetForm();
-  }
-
-
-
-  onSubmit(form:NgForm){
-    this.generalService.saveGeneral(this.generalModel).subscribe(res=>{this.resetForm();});
-
+  save(){
+    this.generalService.add(this.generalForm.value).subscribe({
+      next:(res)=>this.generalService.getList(),
+      error:(err)=>console.log(err)
+    })
+    console.warn(this.generalForm.value);
+    this.createNewForm();
   }
   openModal() {
     this.dialog.open(PPhotoModelComponent);
   }
+
+  enableNation(){
+    this.generalForm.get('disableSelectCitizen')?.valueChanges.subscribe(data=>{
+
+      if (data==false){
+        this.generalForm.get('identityType')?.enable();
+        this.generalForm.get('identityNum')?.enable();
+      }else{
+        this.generalForm.get('identityType')?.disable();
+        this.generalForm.get('identityNum')?.disable();
+      }
+    })
+  }
+  enableDriverLicense(){
+    this.generalForm.get('disableSelectDriver')?.valueChanges.subscribe(data=>{
+      if (data==false){
+        this.generalForm.get('driverLicenseType')?.enable();
+      }else{
+        this.generalForm.get('driverLicenseType')?.disable();
+       }
+      }
+    )
+  }
+
 
 }

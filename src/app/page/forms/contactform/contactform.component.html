@@ -1,3 +1,4 @@
+<form [formGroup]="form" autocomplete="off">
 <table style="font-size: large">
   <thead>
   <h2>İletişim Bilgileri</h2>
@@ -14,8 +15,7 @@
         </mat-option>
       </mat-select>
       <mat-error *ngIf="country.hasError('required')"
-      >Please select a country.</mat-error
-      >
+      >Please select a country.</mat-error>
     </mat-form-field></p></td>
     <td><p><mat-form-field appearance="outline" style="width: 100%;">
       <mat-label>İl</mat-label>
@@ -27,8 +27,7 @@
         </mat-option>
       </mat-select>
       <mat-error *ngIf="state.hasError('required')"
-      >Please select a state.</mat-error
-      >
+      >Please select a state.</mat-error>
     </mat-form-field></p></td>
     <td><p><mat-form-field appearance="outline" style="width: 100%;">
       <mat-label>İlçe</mat-label>
@@ -38,12 +37,11 @@
         </mat-option>
       </mat-select>
       <mat-error *ngIf="city.hasError('required')"
-      >Please select a city.</mat-error
-      >
+      >Please select a city.</mat-error>
     </mat-form-field></p></td>
     <td><p><mat-form-field appearance="outline" style="width: 100%;">
       <mat-label>Adres Giriniz</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput formControlName="address"></textarea>
     </mat-form-field></p></td>
   </tr>
   <tr>
@@ -51,35 +49,35 @@
     <td>
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>İş Telefonu</mat-label>
-        <input type="tel" matInput placeholder="555-555-1234">
+        <input type="tel" formControlName="workPhone" matInput placeholder="555-555-1234">
         <mat-icon matSuffix>mode_edit</mat-icon>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Ev Telefonu</mat-label>
-        <input type="tel" matInput placeholder="555-555-1234">
+        <input type="tel" matInput formControlName="homePhone" placeholder="555-555-1234">
         <mat-icon matSuffix>mode_edit</mat-icon>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Cep Telefonu</mat-label>
-        <input type="tel" matInput placeholder="555-555-1234"  required>
+        <input type="tel" matInput formControlName="cellPhone" placeholder="555-555-1234"  required>
         <mat-icon matSuffix>mode_edit</mat-icon>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Cep Telefonu-2</mat-label>
-        <input type="tel" matInput placeholder="555-555-1234">
+        <input type="tel" matInput formControlName="cellPhone2" placeholder="555-555-1234">
         <mat-icon matSuffix>mode_edit</mat-icon>
       </mat-form-field>
     </td>
     <td>
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Mail Adresi</mat-label>
-        <input type="email" matInput placeholder="örnek@gmail.com">
+        <input type="email" matInput formControlName="mailAdress" placeholder="örnek@gmail.com">
         <mat-icon matSuffix>mode_edit</mat-icon>
       </mat-form-field>
     </td>
@@ -87,27 +85,39 @@
   <mat-divider style="width: 600%;"></mat-divider>
   <h2>Beklentiler</h2>
   <tr>
-
-
-    <td><mat-form-field class="example-full-width" appearance="outline">
+    <td>
+      <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Kariyer Hedefi</mat-label>
-      <input type="text" matInput placeholder="örnek@gmail.com">
+      <input type="text" matInput formControlName="goal" placeholder="örnek@gmail.com">
       <mat-icon matSuffix>mode_edit</mat-icon>
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width" appearance="outline">
+    </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Hedeflenen Pozisyonlar</mat-label>
-      <input type="text" matInput placeholder="örnek@gmail.com">
+      <input type="text" matInput formControlName="position" placeholder="örnek@gmail.com">
       <mat-icon matSuffix>mode_edit</mat-icon>
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width" appearance="outline">
+    </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Maaş Beklentisi</mat-label>
-      <input type="number" matInput placeholder="örnek@gmail.com">
+      <input  matInput formControlName="salaryExp" placeholder="">
       <mat-icon matSuffix>mode_edit</mat-icon>
-    </mat-form-field></td>
-    <td><mat-form-field appearance="outline">
+    </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field appearance="outline">
       <mat-label>Genel Beklentiler</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field></td>
+      <textarea matInput formControlName="general"></textarea>
+    </mat-form-field>
+    </td>
   </tr>
   </tbody>
 </table>
+</form>
+
+<div style="margin-top:10%;">
+  <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
+  <button mat-raised-button (click)="save()" class="next-button" matStepperNext>Next</button>
+</div>

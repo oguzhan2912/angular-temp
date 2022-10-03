@@ -4,28 +4,35 @@
   </thead>
   <tbody>
   <tr >
-    <td class="stepper-table-button" >
-      <button mat-raised-button color="primary" style="color:white;" (click)="openReferanceModal(null,referanceModal.id)">Referans  Ekle</button></td>
+
     <td class="stepper-table-header">Referansın Adı</td>
     <td class="stepper-table-header">Referans Olan Kurum</td>
     <td class="stepper-table-header">Referansın E-Mail Adresi</td>
     <td class="stepper-table-header">Referansın Telefon Numarası</td>
     <td class="stepper-table-header">Referansın Telefon Numarası-2</td>
+    <td class="stepper-table-button" >
+      <button mat-raised-button color="primary" style="color:white;"
+              (click)="openReferanceModal(null,referanceModal.id)">Referans  Ekle</button></td>
   </tr>
+
   <tr style="text-align: center" *ngIf="ReferanceList.length==0">
     <td style="text-align:center;" colspan="8"> <strong>Lütfen Referans Bilgisi Ekleyiniz.</strong> </td>
   </tr>
-  <tr *ngFor="let item of ReferanceList">
-    <td class="stepper-table-button" (click)="openReferanceModal(null,item.id)"><i class=" fa fa-pencil"></i></td>
-    <td class="stepper-table-body">{{item.ReferanceName}}</td>
-    <td class="stepper-table-body">{{item.ReferanceFoundation}}</td>
-    <td class="stepper-table-body"> {{item.ReferanceEmail}}</td>
-    <td class="stepper-table-body">{{item.ReferancePhoneNumber}}</td>
-    <td class="stepper-table-body">{{item.ReferancePhoneNumber2}}</td>
 
-
+  <tr *ngFor="let item of ReferanceList,let i=index">
+    <td class="stepper-table-body">{{item.referanceName}}</td>
+    <td class="stepper-table-body">{{item.referanceFoundation}}</td>
+    <td class="stepper-table-body"> {{item.referanceEmail}}</td>
+    <td class="stepper-table-body">{{item.referancePhoneNumber}}</td>
+    <td class="stepper-table-body">{{item.referancePhoneNumber2}}</td>
+    <td class="stepper-table-button" >
+      <button mat-mini-fab color="primary" (click)="deleteRecord(item)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-mini-fab color="primary" (click)="openReferanceModal(null,item.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
   </tr>
-
-
   </tbody>
 </table>

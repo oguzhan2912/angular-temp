@@ -1,5 +1,5 @@
+<form [formGroup]="phDForm">
 <div class="container" style="min-height: 450px;">
-
   <table style="font-size: large">
     <thead>
     <h2>Doktora Bilgileri</h2>
@@ -9,7 +9,7 @@
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Okul Adı</mat-label>
-          <mat-select required >
+          <mat-select formControlName="schoolName" required >
             <mat-option *ngFor="let school of schools" value="{{school.name}}">{{school.name}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -17,14 +17,13 @@
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Bölüm Adı</mat-label>
-          <input  matInput required>
-
+          <input  matInput formControlName="schoolDepartment" required placeholder="Bölüm Adı Giriniz.">
         </mat-form-field>
       </td>
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Öğrenim Türü</mat-label>
-          <mat-select required>
+          <mat-select formControlName="schoolState"  required>
             <mat-option *ngFor="let state of states" value="{{state.name}}">{{state.name}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -32,7 +31,7 @@
       <td style="margin-left:1%;">
         <mat-form-field appearance="outline">
           <mat-label>Mezuniyet Tarihi</mat-label>
-          <input matInput [matDatepicker]="PhDGraduationDate">
+          <input matInput formControlName="graduationDate" required [matDatepicker]="PhDGraduationDate">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="PhDGraduationDate"></mat-datepicker-toggle>
           <mat-datepicker #PhDGraduationDate></mat-datepicker>
@@ -41,7 +40,7 @@
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Mezuniyet Notu</mat-label>
-          <input matInput [(ngModel)]="educationModel.phdGPA" placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+          <input matInput formControlName="schoolGPA" required placeholder="Puan Giriniz." >
         </mat-form-field>
       </td>
     </tr>
@@ -50,21 +49,24 @@
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Okul Adı</mat-label>
-          <input matInput [(ngModel)]="educationModel.newPhDSchool" placeholder="Okul adı giriniz." >
+          <input matInput formControlName="newSchool"  placeholder="Okul adı giriniz." >
         </mat-form-field>
       </td>
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Bölüm Adı</mat-label>
-          <input matInput [(ngModel)]="educationModel.newPhDDepartment" placeholder="Bölüm Adı Giriniz."  >
+          <input matInput formControlName="newDepartment"  placeholder="Bölüm Adı Giriniz."  >
         </mat-form-field>
+      </td>
+      <td>
+        <input hidden formControlName="gradeLevel" value="7">
       </td>
     </tr>
     </tbody>
   </table>
 </div>
+</form>
 <div>
-
   <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
-  <button mat-raised-button class="next-button" matStepperNext>Next</button>
+  <button mat-raised-button (click)="save()" class="next-button" matStepperNext>Next</button>
 </div>

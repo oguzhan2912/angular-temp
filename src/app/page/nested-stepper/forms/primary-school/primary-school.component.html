@@ -1,4 +1,4 @@
-
+<form [formGroup]="primaryForm">
 <div class="container" style="min-height: 450px;">
   <table style="font-size: large">
     <thead>
@@ -9,23 +9,26 @@
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Okul Adı</mat-label>
-          <input matInput [(ngModel)]="educationModel.primarySchoolName"   placeholder="Okul adı giriniz." formControlName="firstCtrl" required>
+          <input matInput formControlName="schoolName"   placeholder="Okul adı giriniz."  required>
         </mat-form-field>
       </td>
       <td style="margin-left:1%;">
         <mat-form-field appearance="outline">
           <mat-label>Mezuniyet Tarihi</mat-label>
-          <input matInput [matDatepicker]="primaryGraduation">
+          <input matInput formControlName="graduationDate" required [matDatepicker]="primaryGraduation">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="primaryGraduation"></mat-datepicker-toggle>
           <mat-datepicker #primaryGraduation></mat-datepicker>
         </mat-form-field>
       </td>
+      <td>
+        <input hidden formControlName="gradeLevel" value="1">
+      </td>
     </tr>
     </tbody>
   </table>
 </div>
+</form>
 <div>
-
-  <button mat-raised-button class="next-button" matStepperNext>Next</button>
+  <button mat-raised-button (click)="save()" class="next-button" matStepperNext>Next</button>
 </div>

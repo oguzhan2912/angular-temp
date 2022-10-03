@@ -4,30 +4,39 @@
   </thead>
   <tbody>
   <tr >
-    <td class="stepper-table-button" >
-      <button mat-raised-button color="primary" style="color:white;" (click)="openWorkModal(null,workModal.id)">İş Ekle</button></td>
+
     <td class="stepper-table-header">Firma Adı</td>
     <td class="stepper-table-header">Çalıştığı Departman</td>
     <td class="stepper-table-header">Çalıştığı Pozisyon</td>
+    <td class="stepper-table-header">Çalıştığı Görev</td>
     <td class="stepper-table-header">Son Maaş</td>
     <td class="stepper-table-header">İşe Giriş Tarihi</td>
-    <td class="stepper-table-header">Hala Aktif Çalışıyorum</td>
     <td class="stepper-table-header">İşten Ayrılış Tarihi</td>
+    <td class="stepper-table-button" >
+    <button mat-raised-button  style="background-color:#8a9b6e;"
+            (click)="openWorkModal(null,workModal.id)">İş Ekle</button>
+  </td>
+
   </tr>
   <tr style="text-align: center" *ngIf="WorkList.length==0">
     <td style="text-align:center;" colspan="8"> <strong>Lütfen İş Bilgisi Ekleyiniz.</strong> </td>
   </tr>
-  <tr *ngFor="let item of WorkList">
-    <td class="stepper-table-button" (click)="openWorkModal(null,item.id)"><i class=" fa fa-pencil"></i></td>
-    <td class="stepper-table-body">{{item.CompanyName}}</td>
-    <td class="stepper-table-body">{{item.CompanyDepartment}}</td>
-    <td class="stepper-table-body"> {{item.CompanyPosition}}</td>
-    <td class="stepper-table-body">{{item.CompanySalary}}</td>
-    <td class="stepper-table-body">{{item.CompanyStartingDate}}</td>
-    <td class="stepper-table-body">{{item.CompanyStillWorking}}</td>
-    <td class="stepper-table-body">{{item.CompanyLeavingDate}}</td>
-
+  <tr *ngFor="let item of WorkList,let i=index;">
+    <td class="stepper-table-body">{{item.companyName}}</td>
+    <td class="stepper-table-body">{{item.companyDepartment}}</td>
+    <td class="stepper-table-body"> {{item.companyPosition}}</td>
+    <td class="stepper-table-body">{{item.companyMission}}</td>
+    <td class="stepper-table-body">{{item.companySalary}}</td>
+    <td class="stepper-table-body">{{item.companyStartingDate}}</td>
+    <td class="stepper-table-body">{{item.companyLeavingDate}}</td>
+    <td class="stepper-table-button" >
+      <button mat-mini-fab color="primary"(click)="deleteRecord(item)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-mini-fab color="primary"(click)="openWorkModal(null,item.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      </td>
   </tr>
-
   </tbody>
 </table>

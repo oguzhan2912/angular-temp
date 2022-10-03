@@ -1,3 +1,4 @@
+<form [formGroup]="skillForm">
 <table style="font-size: large">
   <thead>
   <h2>Yeteneklerim</h2>
@@ -7,22 +8,18 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Yetenek</mat-label>
-        <input matInput [(ngModel)]="skillModel.SkillName" placeholder="İsim Giriniz."  required>
+        <input matInput formControlName="skillName" placeholder="İsim Giriniz." >
       </mat-form-field>
     </td>
-    <td>
-      <mat-form-field appearance="outline" style="width: 100%;">
-        <mat-label>Tecrübe Yılı</mat-label>
-        <mat-select required >
-          <mat-option *ngFor="let year of years" [value]="year.model">{{year.model}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </td>
+
+
+
   </tr>
   </tbody>
 </table>
+</form>
 
 <mat-dialog-actions align="end">
-  <button mat-raised-button color="warn" mat-dialog-close>İptal Et</button>
-  <button mat-raised-button color="warn" style="background-color: lawngreen" [mat-dialog-close]="true" cdkFocusInitial>Kaydet</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="true">İptal Et</button>
+  <button  (click)="save()" mat-raised-button color="warn" style="background-color: lawngreen">Kaydet</button>
 </mat-dialog-actions>

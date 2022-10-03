@@ -3,7 +3,6 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig} from "@angular/material/dia
 import {LanguaeModalComponent} from "../../modals/languae-modal/languae-modal.component";
 import {LanguageInfo} from "../../../Services/LanguageInfo/language-info.model";
 import {LanguageInfoService} from "../../../Services/LanguageInfo/language-info.service";
- import {NgForm} from "@angular/forms";
 
 
 
@@ -16,6 +15,7 @@ export class LanguageformComponent implements OnInit {
   isLoading: boolean = false;
   LanguageList:LanguageInfo[];
   languageModel: LanguageInfo=new LanguageInfo();
+  languageModal:LanguageInfo;
 
   @Input() langList: LanguageInfo[] = []
   @Output() myDeleteEvent = new EventEmitter<any>();
@@ -27,9 +27,9 @@ export class LanguageformComponent implements OnInit {
     this.RefreshToList();
   }
 
-  openLanguageModal(LanguageModelIndex,LanguageId):void {
+  openLanguageModal(languageId):void {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = { LanguageModelIndex, LanguageId };
+
     this.dialog.open(LanguaeModalComponent,dialogConfig);
   }
   RefreshToList(){
@@ -39,16 +39,11 @@ export class LanguageformComponent implements OnInit {
     })
   }
   deleteRecord(model:LanguageInfo){
-
    this.myDeleteEvent.emit(model);
-
-
-   /* this.isLoading=true;
-    this.languageService.delete().subscribe({
-      next:(res)=>{this.languageService.getList(); this.isLoading=false},
-      error:(err)=>{console.log(err); this.isLoading=false},
-    })*/
-
-
   }
 }
+
+
+
+
+

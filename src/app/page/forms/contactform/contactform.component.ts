@@ -32,7 +32,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class ContactformComponent implements OnInit {
 
 
-
+  contactForm:FormGroup;
   form: FormGroup;
   matcher = new MyErrorStateMatcher();
 
@@ -47,21 +47,44 @@ export class ContactformComponent implements OnInit {
   city = new FormControl({ value: null, disabled: true }, [
     Validators.required,
   ]);
+  address=new FormControl("",[Validators.required,]);
+  workPhone=new FormControl("",[Validators.required,]);
+  cellPhone=new FormControl("",[Validators.required,]);
+  homePhone=new FormControl("",[Validators.required,]);
+  cellPhone2=new FormControl("",[Validators.required,]);
+  mailAdress=new FormControl("",[Validators.required,]);
+  goal=new FormControl("",[Validators.required,]);
+  position=new FormControl("",[Validators.required,]);
+  salaryExp=new FormControl("",[Validators.required,]);
+  general =new FormControl("",[Validators.required,]);
 
-  constructor(private service: ContactInfoService) {
-    this.countries = this.service.getCountries();
+
+
+  constructor(private contactService: ContactInfoService) {
+    this.countries = this.contactService.getCountries();
     this.form = new FormGroup({
       country: this.country,
       state: this.state,
       city: this.city,
-    }); }
+      address:this.address,
+      workPhone:this.workPhone,
+      cellPhone:this.cellPhone,
+      cellPhone2:this.cellPhone2,
+      homePhone:this.homePhone,
+      mailAdress:this.mailAdress,
+      goal:this.goal,
+      position:this.position,
+      salaryExp:this.salaryExp,
+      general:this.general,
+    });
+  }
 
   ngOnInit() {
     this.country.valueChanges.subscribe((country) => {
       this.state.reset();
       this.state.disable();
       if (country) {
-        this.states = this.service.getStatesByCountry(country);
+        this.states = this.contactService.getStatesByCountry(country);
         this.state.enable();
       }
     });
@@ -70,9 +93,43 @@ export class ContactformComponent implements OnInit {
       this.city.reset();
       this.city.disable();
       if (state) {
-        this.cities = this.service.getCitiesByState(this.country.value!, state);
+        this.cities = this.contactService.getCitiesByState(this.country.value!, state);
         this.city.enable();
       }
     });
+    this.createNewForm();
+  }
+
+  createNewForm(){
+    /*
+    this.contactForm=new FormGroup(
+      {
+        address:new FormControl("",[Validators.required,]),
+        workPhone:new FormControl("",[Validators.required,]),
+        cellPhone:new FormControl("",[Validators.required,]),
+        homePhone:new FormControl("",[Validators.required,]),
+        cellPhone2:new FormControl("",[Validators.required,]),
+        mailAdress:new FormControl("",[Validators.required,]),
+        goal:new FormControl("",[Validators.required,]),
+        position:new FormControl("",[Validators.required,]),
+        salaryExp:new FormControl("",[Validators.required,]),
+        general :new FormControl("",[Validators.required,]),
+      }
+    )*/
+  }
+
+  save(){
+    /*
+    this.contactService.add(this.contactForm.value).subscribe({
+      next:(res)=>this.contactService.getList(),
+      error:(err)=>console.log(err)
+    })*/
+
+    this.contactService.add(this.form.value).subscribe({
+      next:(res)=>this.contactService.getList(),
+      error:(err)=>console.log(err)
+    })
+    console.warn(this.form.value);
+    this.createNewForm();
   }
 }

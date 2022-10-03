@@ -1,14 +1,14 @@
 export class PostworkInfo {
   id:number;
-  CompanyName:string;
-  CompanyDepartment:string;
-  CompanyPosition:string;
-  CompanyMission:string;
-  CompanySalary:number;
-  CompanyStartingDate:Date;
-  CompanyStillWorking:boolean;
-  CompanyLeavingDate:Date;
-  CompanyLeavingReason:string;
+  companyName:string;
+  companyDepartment:string;
+  companyPosition:string;
+  companyMission:string;
+  companySalary:number;
+  companyStartingDate:Date;
+  companyStillWorking:boolean;
+  companyLeavingDate:Date;
+  companyLeavingReason:string;
 
 
 }

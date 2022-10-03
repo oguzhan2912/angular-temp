@@ -1,29 +1,37 @@
 <div class="container" style="min-height: 450px;">
-
   <table style="width: 100%">
     <thead>
     <h2>Yüksek Lisans Bilgileri</h2>
     </thead>
     <tbody>
-    <tr >
-      <td class="stepper-table-button" >
-        <button mat-raised-button  color="primary" style="color:white;" (click)="openPostDegreeDialog(null,postDegreeModel.id)"><mat-icon>library_add</mat-icon></button></td>
+    <tr>
       <td class="stepper-table-header">Okul İsmi</td>
       <td class="stepper-table-header">Bölüm İsmi</td>
       <td class="stepper-table-header">Öğrenim Durumu</td>
       <td class="stepper-table-header">Mezuniyet Ortalaması</td>
       <td class="stepper-table-header">Mezuniyet Tarihi</td>
+      <td class="stepper-table-button" >
+      <button mat-raised-button  color="primary" style="color:white;"
+              (click)="openPostDegreeDialog(null,postDegreeModel.id)">
+        <mat-icon>library_add</mat-icon></button></td>
     </tr>
     <tr style="text-align: center" *ngIf="PostDegreeList.length==0">
       <td style="text-align:center;" colspan="8"> <strong>Lütfen Yüksek Lisans Bilgisi Ekleyiniz.</strong> </td>
     </tr>
     <tr *ngFor="let item of PostDegreeList">
-      <td class="stepper-table-button" (click)="openPostDegreeDialog(null,item.id)"><i class=" fa fa-pencil"></i></td>
-      <td class="stepper-table-body">{{item.postgraduationName}}</td>
-      <td class="stepper-table-body">{{item.postgraduationState}}</td>
-      <td class="stepper-table-body">{{item.postgraduationGPA}}</td>
-      <td class="stepper-table-body">{{item.postgraduationCountry}}</td>
-      <td class="stepper-table-body">{{item.postgraduationDateDegree}}</td>
+      <td class="stepper-table-body">{{item.schoolName}}</td>
+      <td class="stepper-table-body">{{item.schoolDepartment}}</td>
+      <td class="stepper-table-body">{{item.graduationDate}}</td>
+      <td class="stepper-table-body">{{item.schoolState}}</td>
+      <td class="stepper-table-body">{{item.schoolGPA}}</td>
+      <td class="stepper-table-button" >
+        <button mat-mini-fab color="primary" (click)="deleteRecord(item)" >
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-mini-fab color="accent"  (click)="openPostDegreeDialog(null,item.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
 
 
     </tr>

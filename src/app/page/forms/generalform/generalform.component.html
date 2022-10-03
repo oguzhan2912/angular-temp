@@ -1,4 +1,4 @@
-<form #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+<form [formGroup]="generalForm" autocomplete="off">
 <table style="font-size: medium">
   <thead>
   <h2>Genel Bilgiler</h2>
@@ -9,14 +9,14 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;" >
           <mat-label>İsim giriniz.</mat-label>
-          <input matInput [(ngModel)]="generalModel.name"  placeholder="İsim" >
+          <input matInput formControlName="name"  placeholder="İsim" >
         </mat-form-field>
       </p></td>
     <td>
       <p>
       <mat-form-field appearance="outline" style="width: 100%;">
         <mat-label  >Soyisim giriniz.</mat-label>
-        <input matInput  [(ngModel)]="generalModel.lastname" placeholder="Soyisim"  >
+        <input matInput formControlName="lastname" placeholder="Soyisim"  >
       </mat-form-field>
     </p>
     </td>
@@ -24,7 +24,7 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Cinsiyet</mat-label>
-          <mat-select  required  >
+          <mat-select formControlName="gender" required  >
             <mat-option *ngFor="let gender  of genders" [value]="gender.name">
               {{gender.name}}</mat-option>
           </mat-select>
@@ -35,7 +35,7 @@
       <p >
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Eğitim Durumu</mat-label>
-          <mat-select  required  >
+          <mat-select formControlName="graduation" required  >
             <mat-option *ngFor="let education of educations" value="{{education.name}}">{{education.name}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -47,14 +47,14 @@
     <td>
       <p>
       <p>
-        <mat-checkbox style="margin-bottom: 30px;" [formControl]="disableSelectCitizen">Türk Vatandaşı Değilim</mat-checkbox>
+        <mat-checkbox style="margin-bottom: 30px;" formControlName="disableSelectCitizen"  >Türk Vatandaşı Değilim</mat-checkbox>
     </p>
     </td>
     <td>
       <p>
       <mat-form-field appearance="outline" style="width: 100%;">
         <mat-label>Kimlik Türü</mat-label>
-        <mat-select [disabled]="disableSelectCitizen.value"  required >
+        <mat-select formControlName="identityType"   required >
           <mat-option *ngFor="let identy of identities" [value]="identy.name">{{identy.name}}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -65,7 +65,7 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Kimlik Numarası</mat-label>
-          <input matInput [disabled]="disableSelectCitizen.value" [(ngModel)]="generalModel.identityNum" placeholder="Kimlik Numarası Giriniz.">
+          <input matInput formControlName="identityNum" required placeholder="Kimlik Numarası Giriniz.">
         </mat-form-field>
       </p>
     </td>
@@ -73,7 +73,7 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Medeni Durum</mat-label>
-          <mat-select  required >
+          <mat-select formControlName="martialStatus" required >
             <mat-option *ngFor="let marriage of marriages"  value="{{marriage.name}}">{{marriage.name}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -84,14 +84,14 @@
   <tr>
     <td>
       <p>
-        <mat-checkbox style="margin-bottom: 30px;" [formControl]="disableSelectDriver">Sürücü Belgesi Var Mı?</mat-checkbox>
+        <mat-checkbox style="margin-bottom: 30px;" formControlName="disableSelectDriver">Sürücü Belgesi Var Mı?</mat-checkbox>
       </p>
     </td>
     <td>
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Sürücü Belgesi Türü</mat-label>
-          <mat-select  [disabled]="disableSelectDriver.value" required >
+          <mat-select formControlName="driverLicenseType" required >
             <mat-option *ngFor="let driver of drivers" value="{{driver.name}}">
               {{driver.name}}</mat-option>
           </mat-select>
@@ -102,7 +102,7 @@
       <p>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label>Uyruk</mat-label>
-          <mat-select required >
+          <mat-select formControlName="nation" required >
             <mat-option *ngFor="let nation of nations" value="{{nation.name}}">{{nation.name}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -117,7 +117,7 @@
     <td >
       <mat-form-field appearance="outline">
         <mat-label>Doğum Tarihi</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input matInput formControlName="dateOfBirth" [matDatepicker]="picker">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -126,7 +126,7 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Doğduğu Ülke</mat-label>
-        <mat-select required >
+        <mat-select formControlName="bornedCountry" required >
           <mat-option *ngFor="let country of countries" value="{{country.name}}">
             {{country.name}}</mat-option>
         </mat-select>
@@ -135,17 +135,18 @@
     <td>
       <mat-form-field appearance="outline">
         <mat-label>Doğduğu Şehir</mat-label>
-        <mat-select required >
+        <mat-select formControlName="bornedCity" required >
           <mat-option *ngFor="let city of cities" value="{{city.name}}">
             {{city.name}}</mat-option>
         </mat-select>
       </mat-form-field>
     </td>
-    <td>
-      <button type="submit" class="btn btn-primary">
-      <i class="fa fa-save"></i> Kaydet</button>
-    </td>
+
   </tr>
   </tbody>
 </table>
 </form>
+
+<div style="margin-top:5%;width: 120%;">
+  <button mat-raised-button (click)="save()" class="next-button" matStepperNext>Next</button>
+</div>

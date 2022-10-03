@@ -3,21 +3,28 @@
   <h2>Yeteneklerim</h2>
   </thead>
   <tbody>
-  <tr >
-    <td class="stepper-table-button" >
-      <button mat-raised-button color="primary" style="color:white;" (click)="openSkillModal(null,SkillModal.id)">Yetenek Ekle</button></td>
+  <tr>
     <td class="stepper-table-header">Yetenek Adı</td>
-    <td class="stepper-table-header">Tecrübe Yılı</td>
+    <td class="stepper-table-button" >
+    <button mat-raised-button color="primary" style="color:white;" (click)="openSkillModal(null,SkillModal.id)">Yetenek Ekle</button></td>
   </tr>
+
   <tr style="text-align: center" *ngIf="SkillList.length==0">
     <td style="text-align:center;" colspan="8"> <strong>Lütfen Yetenek Bilgisi Ekleyiniz.</strong> </td>
   </tr>
+
   <tr *ngFor="let item of SkillList">
-    <td class="stepper-table-button" (click)="openSkillModal(null,item.id)"><i class=" fa fa-pencil"></i></td>
-    <td class="stepper-table-body">{{item.SkillName}}</td>
-    <td class="stepper-table-body">Yıl</td>
+    <td class="stepper-table-body">{{item.skillName}}</td>
+    <td class="stepper-table-button"
+        (click)="openSkillModal(null,item.id)">
+      <button mat-mini-fab color="primary" (click)="deleteRecord(item)">
+        <mat-icon>delete</mat-icon>
+      </button>
 
-
+      <button mat-mini-fab color="primary" (click)="openSkillModal(null,item.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
   </tr>
   </tbody>
 </table>

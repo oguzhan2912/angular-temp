@@ -1,6 +1,6 @@
 export class SkillInfo {
   id:number;
-  SkillName:string;
+  skillName:string;
 
   constructor() {
 

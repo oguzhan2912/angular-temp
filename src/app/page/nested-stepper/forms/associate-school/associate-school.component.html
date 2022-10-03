@@ -1,5 +1,5 @@
+<form [formGroup]="associateForm">
 <div class="container" style="min-height: 450px;">
-
   <table style="font-size: large">
     <thead>
     <h2>Ön Lisans Bilgileri</h2>
@@ -9,7 +9,7 @@
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Okul Adı</mat-label>
-          <mat-select required >
+          <mat-select formControlName="schoolName" required >
             <mat-option *ngFor="let school of schools" value="{{school.name}}">{{school.name}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -17,7 +17,7 @@
       <td style="width: 160%">
         <mat-form-field appearance="outline" style="width: 100%">
           <mat-label>Bölüm Adı</mat-label>
-          <mat-select required >
+          <mat-select formControlName="schoolDepartment" required >
             <mat-option  *ngFor="let departmentA of departmentAssociate" value="{{departmentA.name}}">{{departmentA.name}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -25,15 +25,15 @@
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Öğrenim Türü</mat-label>
-          <mat-select [(ngModel)]="educationModel.associateState" required>
-            <mat-option *ngFor="let associateStates of educationModel.associateState" value="{{educationModel.associateState}}">{{associateStates}}</mat-option>
+          <mat-select formControlName="schoolState" required>
+            <mat-option *ngFor="let associateStates of states" value="{{associateStates.name}}">{{associateStates.name}}</mat-option>
           </mat-select>
         </mat-form-field>
       </td>
       <td style="margin-left:1%;">
         <mat-form-field appearance="outline">
           <mat-label>Mezuniyet Tarihi</mat-label>
-          <input matInput [matDatepicker]="associateGraduationDate">
+          <input matInput formControlName="graduationDate" required [matDatepicker]="associateGraduationDate">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="associateGraduationDate"></mat-datepicker-toggle>
           <mat-datepicker #associateGraduationDate></mat-datepicker>
@@ -42,7 +42,7 @@
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Mezuniyet Notu</mat-label>
-          <input matInput [(ngModel)]="educationModel.associateGPA" placeholder="Puan Giriniz." formControlName="firstCtrl" required>
+          <input matInput formControlName="schoolGPA" required placeholder="Puan Giriniz." >
         </mat-form-field>
       </td>
     </tr>
@@ -51,21 +51,24 @@
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Okul Adı</mat-label>
-          <input matInput [(ngModel)]="educationModel.newAssociateSchool" placeholder="Okul adı giriniz." >
+          <input matInput formControlName="newSchool" placeholder="Okul adı giriniz." >
         </mat-form-field>
       </td>
       <td>
         <mat-form-field appearance="outline">
           <mat-label>Bölüm Adı</mat-label>
-          <input matInput [(ngModel)]="educationModel.newAssociateDepartment" placeholder="Bölüm Adı Giriniz."  >
+          <input matInput formControlName="newDepartment" placeholder="Bölüm Adı Giriniz."  >
         </mat-form-field>
+      </td>
+      <td>
+        <input hidden formControlName="gradeLevel" value="1">
       </td>
     </tr>
     </tbody>
   </table>
-
 </div>
+</form>
 <div >
   <button mat-raised-button class="previous-button" matStepperPrevious>Back</button>
-  <button mat-raised-button class="next-button" matStepperNext>Next</button>
+  <button mat-raised-button (click)="save()" class="next-button" matStepperNext>Next</button>
 </div >

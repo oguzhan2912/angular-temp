@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {SkillmodalComponent} from "../../modals/skillmodal/skillmodal.component";
-import {years} from "../../../Data/Skills/yearsstore";
+
 import {SkillInfo} from "../../../Services/SkillInfo/skill-info.model";
 import {SkillInfoService} from "../../../Services/SkillInfo/skill-info.service";
+
 
 
 @Component({
@@ -16,18 +17,29 @@ export class SkillformComponent implements OnInit {
   SkillList: SkillInfo[];
   SkillModal:SkillInfo=new SkillInfo();
 
-  constructor(public dialog: MatDialog,private SkillService:SkillInfoService,) { }
+  @Input() skillList: SkillInfo[] = []
+  @Output() myDeleteEvent = new EventEmitter<any>();
 
+  constructor(public dialog: MatDialog,private skillService:SkillInfoService,) { }
 
-
+  ngOnInit(): void {
+    this.SkillList=this.skillService.skillModel;
+    this.RefreshToList();
+  }
 
   openSkillModal(SkillModalIndex,SkillId){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = { SkillModalIndex, SkillId };
     this.dialog.open(SkillmodalComponent,dialogConfig);
   }
-  ngOnInit(): void {
-    this.SkillService.getSkills().then(res=>this.SkillList=res as SkillInfo[])
-  }
 
+  RefreshToList(){
+    this.skillService.getList().subscribe({
+      next: (res)=>this.SkillList=res as SkillInfo[],
+      error:(err)=>console.log(err)
+    })
+  }
+  deleteRecord(model:SkillInfo){
+    this.myDeleteEvent.emit(model);
+  }
 }

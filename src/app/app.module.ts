@@ -13,15 +13,12 @@ import {GeneralInfoService} from "./Services/GeneralInfo/general-info.service";
 import {LanguaeModalComponent} from "./page/modals/languae-modal/languae-modal.component";
 import {HttpClientModule} from "@angular/common/http";
 import {MatInputModule} from "@angular/material/input";
-import { CvInfoModel } from './Services/CVInfo/cv-info.model';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
-
 
   ],
   imports: [
