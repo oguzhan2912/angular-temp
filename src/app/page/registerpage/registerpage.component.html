@@ -21,7 +21,8 @@
         <h1 style="text-align: center; font-size: x-large;">Kayıt Ol</h1>
       </mat-card-title>
       <mat-card-content>
-        <div >
+        <form [formGroup]="registerForm" >
+        <div ><!-----
           <p>
             <mat-form-field appearance="outline" style="width: 100%;">
               <mat-label>İsim giriniz.</mat-label>
@@ -76,7 +77,27 @@
               <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
           </p>
+        -->
         </div>
+
+        <div >
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Kullanıcı Adı</mat-label>
+              <input matInput formControlName="userName" placeholder="Kullanıcı Adı giriniz" required>
+            </mat-form-field>
+          </p>
+        </div>
+        <div >
+          <p>
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Şifre Giriniz</mat-label>
+              <input matInput formControlName="password" placeholder="Şifre giriniz" required>
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+      </form>
       </mat-card-content>
         <mat-card-footer >
           <div style="margin-left: 25%;margin-top:1%;margin-bottom:4%;">
@@ -84,7 +105,7 @@
             </mat-checkbox>
           </div>
           <a mat-raised-button color="primary" [routerLink]="['/profile']" target="_blank"
-             style="margin-top:1%;margin-bottom:4%;margin-left: 35%;width: 30%;background-color: #BF9B6F">Kayıt Ol</a>
+             style="margin-top:1%;margin-bottom:4%;margin-left: 35%;width: 30%;background-color: #BF9B6F" type="submit" (click)="register()">Kayıt Ol</a>
         </mat-card-footer>
 
     </mat-card>
